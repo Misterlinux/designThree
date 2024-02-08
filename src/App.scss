@@ -1,0 +1,15 @@
+
+$enable-important-utilities: false;
+
+
+$base: 250;
+
+#bootlock .text-danger{
+  color: hsl(var(--base, $base), 100%, 45%);
+}
+
+#bootlock .bg-danger{
+  background-color: hsl(var(--base, $base), 100%, 45%)
+}
+
+@import '~bootstrap/scss/bootstrap.scss';
