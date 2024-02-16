@@ -1,5 +1,7 @@
-import { useReducer, useContext, createContext, Children} from 'react';
+import { useReducer, useContext, createContext} from 'react';
+import { animated, useTransition, useScroll, useSpringValue} from '@react-spring/web'
 import { micro } from './Data';
+import { passo } from '../components/Home';
 
 let Stato = createContext(null)
 let StatoSet = createContext(null)
@@ -13,8 +15,6 @@ export default function Task({children}){
 
     switch(action.type){
       case "colore": {
-        console.log( document.documentElement.style.getPropertyValue("--base") )
-        console.log( action.base )
         document.documentElement.style.setProperty("--base", action.base)
 
         state.base = action.base
@@ -22,12 +22,19 @@ export default function Task({children}){
           ...state
         }
       }
+      case "move":{ 
+        console.log("E stato passato")
+        state.springa.start(action.movi)
+        return{
+          ...state
+        } 
+      }
     }
 
     throw Error('Unknown action: ' + action.type);
   }
 
-  const initial = { base: 120 }
+  const initial = { base: 120, springa: useSpringValue("17%",{ config:{ mass: 3, tension: 400, friction: 40 }} ) }
   const [instate, dispatch] = useReducer(reducer, initial);
 
   return(

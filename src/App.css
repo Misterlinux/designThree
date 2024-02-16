@@ -11,4 +11,8 @@
   scrollbar-width: none;
 }
 
+/* navbar */
 
+#bootlock .nav-item.col-3{
+  transition: 1s;
+}
