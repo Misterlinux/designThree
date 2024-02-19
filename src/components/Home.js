@@ -109,12 +109,18 @@ function Home(){
         <ParallaxLayer offset={2} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 1.5 }}>
           <> 
             <div className="d-inline-block" style={{ verticalAlign: "top", width: "30%"}}>
-              <div style={{ backgroundColor: "brown", height: "65vh" }} >
-                This is the bar
+              <div className="position-relative" style={{ backgroundColor: "brown", height: "65vh" }} >
+
+                <div className="position-absolute colonna1">
+                </div>
+
+                <div className="position-relative">
+                  <h2 className="text-center" style={{ color: "yellow" }}>First day</h2>
+                  <p>Welcome to the way</p>
+                </div>
+
               </div>
             </div>
-
-
           </>
         </ParallaxLayer>
 

@@ -25,3 +25,12 @@
   background-position: center center;
   background-size: cover;
 }
+
+.colonna1{
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background-image: url("./imma/intro.jpg");
+  background-position: center center;
+  background-size: cover;
+}
