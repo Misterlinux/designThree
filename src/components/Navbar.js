@@ -25,6 +25,9 @@ function Navbar(){
 
       <div className="col-3">
         Icona
+        <div style={{ height: 50, width: 50 }}>
+          <div className="fondo"></div>
+        </div>
       </div>
       <div className="col-8 row">
         <nav className="col-3 nav-item border-right border-warning primo">

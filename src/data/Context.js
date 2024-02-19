@@ -22,13 +22,6 @@ export default function Task({children}){
           ...state
         }
       }
-      case "move":{ 
-        console.log("E stato passato")
-        state.springa.start(action.movi)
-        return{
-          ...state
-        } 
-      }
     }
 
     throw Error('Unknown action: ' + action.type);
