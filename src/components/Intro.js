@@ -11,7 +11,7 @@ function Intro(){
         <p>Siamo stati noi</p>
       </div>
 
-      <div className="position-absolute text-white" style={{ bottom: 0, height: "50px"}}>
+      <div className="position-absolute text-white" style={{ bottom: 0, height: "15vh"}}>
         <h1 style={{ marginLeft: "32%" }}>Our days going on</h1>
       </div>
     </div>
