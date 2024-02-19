@@ -1,4 +1,14 @@
 
+#bootlock h1{
+  margin: 0;
+}
+
+#bootlock p{
+  margin: 0;
+}
+
+/*------------ */
+
 .naviga{
   position: fixed;
   top: 0;
@@ -15,6 +25,15 @@
 
 #bootlock .nav-item.col-3{
   transition: 1s;
+}
+
+.fondo{
+  height: 100%;
+  width: 100%;
+  background-image: url("./imma/Roundabout.png");
+  background-position: center;
+  background-size: cover;
+
 }
 
 .sfondo{

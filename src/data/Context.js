@@ -7,7 +7,7 @@ let Stato = createContext(null)
 let StatoSet = createContext(null)
     
 document.documentElement.style.setProperty("--primo", "brown")
-document.documentElement.style.setProperty("--base", 250)
+document.documentElement.style.setProperty("--base", 180)
 
 export default function Task({children}){
 
