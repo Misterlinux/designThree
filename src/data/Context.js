@@ -7,7 +7,7 @@ let Stato = createContext(null)
 let StatoSet = createContext(null)
     
 document.documentElement.style.setProperty("--primo", "brown")
-document.documentElement.style.setProperty("--base", 180)
+document.documentElement.style.setProperty("--base", 318)
 
 export default function Task({children}){
 
@@ -22,12 +22,23 @@ export default function Task({children}){
           ...state
         }
       }
+      case "topico": {
+        state.topic = action.topic
+        return{
+          ...state
+        }
+      }
     }
 
     throw Error('Unknown action: ' + action.type);
   }
 
-  const initial = { base: 120, springa: useSpringValue("17%",{ config:{ mass: 3, tension: 400, friction: 40 }} ) }
+  const initial = { 
+    base: 120, 
+    springa: useSpringValue("17%",{ config:{ mass: 3, tension: 400, friction: 40 }} ),
+    topic: ["TuneFuse"]
+  }
+
   const [instate, dispatch] = useReducer(reducer, initial);
 
   return(

@@ -8,30 +8,12 @@ function Secondo(){
   let dispatch = useStatoset()
 
 
-  function doing(){
-    console.log("ok wo how do we do?")
-  }
-
   //so unlike sticky we can use the height 100% with the offset height set
   return(
-    <div style={{backgroundColor: "lightblue" }}>
+    <div >
 
-      <div style={{ height: "20%" }}>
-        <h4>Siamo circolari</h4>
+      <h1>Costa </h1>
 
-      </div>
-
-      <div style={{ height: "30%", backgroundColor: "red", width: "50%"}}>
-        Andiamo
-      </div>
-
-      <div style={{ height: "50%", backgroundColor: "lightcoral" }}>
-        <p>Altri circoli</p>
-
-        <button className="btn btn-primary" onClick={() => doing()}>
-          Click Child
-        </button>
-      </div>
     </div>
   )
 }

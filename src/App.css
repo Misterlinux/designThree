@@ -53,3 +53,18 @@
   background-position: center center;
   background-size: cover;
 }
+
+.sini{
+  background-color: orange;
+  clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
+}
+
+.des{
+  background-color: orange;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+}
+
+.taglio{
+  background-color: orange;
+  height: 5vh;
+}

@@ -1,8 +1,19 @@
 
 $enable-important-utilities: false;
 
+/*
+The four colors used for this webpage will be
+#FFCD10 / hsla(47, 100%, 53%, 1)
+#10FF55 / hsla(137, 100%, 53%, 1)
+#1042FF / hsla(227, 100%, 53%, 1)
+#FF10B9 / hsla(318, 100%, 53%, 1)
 
-$base: 180;
+The order will be red/blue/green/yellow
+318, 137, 227, 47
+
+*/
+
+$base: 318;
 
 #bootlock .text-danger{
   color: hsl(var(--base, $base), 100%, 45%);
