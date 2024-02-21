@@ -8,6 +8,8 @@ import Quarto from "./4Forth";
 import Intro from "./Intro";
 import Footer from "./Footer";
 
+import camera from "../imma/fotoicon.svg"
+
 import { useMount } from "../data/Data";
 import {
   useResize,
@@ -107,7 +109,7 @@ function Home(){
         
         <ParallaxLayer offset={0.35} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 0.8 }}>
           <> 
-            <div className="d-inline-block" style={{ verticalAlign: "top", width: "30%"}}>
+            <div className="d-inline-block" style={{ verticalAlign: "top", width: "25%"}}>
               <div className="position-relative" style={{ backgroundColor: "brown", height: "80vh" }} >
 
                 <div className="position-absolute colonna1">
@@ -124,14 +126,14 @@ function Home(){
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.5} style={{ backgroundColor: "pink" }}>
-          <div className="stratos" id="secondo" move="34%" color={227} style={{ height: "100%" }}>
+          <div className="stratos" id="secondo" move="34%" color={227}>
             <Secondo />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.5} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2}}>
+        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2}}>
           <>
-            <div className="d-inline-block" style={{ marginLeft: "69%", width: "30%" }}>
+            <div className="d-inline-block" style={{ marginLeft: "69%", width: "25%" }}>
               <div style={{ height: "70vh", backgroundColor: "purple" }}>
                 <h3>Siamo stati</h3>
               </div>
@@ -147,8 +149,8 @@ function Home(){
 
         <ParallaxLayer offset={2.4} style={{height: 0, display: "inline-block"}} sticky={{start: 2.4,end: 2.9}}>
           <>
-            <div className="d-inline-block" style={{width: "30%"}}>
-              <div style={{height: "70vh", backgroundColor: "navy" }}>
+            <div className="d-inline-block" style={{width: "25%"}}>
+              <div style={{height: "70vh", backgroundColor: "navy", color: "yellow"}}>
                 That way
               </div>
             </div>
@@ -161,9 +163,22 @@ function Home(){
           </div>
         </ParallaxLayer>
 
+        <ParallaxLayer offset={3.78} speed={0.5}
+          style={{
+            display: "inline-block",
+            width: "10vw",
+            height: "10vw",
+            marginLeft: "62%",
+            backgroundImage: `URL(${camera})`,
+            backgroundPosition: "center center",
+            backgroundSize: "contain"
+          }}
+        >
+        </ParallaxLayer>
+
         <ParallaxLayer offset={3.4} style={{height: 0, display: "inline-block"}} sticky={{start: 3.4,end: 3.9 }}>
           <>
-            <div className="d-inline-block" style={{width: "30%", marginLeft: "69%"}}>
+            <div className="d-inline-block" style={{width: "25%", marginLeft: "75%"}}>
               <div style={{height: "70vh", backgroundColor: "darkkhaki"}}>
                 Second way
               </div>

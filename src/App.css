@@ -68,3 +68,43 @@
   background-color: orange;
   height: 5vh;
 }
+
+/* Quarto */
+.scrollo{
+  scrollbar-width: none;
+  scrollbar-color: yellow orange;
+}
+
+.immagine{
+  width: 100%;
+  height: 20vh;
+}
+
+
+.bassofondo{
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.maxiscreen{
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.orizontimma{
+  height: 20vh;
+  width: 100%;
+}
+
+.altofondo{
+  width: 20vh;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+
