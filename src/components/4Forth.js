@@ -41,9 +41,10 @@ function Quarto(){
         <h3>The organitation</h3>
       </div>
 
-      <div className="d-flex justify-content-start col-12 row mx-0 ps-2" style={{width: "82%", height: "65vh"}}>
+      <div className="d-flex justify-content-start col-12 row mx-0 ps-2" style={{width: "82%", height: "45vh"}}>
 
-        <div className="col-3 d-none d-sm-block p-0 scrollo position-relative" style={{ height: "100%", overflowY: "scroll" }}>
+        <div className="col-3 d-none d-sm-block p-0 scrollo position-relative" 
+          style={{ height: "100%", overflowY: "scroll" }}>
 
           <animated.div className="position-absolute immagine" style={{border: "3px solid red", y: mosso }}>
           </animated.div>
@@ -56,13 +57,13 @@ function Quarto(){
 
         </div>
 
-        <div className="col-sm-8 col-11 px-3">
+        <div className="col-sm-8 col-11 px-2 px-sm-3">
           <div style={{width: "100%", height: "100%"}}>
 
           <Carousel onSelect={(e)=> mossi(e)} activeIndex={conta}>
             {stato.galleria.map((cont, index)=>(
               <Carousel.Item key={index}>
-                <div style={{width: "100%", height: "65vh"}}>
+                <div style={{width: "100%", height: "45vh"}}>
                   <div className="maxiscreen" style={{backgroundImage: `URL(${cont.src})`}}></div>
                 </div>
 
@@ -75,24 +76,19 @@ function Quarto(){
           </div>
         </div>
 
-        <div className="d-flex d-sm-none col-11 px-3 position-relative" style={{ width: "100%", height: "20vh", overflowX: "scroll" }}>
-          <div className="orizontimma">
-            <div className="altofondo" style={{backgroundImage: `url(${stato.galleria[0].src})`}}></div>
-          </div>
+      </div>
 
-          <div className="orizontimma">
-            <div className="altofondo" style={{backgroundImage: `url(${stato.galleria[0].src})`}}></div>
-          </div>
+      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" 
+        style={{height: "20vh", overflowX: "scroll" }}>
 
-          <div className="orizontimma">
-            <div className="altofondo" style={{backgroundImage: `url(${stato.galleria[0].src})`}}></div>
-          </div>
+        <animated.div className="position-absolute immagine1" style={{border: "3px solid red", x: mosso }}>
+        </animated.div>
 
-          <div className="orizontimma">
-            <div className="altofondo" style={{backgroundImage: `url(${stato.galleria[0].src})`}}></div>
+        {stato.galleria.map((cont, index)=>(
+          <div className="orizontimma" key={index} onClick={()=> mossi(index)}>
+            <div className="altofondo" style={{backgroundImage: `url(${cont.src})`}}></div>
           </div>
-        </div>
-
+        ))}
 
       </div>
 

@@ -28,6 +28,7 @@ function Home(){
   const parallaxLayerRef = useRef(null);
   const [parallaxLayerMounted, setParallaxLayerMounted] = useState(false);
 
+  
   useEffect(()=>{
 
     let base = document.getElementById("questo")
@@ -76,6 +77,7 @@ function Home(){
     }
 
   }, [parallaxLayerMounted])
+ 
 
   //Read the useMount paragraph in the notes
   useMount(() => {
@@ -95,7 +97,7 @@ function Home(){
   */
 
   return(
-    <div style={{width: "100%", marginTop: "5em"}}>
+    <div style={{width: "100%" , marginTop: "5em"}}>
       <Parallax pages={4.7} className="meno" id="questo" ref={parallaxLayerRef}>
         <ParallaxLayer offset={0}>
           <Intro/>
@@ -179,7 +181,7 @@ function Home(){
         <ParallaxLayer offset={3.4} style={{height: 0, display: "inline-block"}} sticky={{start: 3.4,end: 3.9 }}>
           <>
             <div className="d-inline-block" style={{width: "25%", marginLeft: "75%"}}>
-              <div style={{height: "70vh", backgroundColor: "darkkhaki"}}>
+              <div style={{height: "55vh", backgroundColor: "darkkhaki"}}>
                 Second way
               </div>
             </div>

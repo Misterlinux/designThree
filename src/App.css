@@ -80,6 +80,10 @@
   height: 20vh;
 }
 
+.immagine1{
+  width: 20vh;
+  height: 100%;
+}
 
 .bassofondo{
   background-position: center;
@@ -96,8 +100,8 @@
 }
 
 .orizontimma{
-  height: 20vh;
-  width: 100%;
+  height: 100%;
+  width: 20vh;
 }
 
 .altofondo{
