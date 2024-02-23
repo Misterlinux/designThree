@@ -5,6 +5,11 @@ import stage from "../imma/stage.jpg"
 import team from "../imma/team.jpg"
 import sign from "../imma/sign.jpg"
 
+import basso from "../imma/basso.jpg"
+import basso1 from "../imma/basso1.jpg"
+import basso2 from "../imma/basso2.jpg"
+import basso3 from "../imma/basso3.jpg"
+
 export let galleria = [
   {
     src: team,
@@ -35,3 +40,26 @@ export const useMount = (callback) =>{
     callback();
   }, [callback]); 
 } 
+
+export let band = [
+  {
+    src: basso,
+    marginTop: ["0vh", "0vh"]
+  },
+  {
+    src: basso1,
+    marginTop: ["5vh", "4vh"]
+  },
+  {
+    src: basso2,
+    marginTop: ["10vh", "36vh"]
+  },
+  {
+    src: basso3,
+    marginTop: ["15vh", "40vh"]
+  }
+]
+
+
+
+

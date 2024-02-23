@@ -2,7 +2,7 @@ import { useReducer, useContext, createContext} from 'react';
 import { animated, useTransition, useScroll, useSpringValue} from '@react-spring/web'
 import { micro } from './Data';
 import { passo } from '../components/Home';
-import { galleria } from './Data';
+import { galleria, band } from './Data';
 
 let Stato = createContext(null)
 let StatoSet = createContext(null)
@@ -38,7 +38,8 @@ export default function Task({children}){
     base: 120, 
     springa: useSpringValue("17%",{ config:{ mass: 3, tension: 400, friction: 40 }} ),
     topic: ["TuneFuse"],
-    galleria: galleria
+    galleria: galleria,
+    band: band
   }
 
   const [instate, dispatch] = useReducer(reducer, initial);

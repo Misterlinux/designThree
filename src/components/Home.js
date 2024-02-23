@@ -63,6 +63,7 @@ function Home(){
               type: "topico",
               topic: entry.target.id
             })
+
           }
   
         })
@@ -135,7 +136,7 @@ function Home(){
 
         <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2}}>
           <>
-            <div className="d-inline-block" style={{ marginLeft: "69%", width: "25%" }}>
+            <div className="d-inline-block" style={{ marginLeft: "75%", width: "25%" }}>
               <div style={{ height: "70vh", backgroundColor: "purple" }}>
                 <h3>Siamo stati</h3>
               </div>

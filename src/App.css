@@ -21,6 +21,19 @@
   scrollbar-width: none;
 }
 
+/* secondo */
+.present{
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.carta{
+  height: 55vh;
+}
+
 /* navbar */
 
 #bootlock .nav-item.col-3{
@@ -75,6 +88,10 @@
   scrollbar-color: yellow orange;
 }
 
+.caroselheight{
+  height: 65vh;
+}
+
 .immagine{
   width: 100%;
   height: 20vh;
@@ -111,4 +128,15 @@
   background-size: cover;
 }
 
+@media only screen and (max-width: 550px){
+  
+  .caroselheight{
+    height: 45vh;
+  }
+
+  .carta{
+    height: 35vh;
+  }
+
+}
 
