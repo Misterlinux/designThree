@@ -32,10 +32,10 @@ function Footer(){
 
 
         <div className="row col-12 col-sm-6 col-md-6 px-0 py-0 d-flex justify-content-center">
-          <div style={{height: "9vh", width: "5vh"}} className="sini">
+          <div style={{height: "9vh", width: "5vh"}} className="sini px-0">
           </div>  
 
-          <div className="col-10 col-sm-9 col-md-8 taglio px-0 py-2">
+          <div className="col-9 col-sm-9 col-md-8 taglio px-0 py-2">
             <form onSubmit={segna} className="row mx-0 d-flex justify-content-center">
               <div className="col-8 col-md-7 px-0">
                 <input type="text" className="form-control w-100" name="indi" 
@@ -61,6 +61,25 @@ function Footer(){
             </div>
             <div className="d-flex justify-content-center align-items-center">
               <FontAwesomeIcon className="p-3 bg-warning rounded-circle" style={{fontSize: "1em"}} icon={faFacebook} />
+            </div>
+          </div>
+
+          <div className="d-flex d-sm-none justify-content-around row col-12 px-0 pt-2">
+            <div className="col-6 row px-0">
+              <div className="col-3 col-md-2 pe-0 align-self-center text-end">
+                <FontAwesomeIcon icon={faMapLocationDot} />
+              </div>
+              <div className="col-9 col-md-10 ps-1">
+                St. Lorem, ipsum
+              </div>
+            </div>
+            <div className="col-6 row px-0">
+              <div className="col-3 col-md-2 pe-0 align-self-center text-end">
+                <FontAwesomeIcon icon={faPhone} /> 
+              </div>
+              <div className="col-9 col-md-10 ps-1 pe-0 text-break">
+                1234567890
+              </div>
             </div>
           </div>
 

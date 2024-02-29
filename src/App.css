@@ -79,6 +79,7 @@
   clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
 }
 
+/* to change on media query */
 .taglio{
   background-color: orange;
   height: 9vh;
