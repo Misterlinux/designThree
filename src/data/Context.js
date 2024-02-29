@@ -39,7 +39,9 @@ export default function Task({children}){
     springa: useSpringValue("17%",{ config:{ mass: 3, tension: 400, friction: 40 }} ),
     topic: ["TuneFuse"],
     galleria: galleria,
-    band: band
+    band: band,
+
+    barre: [100, 200]
   }
 
   const [instate, dispatch] = useReducer(reducer, initial);

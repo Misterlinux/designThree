@@ -1,5 +1,7 @@
 
-#bootlock h1{
+#bootlock h1, 
+#bootlock h4,
+#bootlock h5{
   margin: 0;
 }
 
@@ -79,8 +81,16 @@
 
 .taglio{
   background-color: orange;
-  height: 5vh;
+  height: 9vh;
 }
+
+/* Terzo */
+
+.centered{
+  background-size: cover;
+  background-position: center center;
+}
+
 
 /* Quarto */
 .scrollo{

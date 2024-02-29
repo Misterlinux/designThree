@@ -92,6 +92,9 @@ function Quarto(){
 
       </div>
 
+      <div className="mx-auto position-fixed w-100" style={{bottom: 0}}>
+        <h5 className="text-center"> Sign in to the newsletter </h5>
+      </div>
     </div>
   )
 }

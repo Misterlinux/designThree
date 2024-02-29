@@ -152,7 +152,7 @@ function Home(){
 
         <ParallaxLayer offset={2.4} style={{height: 0, display: "inline-block"}} sticky={{start: 2.4,end: 2.9}}>
           <>
-            <div className="d-inline-block" style={{width: "25%"}}>
+            <div className="d-inline-block" style={{width: "20%"}}>
               <div style={{height: "70vh", backgroundColor: "navy", color: "yellow"}}>
                 That way
               </div>
