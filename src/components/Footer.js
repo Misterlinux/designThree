@@ -32,7 +32,7 @@ function Footer(){
 
 
         <div className="row col-12 col-sm-6 col-md-6 px-0 py-0 d-flex justify-content-center">
-          <div style={{height: "9vh", width: "5vh"}} className="sini px-0">
+          <div style={{width: "5vh"}} className="sini px-0">
           </div>  
 
           <div className="col-9 col-sm-9 col-md-8 taglio px-0 py-2">
@@ -49,7 +49,7 @@ function Footer(){
             </form>
           </div>
 
-          <div style={{height: "9vh", width: "5vh"}} className="des">
+          <div style={{width: "5vh"}} className="des">
           </div>
 
           <div className="d-flex justify-content-around col-9 col-md-8 pt-2">
