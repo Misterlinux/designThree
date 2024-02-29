@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
 
 #bootlock h1, 
 #bootlock h4,
@@ -10,6 +11,45 @@
 }
 
 /*------------ */
+
+/* intro */
+
+.hammer{
+  font-family: 'Racing Sans One', cursive;
+}
+
+/* Primo.js */
+
+.barraintro{
+  margin-left: 0%;
+}
+
+.single{
+  height: 45vh;
+  width: 45vh;
+}
+
+.singlepresent{
+  background-position: center center;
+  background-size: cover;
+}
+
+#bootlock .singlesecond{
+  height: 15vh;
+  width: 15vh;
+  background-position: center center;
+  background-size: cover;
+}
+
+.singletext{
+  height: 100%;
+  width: 56vw;
+  z-index: 5;
+  top: 66%;
+  left: 38%;
+}
+
+/**/
 
 .naviga{
   position: fixed;
@@ -154,6 +194,31 @@
 }
 
 @media only screen and (max-width: 576px){
+
+  /* Primo.js */
+
+  .barraintro{
+    margin-left: -11%;
+  }
+
+  .single{
+    height: 30vh;
+    width: 30vh;
+  }
+
+  #bootlock .singlesecond{
+    height: 8vh;
+    width: 8vh;
+  }
+
+  .singletext{
+    height: 100%;
+    width: 64vw;
+    top: 82%;
+    left: 8%;
+  }
+
+  /*  */
   .taglio, .sini, .des{
     height: 6.5vh;
   }
