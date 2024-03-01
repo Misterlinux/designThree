@@ -41,11 +41,9 @@ function Quarto(){
         <h3>The organitation</h3>
       </div>
 
-      <div className="d-flex justify-content-start col-12 row mx-0 ps-2 caroselheight" style={{width: "82%"}}>
+      <div className="quartotest row mx-0 caroselheight">
 
-        <div className="col-3 d-none d-sm-block p-0 scrollo position-relative" 
-          style={{ height: "100%", overflowY: "scroll" }}>
-
+        <div className="d-none d-md-block col-3 p-0 scrollo position-relative" style={{ height: "100%", overflowY: "scroll" }}>
           <animated.div className="position-absolute immagine" style={{border: "3px solid red", y: mosso }}>
           </animated.div>
 
@@ -54,33 +52,31 @@ function Quarto(){
               <div className="bassofondo" style={{backgroundImage: `URL(${cont.src})`}}></div>
             </div>
           ))}
-
         </div>
 
-        <div className="col-sm-8 col-11 px-2 px-sm-3">
+        <div className="col-12 col-md-8 px-2 px-sm-3">
           <div style={{width: "100%", height: "100%"}}>
 
-          <Carousel onSelect={(e)=> mossi(e)} activeIndex={conta}>
-            {stato.galleria.map((cont, index)=>(
-              <Carousel.Item key={index}>
-                <div className="caroselheight" style={{width: "100%"}}>
-                  <div className="maxiscreen" style={{backgroundImage: `URL(${cont.src})`}}></div>
-                </div>
+            <Carousel onSelect={(e)=> mossi(e)} activeIndex={conta}>
+              {stato.galleria.map((cont, index)=>(
+                <Carousel.Item key={index}>
+                  <div className="caroselheight" style={{width: "100%"}}>
+                    <div className="maxiscreen" style={{backgroundImage: `URL(${cont.src})`}}></div>
+                  </div>
 
-                <Carousel.Caption>
-                  <p>{cont.desc}</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-            ))}
-          </Carousel>
+                  <Carousel.Caption>
+                    <p>{cont.desc}</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+
           </div>
         </div>
 
       </div>
 
-      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" 
-        style={{height: "20vh", overflowX: "scroll", marginTop: "2vh"}}>
-
+      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" style={{height: "20vh", overflowX: "scroll", marginTop: "2vh"}}>
         <animated.div className="position-absolute immagine1" style={{border: "3px solid red", x: mosso }}>
         </animated.div>
 
@@ -89,8 +85,8 @@ function Quarto(){
             <div className="altofondo" style={{backgroundImage: `url(${cont.src})`}}></div>
           </div>
         ))}
-
       </div>
+
 
       <div className="mx-auto position-fixed w-100" style={{bottom: 0}}>
         <h5 className="text-center"> Sign in to the newsletter </h5>

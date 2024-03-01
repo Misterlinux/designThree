@@ -27,6 +27,10 @@
   height: 12vh;
 }
 
+.barraintro h2{
+  padding-left: 5%;
+}
+
 .single{
   height: 45vh;
   width: 45vh;
@@ -43,6 +47,10 @@
   width: 15vh;
   background-position: center center;
   background-size: cover;
+}
+
+#bootlock .singlename{
+  width: calc(100% - 15vh );
 }
 
 .singletext{
@@ -186,19 +194,18 @@
   background-size: cover;
 }
 
-@media only screen and (max-width: 550px){
-  
-  .caroselheight{
-    height: 45vh;
-  }
 
-  .carta{
-    height: 35vh;
-  }
 
+.quartotest{
+  width: 82%;
 }
 
 @media only screen and (max-width: 576px){
+
+  /*quarto */
+  .quartotest{
+    width: 100%;
+  }
 
   /* Primo.js */
 
@@ -220,6 +227,10 @@
     width: 7vh;
   }
 
+  #bootlock .singlename{
+    width: calc(100% - 7vh);
+  }
+
   .singletext{
     width: 64vw;
     top: 82%;
@@ -231,5 +242,35 @@
     height: 6.5vh;
   }
 
+  .caroselheight{
+    height: 45vh;
+  }
+
+  .carta{
+    height: 35vh;
+  }
+
 }
 
+@media only screen and (max-width: 400px){
+
+  .barraintro{
+    width: 80%;
+    margin-left: -19%;
+  }
+
+  .barraintro h2{
+    padding-left: 2%;
+  }
+
+  #bootlock .singlesecond{
+    height: 6vh;
+    width: 6vh;
+  }
+
+  #bootlock .singlename{
+    width: calc(100% - 6vh);
+  }
+
+
+}

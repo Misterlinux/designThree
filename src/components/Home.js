@@ -97,8 +97,9 @@ function Home(){
   })
   */
 
+  //check the notes for how we spaced the sticky columns
   return(
-    <div style={{width: "100%" , marginTop: "5em"}}>
+    <div style={{width: "100%" , marginTop: "5em", height: "calc(100vh - 5em)" }}>
       <Parallax pages={4.7} className="meno" id="questo" ref={parallaxLayerRef}>
         <ParallaxLayer offset={0}>
           <Intro/>
@@ -110,10 +111,10 @@ function Home(){
           </div>
         </ParallaxLayer>
         
-        <ParallaxLayer offset={0.35} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 0.8 }}>
+        <ParallaxLayer offset={0.35} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 0.6 }}>
           <> 
-            <div className="d-inline-block" style={{ verticalAlign: "top", width: "25%"}}>
-              <div className="position-relative" style={{ backgroundColor: "brown", height: "80vh" }} >
+            <div className="d-inline-block" style={{ verticalAlign: "top", width: "25%" }}>
+              <div className="position-relative" style={{ backgroundColor: "brown", height: "calc(100vh - 5em)" }} >
 
                 <div className="position-absolute colonna1">
                 </div>
@@ -123,6 +124,18 @@ function Home(){
                   <p>Welcome to the way</p>
                 </div>
 
+              </div>
+
+            </div>
+          </>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1.4} style={{height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 1.4}}>
+          <>
+            <div className="d-inline-block" style={{verticalAlign: "top", marginLeft: "25%" ,width: "50%" }}>
+              <div className="d-flex justify-content-center align-items-center position-relative" 
+              style={{backgroundColor: "lightblue", height: "calc(20vh - 5em)" }}>
+                <h3> Band </h3>
               </div>
             </div>
           </>
@@ -134,10 +147,10 @@ function Home(){
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2}}>
+        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 1.65}}>
           <>
-            <div className="d-inline-block" style={{ marginLeft: "75%", width: "25%" }}>
-              <div style={{ height: "70vh", backgroundColor: "purple" }}>
+            <div className="d-inline-block" style={{verticalAlign: "top", marginLeft: "75%", width: "25%" }}>
+              <div style={{backgroundColor: "purple", height: "calc(100vh - 5em)" }}>
                 <h3>Siamo stati</h3>
               </div>
             </div>
@@ -150,10 +163,20 @@ function Home(){
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.4} style={{height: 0, display: "inline-block"}} sticky={{start: 2.4,end: 2.9}}>
+        <ParallaxLayer offset={2.45} style={{height: 0, display: "inline-block"}} sticky={{start: 2.45, end: 2.45}}>
+          <>
+            <div className="d-inline-block" style={{marginLeft: "20%", width: "55%"}}>
+              <div style={{backgroundColor: "green", height: "calc(20vh - 5em"}}>
+                The Duo
+              </div>
+            </div>
+          </>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={2.45} style={{height: 0, display: "inline-block"}} sticky={{start: 2.45,end: 2.65}}>
           <>
             <div className="d-inline-block" style={{width: "20%"}}>
-              <div style={{height: "70vh", backgroundColor: "navy", color: "yellow"}}>
+              <div style={{height: "calc(100vh - 5em)", backgroundColor: "navy", color: "yellow"}}>
                 That way
               </div>
             </div>
@@ -179,7 +202,7 @@ function Home(){
         >
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.4} style={{height: 0, display: "inline-block"}} sticky={{start: 3.4,end: 3.9 }}>
+        <ParallaxLayer className="d-none d-md-inline-block" offset={3.4} style={{height: 0 }} sticky={{start: 3.4,end: 3.9 }}>
           <>
             <div className="d-inline-block" style={{width: "25%", marginLeft: "75%"}}>
               <div style={{height: "55vh", backgroundColor: "darkkhaki"}}>

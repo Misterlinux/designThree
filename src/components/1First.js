@@ -67,7 +67,7 @@ function Primo(){
 
       <animated.div className="bg-primary d-flex justify-content-start align-items-center position-absolute barraintro" 
         style={{x: horin.x }}>
-        <h2 style={{paddingLeft: "5%"}}> 
+        <h2> 
           Check our program 
           <FontAwesomeIcon className="ps-2" icon={faUserAstronaut}/>  
         </h2>
@@ -78,7 +78,7 @@ function Primo(){
           style={{ width: "100%", height: "100%", backgroundImage: `url(${single})`}}>
 
           <animated.div className="bg-danger position-absolute"
-            style={{ height: "10vh", width: "10vh", marginLeft: "-15px",marginTop: "-15px", zIndex: -5, y: toppo.y }}>
+            style={{ height: "10vh", width: "10vh", marginLeft: "-15px", marginTop: "-15px", zIndex: -5, y: toppo.y }}>
           </animated.div>
 
           <div className="bg-success position-relative singletext">
@@ -87,7 +87,7 @@ function Primo(){
               <div className="singlesecond" style={{backgroundImage: `url(${singlesec})`}}>
               </div>
 
-              <div className="col-9 px-0 d-flex justify-content-center align-items-center">
+              <div className="singlename px-0 d-flex justify-content-center align-items-center">
                 <h1 className="text-white">
 
                   {nome.map((cont, index)=>(

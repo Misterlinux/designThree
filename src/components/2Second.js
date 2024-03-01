@@ -5,7 +5,6 @@ import { animated, useSprings, to as interpolate, useTrail, useResize} from '@re
 
 import basso from "../imma/basso.jpg"
 
-
 function Secondo(){
 
   let stato = useStato()
@@ -28,14 +27,8 @@ function Secondo(){
   })
 
   useEffect(()=>{
-
     piccolo.current = width.animation.to < 500 ? true : false
-
   }, [width])
-
-
-
-
 
 
   //so, The order of animations 
@@ -100,14 +93,15 @@ function Secondo(){
   return(
     <div style={{height: "100vh"}} ref={tutto}>
 
-      <div style={{marginTop: "10vh"}}>
-        <h1>Costa {reve}</h1>
-        <button className="btn btn-success" onClick={()=> clusta() }>
-          Stage
-        </button>
+      <div style={{marginTop: "4.5vh", width: "75%"}}>
+        <h1>The Beatniks</h1>
+        <p className="px-1">
+          They tour the nation with their soulful blend 
+          of blues and rock, driven by a passionate tight-knit group of musicians.
+        </p>
       </div>
 
-      <div style={{width: "72%"}}>
+      <div className="pt-2" style={{width: "72%"}}>
         <div className="row col-12 mx-0 position-relative">
             
           {stato.band.map((cont, index)=> (
@@ -119,6 +113,12 @@ function Secondo(){
               }}>
               <div className="bg-danger position-relative" style={{height: "100%", width: "100%"}}>
                 <div className="position-absolute present" style={{backgroundImage: `url(${cont.src})`}}></div>
+
+                <div className="position-relative text-white">
+                  <p>Mickaela Noin</p>
+                  <p>Drumminst</p>
+                  <p>I played the drum while everyone told be to play music</p>
+                </div>
               </div>
             </animated.div>
           ))}
