@@ -22,11 +22,15 @@
 
 .barraintro{
   margin-left: 0%;
+  top: -5vh;
+  width: 70%;
+  height: 12vh;
 }
 
 .single{
   height: 45vh;
   width: 45vh;
+  margin-top: 10vh;
 }
 
 .singlepresent{
@@ -42,12 +46,13 @@
 }
 
 .singletext{
-  height: 100%;
   width: 56vw;
   z-index: 5;
   top: 66%;
   left: 38%;
 }
+
+
 
 /**/
 
@@ -199,23 +204,26 @@
 
   .barraintro{
     margin-left: -11%;
+    top: -5vh;
+    width: 70%;
+    height: 8vh;
   }
 
   .single{
     height: 30vh;
     width: 30vh;
+    margin-top: 8vh;
   }
 
   #bootlock .singlesecond{
-    height: 8vh;
-    width: 8vh;
+    height: 7vh;
+    width: 7vh;
   }
 
   .singletext{
-    height: 100%;
     width: 64vw;
     top: 82%;
-    left: 8%;
+    left: 6%;
   }
 
   /*  */

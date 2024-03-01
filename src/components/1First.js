@@ -6,7 +6,7 @@ import { useSpring, useSprings, animated, useInView} from "react-spring";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 
-import single from "../imma/single3k.jpg"
+import single from "../imma/single.jpg"
 import singlesec from "../imma/singleCover.jpg"
 
 function Primo(){
@@ -66,15 +66,14 @@ function Primo(){
       <div className="col-11 d-flex flex-column">
 
       <animated.div className="bg-primary d-flex justify-content-start align-items-center position-absolute barraintro" 
-        style={{x: horin.x, top: "-5vh", width: "70%", height: "12vh"}}>
+        style={{x: horin.x }}>
         <h2 style={{paddingLeft: "5%"}}> 
           Check our program 
           <FontAwesomeIcon className="ps-2" icon={faUserAstronaut}/>  
         </h2>
       </animated.div>
 
-      <div className="d-flex justify-content-center position-relative single" 
-        style={{ marginTop: "10vh" }}>
+      <div className="d-flex justify-content-center position-relative single">
         <div className="position-relative singlepresent" 
           style={{ width: "100%", height: "100%", backgroundImage: `url(${single})`}}>
 
@@ -88,7 +87,7 @@ function Primo(){
               <div className="singlesecond" style={{backgroundImage: `url(${singlesec})`}}>
               </div>
 
-              <div className="col-9 d-flex justify-content-center align-items-center">
+              <div className="col-9 px-0 d-flex justify-content-center align-items-center">
                 <h1 className="text-white">
 
                   {nome.map((cont, index)=>(
