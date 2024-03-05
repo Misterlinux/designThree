@@ -289,7 +289,6 @@ function Home(){
 
               </div>
             </animated.div>
-
           </>
         </ParallaxLayer>
 
