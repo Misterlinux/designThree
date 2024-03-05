@@ -138,6 +138,8 @@ function Home(){
               //console.log( entry.intersectionRect.top- 80 )
               //console.log("----------------")
               alto.start( entry.boundingClientRect.top- 80, {immediate: true})
+            
+              document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
             }
 
           }
@@ -271,9 +273,10 @@ function Home(){
         
         <ParallaxLayer onScroll={vario} offset={0.35} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 1.5 }}>
           <> 
-            <animated.div className="d-inline-block" 
+            <animated.div className="d-inline-block stickycol" 
             style={{ verticalAlign: "top", overflowY: "hidden",width: "25%", 
-              height: alto.to(value => `calc(100vh + ${value}px)`) }}>
+               }}>
+
               <div className="position-relative" style={{ backgroundColor: "brown", height: "100vh" }} >
 
                 <div className="position-absolute colonna1">
@@ -285,11 +288,10 @@ function Home(){
                 </div>
 
               </div>
-
             </animated.div>
+
           </>
         </ParallaxLayer>
-
 
 
 

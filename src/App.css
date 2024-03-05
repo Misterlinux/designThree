@@ -199,10 +199,19 @@
 }
 
 
-
 .quartotest{
   width: 82%;
 }
+
+/* --------------------- */
+:root{
+  --col: 0px
+}
+
+.stickycol{
+  height: calc( 100vh + var(--col) );
+}
+
 
 @media only screen and (max-width: 576px){
 
@@ -252,6 +261,11 @@
 
   .carta{
     height: 35vh;
+  }
+
+  /* stycky colonne  */
+  .stickycol{
+    height: calc( 100vh - 5em + var(--col) );
   }
 
 }
