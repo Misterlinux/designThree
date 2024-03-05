@@ -17,7 +17,9 @@ import {
   animated,
   useSpring,
   useIsomorphicLayoutEffect,
-  useReducedMotion
+  useReducedMotion,
+  useInView,
+  useSpringValue
 } from "@react-spring/web";
 
 function Home(){
@@ -28,12 +30,24 @@ function Home(){
   const parallaxLayerRef = useRef(null);
   const [parallaxLayerMounted, setParallaxLayerMounted] = useState(false);
 
-  
+  let pronto = useRef(null)
+
+  let base = document.getElementById("questo")
+
+  let primate = useRef()
+  let secondate = useRef()
+
+  let colla = useRef()
+
+  let alto = useSpringValue(0, {immediate: true})
+
+
+
+  let parle = useRef()
+  //e need to create a different interect ith a different options object
   useEffect(()=>{
 
-    let base = document.getElementById("questo")
     let finalmente = document.querySelectorAll(".stratos")
-
     let navigat = document.querySelectorAll(".nav-item");
 
     if( finalmente.length ){
@@ -44,11 +58,32 @@ function Home(){
         threshold: 0,
       }
   
+      //It seems I can use entry.target element value inside the 
+      //addEventListener function
       function altro(entries){
   
         entries.forEach((entry)=>{
-  
+
           if( entry.isIntersecting ){
+
+            console.log( entry.boundingClientRect.height )
+            console.log( entry.intersectionRect.height )
+            //console.log( entry.target.clientHeight )
+
+            window.addEventListener("wheel", proviamo )
+
+            /*
+            let {container, current} = parle.current
+            console.log( "this is current " + current )
+
+            window.addEventListener('wheel', ()=>{
+              console.log("siam stati qui")
+              console.log( entry.target.clientHeight )
+              console.log( current )
+            }
+            );
+            */
+
             stato.springa.start( entry.target.attributes.move.value )
             
             navigat.forEach(item=>item.classList.remove("active"))
@@ -65,10 +100,9 @@ function Home(){
             })
 
           }
-  
         })
       }
-  
+
       let observer = new IntersectionObserver(altro, options)
   
       finalmente.forEach((valo)=>{
@@ -77,8 +111,132 @@ function Home(){
 
     }
 
+    function handleWheelEvent(){
+      console.log("from here we start")
+    }
+
+    // ----------
+
+    if(finalmente.length){
+
+      let coloptions = {
+        root: base, 
+        rootMargin: "0px",
+        threshold: [...Array(100).keys()].map(x => x / 100),
+      }
+
+      function scrolled(entries){
+
+        entries.forEach((entry)=>{
+
+          if(entry.isIntersecting){
+            console.log("altibani")
+
+            if( entry.target.id == "primo" ){
+              //console.log( entry.intersectionRatio )
+              console.log( entry.boundingClientRect.top- 80 )
+              //console.log( entry.intersectionRect.top- 80 )
+              //console.log("----------------")
+              alto.start( entry.boundingClientRect.top- 80, {immediate: true})
+            }
+
+          }
+        })
+
+      } 
+
+      let observer1 = new IntersectionObserver(scrolled, coloptions)
+
+      finalmente.forEach((valo1)=>{
+        observer1.observe(valo1)
+      })
+
+    }
+
+    //the return for the added wheel effect
+    return () => {
+      window.removeEventListener('wheel', handleWheelEvent);
+    };
+
   }, [parallaxLayerMounted])
  
+  /*
+  let parle = useRef(null)
+  const { scrollY } = useScroll(parle);
+  
+  useEffect(() => {
+    console.log("Parallax scroll position:", scrollY);
+  }, [scrollY]);
+
+  const handleParallaxScroll = () => {
+    console.log("Parallax scroll event triggered");
+  };
+  */
+
+  function vario(){
+    console.log("donde vamos")
+  }
+
+  /*
+  useEffect(()=> {
+    console.log( parle )
+  } )
+  */
+
+  //lets try an external wheel that gets the target element
+  function proviamo(){
+    /*
+    console.log("---------------------")
+    console.log( secondate )
+    console.log( secondate.current.offsetTop )
+    const {container, current} = parle.current;
+    console.log( current )
+    */
+  }
+
+
+  //ok so, the current value is 0, I guess, while container is the Parallax
+  //and no, ref current and getElementbyId are not symilar
+  //current is not pixel and adds by 100 to each scroll movement
+  //ok, they may be pixels of the entire scroll area, 
+  //yes its pixel, the entire height is, 4211 - max-scrolled 3315 == 896 (thescreen window)
+  //being the window.innerHeight the window height
+  //while container.current.scrollHeight is the entire scroll height of the window( fixed)
+  //so we get the percentage using only current as changinng
+  //For the singular sections we can use primo.current.clientHeight
+  
+  /*
+    let primate = useRef()
+  const scrollListener = () => {
+
+    const handleWheelEvent = () => {
+      const {container, current} = parle.current;
+      let percentage = container.current.scrollHeight - window.innerHeight
+
+      const scrollpercent = current / percentage
+      console.log(scrollpercent);
+    };
+
+    window.addEventListener('wheel', handleWheelEvent);
+
+    return () => {
+      window.removeEventListener('wheel', handleWheelEvent);
+    };
+  };
+  useEffect(scrollListener, []);
+  */
+
+  /*
+  const { scrollY: pixel, scrollYProgress: percent } = useScroll({
+    container: parle.current,
+    onChange: ({ value: { scrollYProgress, scrollY } }) => {
+  
+      console.log( scrollYProgress )
+      console.log( scrollY )
+    },
+    default: {immediate: true}
+  })
+  */
 
   //Read the useMount paragraph in the notes
   useMount(() => {
@@ -100,21 +258,23 @@ function Home(){
   //check the notes for how we spaced the sticky columns
   return(
     <div style={{width: "100%" , marginTop: "5em", height: "calc(100vh - 5em)" }}>
-      <Parallax pages={4.7} className="meno" id="questo" ref={parallaxLayerRef}>
-        <ParallaxLayer offset={0}>
+      <Parallax ref={parle} pages={4.7} className="meno" id="questo">
+        <ParallaxLayer  offset={0}>
           <Intro/>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.5} style={{ backgroundColor: "lightskyblue" }}>
-          <div className="stratos" id="primo" move="17%" color={318} >
+        <ParallaxLayer  offset={0.5} style={{ backgroundColor: "lightskyblue" }}>
+          <div ref={primate} className="stratos" id="primo" move="17%" color={318} >
             <Primo />
           </div>
         </ParallaxLayer>
         
-        <ParallaxLayer offset={0.35} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 0.6 }}>
+        <ParallaxLayer onScroll={vario} offset={0.35} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 1.5 }}>
           <> 
-            <div className="d-inline-block" style={{ verticalAlign: "top", width: "25%" }}>
-              <div className="position-relative" style={{ backgroundColor: "brown", height: "calc(100vh - 5em)" }} >
+            <animated.div className="d-inline-block" 
+            style={{ verticalAlign: "top", overflowY: "hidden",width: "25%", 
+              height: alto.to(value => `calc(100vh + ${value}px)`) }}>
+              <div className="position-relative" style={{ backgroundColor: "brown", height: "100vh" }} >
 
                 <div className="position-absolute colonna1">
                 </div>
@@ -126,9 +286,12 @@ function Home(){
 
               </div>
 
-            </div>
+            </animated.div>
           </>
         </ParallaxLayer>
+
+
+
 
         <ParallaxLayer offset={1.4} style={{height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 1.4}}>
           <>
@@ -142,7 +305,7 @@ function Home(){
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.5} style={{ backgroundColor: "pink" }}>
-          <div className="stratos" id="secondo" move="34%" color={227}>
+          <div ref={secondate} className="stratos" id="secondo" move="34%" color={227}>
             <Secondo />
           </div>
         </ParallaxLayer>

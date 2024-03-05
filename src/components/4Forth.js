@@ -29,11 +29,11 @@ function Quarto(){
   let [conta, setConta] = useState(0)
 
   function mossi(e){
-    mosso.start( e*20 + "vh" )
+    mosso.start( e*20 /*+ "vh"*/ )
     setConta(e)
   }
     
-  let mosso = useSpringValue("0vh", {config: {duration: 500}})
+  let mosso = useSpringValue( 0, {config: {duration: 500}})
 
   return(
     <div ref={cart}>
@@ -44,7 +44,8 @@ function Quarto(){
       <div className="quartotest row mx-0 caroselheight">
 
         <div className="d-none d-md-block col-3 p-0 scrollo position-relative" style={{ height: "100%", overflowY: "scroll" }}>
-          <animated.div className="position-absolute immagine" style={{border: "3px solid red", y: mosso }}>
+          <animated.div className="position-absolute immagine" style={{border: "3px solid red", 
+            y: mosso.to(value => `${value}vh`) }}>
           </animated.div>
 
           {stato.galleria.map((cont, index)=>(
@@ -76,8 +77,9 @@ function Quarto(){
 
       </div>
 
-      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" style={{height: "20vh", overflowX: "scroll", marginTop: "2vh"}}>
-        <animated.div className="position-absolute immagine1" style={{border: "3px solid red", x: mosso }}>
+      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" style={{height: "14vh", overflowX: "scroll", marginTop: "2vh"}}>
+        <animated.div className="position-absolute immagine1" style={{border: "3px solid red", 
+        x: mosso.to(value => `${value*0.7}vh`) }}>
         </animated.div>
 
         {stato.galleria.map((cont, index)=>(

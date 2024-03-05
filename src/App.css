@@ -34,7 +34,7 @@
 .single{
   height: 45vh;
   width: 45vh;
-  margin-top: 10vh;
+  padding-top: 10vh;
 }
 
 .singlepresent{
@@ -70,11 +70,12 @@
   z-index: 5;
   height: 5em;
 }
-
+/*
 #bootlock .meno{
   left: 0px;
   scrollbar-width: none;
 }
+*/
 
 /* secondo */
 .present{
@@ -149,10 +150,12 @@
 
 
 /* Quarto */
+/*
 .scrollo{
   scrollbar-width: none;
   scrollbar-color: yellow orange;
 }
+*/
 
 .caroselheight{
   height: 65vh;
@@ -163,8 +166,9 @@
   height: 20vh;
 }
 
+/*This is the red space for the mobile version*/
 .immagine1{
-  width: 20vh;
+  width: 14vh;
   height: 100%;
 }
 
@@ -184,11 +188,11 @@
 
 .orizontimma{
   height: 100%;
-  width: 20vh;
+  width: 14vh;
 }
 
 .altofondo{
-  width: 20vh;
+  width: 14vh;
   height: 100%;
   background-position: center;
   background-size: cover;

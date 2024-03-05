@@ -19,7 +19,7 @@ function Primo(){
 
   useEffect(()=>{
 
-    console.log( nome.length )
+    //console.log( nome.length )
   })
 
   let [ref, inView] = useInView({

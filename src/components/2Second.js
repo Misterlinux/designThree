@@ -54,7 +54,7 @@ function Secondo(){
     }
 
     function passa(entry){
-      console.log( entry )
+      //console.log( entry )
 
       if(entry[0].isIntersecting){
         setReve(true)
