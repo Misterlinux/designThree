@@ -131,6 +131,7 @@ function Home(){
         threshold: [...Array(100).keys()].map(x => x / 100),
       }
 
+      //The parallax including the freaking nacbar from google affects ALSO the boundingRect
       function scrolled(entries){
 
         entries.forEach((entry)=>{
@@ -140,7 +141,8 @@ function Home(){
 
           //when scrolling from bottom top, the boundingRectTop goes from 80 + to 500+ (being from teh next thing)
           //so the previous column almost dissapers
-          if(entry.isIntersecting && entry.boundingClientRect.top <= 70 ){
+          //from 70 to 10
+          if(entry.isIntersecting && entry.boundingClientRect.top <= 10 ){
 
             if( entry.target.id == "primo" ){
               console.log( "Pri " + entry.boundingClientRect.top )
@@ -252,6 +254,7 @@ function Home(){
   });
 
   //check the notes for how we spaced the sticky columns
+  // 5em / 10em for the mobile testing
   return(
     <div style={{width: "100%" , marginTop: "5em", height: "calc(100vh - 5em)" }}>
       <Parallax ref={parle} pages={4.7} className="meno" id="questo">
