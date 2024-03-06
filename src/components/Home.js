@@ -142,7 +142,7 @@ function Home(){
           //when scrolling from bottom top, the boundingRectTop goes from 80 + to 500+ (being from teh next thing)
           //so the previous column almost dissapers
           //from 70 to 10
-          if(entry.isIntersecting && entry.boundingClientRect.top <= 10 ){
+          if(entry.isIntersecting && entry.boundingClientRect.top <= 5 ){
 
             if( entry.target.id == "primo" ){
               console.log( "Pri " + entry.boundingClientRect.top )
