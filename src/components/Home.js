@@ -102,6 +102,8 @@ function Home(){
             })
 
           }
+
+
         })
       }
 
@@ -135,7 +137,17 @@ function Home(){
 
           //When using intercept for the sticky columns font push the end of sticky too behind
           //it might trigger the stickycol beyond its space and create 2 heights columns
-          if(entry.isIntersecting && entry.boundingClientRect.top <= 80){
+
+          //when scrolling from bottom top, the boundingRectTop goes from 80 + to 500+ (being from teh next thing)
+          //so the previous column almost dissapers
+          if(entry.isIntersecting && entry.boundingClientRect.top <= 70 ){
+
+            if( entry.target.id == "primo" ){
+              console.log( "Pri " + entry.boundingClientRect.top )
+            }
+            if(entry.target.id == "secondo" ){
+              console.log( "Sec " + entry.boundingClientRect.top )
+            }
 
             //WE add the variable height of the column once it intersects the top
             document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
@@ -143,6 +155,7 @@ function Home(){
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("lato")
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("pieno")
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("stickycol")
+
             /*
             if( entry.boundingClientRect.top <= 80 ){
               
@@ -156,16 +169,12 @@ function Home(){
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("pieno")
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("lato")
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol")
-
           }else{
-
-            if( entry.target.id == "secondo" ){
-              console.log( entry )
-            }
-
+            
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("pieno")
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("lato")
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol") 
+            
           }
 
 
