@@ -208,7 +208,15 @@
   --col: 0px
 }
 
-.stickycol{
+.lato{
+  height: 0vh;
+}
+
+.pieno{
+  height: 100vh;
+}
+
+#bootlock .stickycol{
   height: calc( 100vh + var(--col) );
   transition-duration: 0s;
 }

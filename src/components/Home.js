@@ -66,8 +66,8 @@ function Home(){
 
           if( entry.isIntersecting ){
 
-            console.log( entry.boundingClientRect.height )
-            console.log( entry.intersectionRect.height )
+            //console.log( entry.boundingClientRect.height )
+            //console.log( entry.intersectionRect.height )
             //console.log( entry.target.clientHeight )
 
             window.addEventListener("wheel", proviamo )
@@ -117,6 +117,9 @@ function Home(){
 
     // ----------
 
+    //remember that intersect and boundingrect clkaslsit() add/remove
+    //diodn't work coz both were playing at the same time, so we just included 
+    //pieno at base kit
     if(finalmente.length){
 
       let coloptions = {
@@ -130,19 +133,78 @@ function Home(){
         entries.forEach((entry)=>{
 
           if(entry.isIntersecting){
-            console.log("altibani")
 
+            if( entry.boundingClientRect.top <= 80 ){
+              
+              /*
+              if( entry.target.id == "primo" ){
+                console.log( entry.boundingClientRect )
+              }
+              */
+              //console.log( entry.target.id )
+              document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
+            
+              console.log( document.querySelector(`.d-inline-block.${entry.target.id}`).classList )
+
+              document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("pieno")
+              document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("stickycol")
+
+              console.log( document.querySelector(`.d-inline-block.${entry.target.id}`).classList )
+              //console.log( document.querySelector(`.lato.${entry.target.id}`) )
+              //stickycol
+
+              //console.log( document.querySelector(`.d-inline-block.${entry.target.id}`) )
+              //document.querySelector(`.lato.${entry.target.id}`).classList.add( "stickycol" )
+            }else{
+              //document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol")
+              //document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("pieno")
+              //document.querySelector(`.lato.${entry.target.id}`).classList.remove( "stickycol" )
+            } 
+
+            /*
+            entries.forEach((element)=>{
+              element.target.classList.toggle('active', element.isIntersecting)
+            })
+            */
+           /*
+            console.log( entry.boundingClientRect.top <= 80 )
+            console.log( entry.target.classList )
+            document.querySelector(`.lato.${entry.target.id}`).classList.toggle( "stickycol", entry.boundingClientRect.top <= 80 )
+            */
+
+            /*
+            entry.forEach((element)=>{
+              console.log( entry )
+              console.log( element )
+              console.log("-----------------")
+              element.target.classList.toggle( "stickycol", entry.boundingClientRect.top <= 80 )
+            })
+            */
+
+            /*
             if( entry.target.id == "primo" ){
               //console.log( entry.intersectionRatio )
-              console.log( entry.boundingClientRect.top- 80 )
+              //console.log( entry.boundingClientRect.top- 80 )
               //console.log( entry.intersectionRect.top- 80 )
               //console.log("----------------")
-              alto.start( entry.boundingClientRect.top- 80, {immediate: true})
+              //alto.start( entry.boundingClientRect.top- 80, {immediate: true})
             
               document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
             }
 
+            console.log( entry.boundingClientRect.top )
+            console.log( entry )
+            console.log( "-----------" )
+            */
+
+          }else{
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("lato")
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol")
           }
+
+
+
+
         })
 
       } 
@@ -273,11 +335,10 @@ function Home(){
         
         <ParallaxLayer onScroll={vario} offset={0.35} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 1.5 }}>
           <> 
-            <animated.div className="d-inline-block stickycol" 
-            style={{ verticalAlign: "top", overflowY: "hidden",width: "25%", 
-               }}>
+            <div className="position-relative d-inline-block pieno primo" 
+              style={{ verticalAlign: "top", overflowY: "hidden",width: "25%", backgroundColor: "brown" }}>
 
-              <div className="position-relative" style={{ backgroundColor: "brown", height: "100vh" }} >
+              <div className="position-relative" style={{ backgroundColor: "brown", height: "100%" }} >
 
                 <div className="position-absolute colonna1">
                 </div>
@@ -286,9 +347,9 @@ function Home(){
                   <h2 className="text-center" style={{ color: "yellow" }}>First day</h2>
                   <p>Welcome to the way</p>
                 </div>
-
               </div>
-            </animated.div>
+
+            </div>
           </>
         </ParallaxLayer>
 
@@ -311,10 +372,10 @@ function Home(){
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 1.65}}>
+        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2.4}}>
           <>
-            <div className="d-inline-block" style={{verticalAlign: "top", marginLeft: "75%", width: "25%" }}>
-              <div style={{backgroundColor: "purple", height: "calc(100vh - 5em)" }}>
+            <div className="d-inline-block pieno secondo" style={{overflowY: "hidden",verticalAlign: "top", marginLeft: "75%", width: "25%" }}>
+              <div className="position-relative" style={{backgroundColor: "purple", height: "100vh" }}>
                 <h3>Siamo stati</h3>
               </div>
             </div>
@@ -337,10 +398,10 @@ function Home(){
           </>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.45} style={{height: 0, display: "inline-block"}} sticky={{start: 2.45,end: 2.65}}>
+        <ParallaxLayer offset={2.45} style={{height: 0, display: "inline-block"}} sticky={{start: 2.45,end: 3.45}}>
           <>
-            <div className="d-inline-block" style={{width: "20%"}}>
-              <div style={{height: "calc(100vh - 5em)", backgroundColor: "navy", color: "yellow"}}>
+            <div className="d-inline-block pieno terzo" style={{ overflowY: "hidden" ,verticalAlign: "top" ,width: "20%"}}>
+              <div className="position-relative" style={{height: "100vh", backgroundColor: "navy", color: "yellow"}}>
                 That way
               </div>
             </div>
@@ -366,10 +427,10 @@ function Home(){
         >
         </ParallaxLayer>
 
-        <ParallaxLayer className="d-none d-md-inline-block" offset={3.4} style={{height: 0 }} sticky={{start: 3.4,end: 3.9 }}>
+        <ParallaxLayer className="d-none d-md-inline-block" offset={3.4} style={{height: 0 }} sticky={{start: 3.4,end: 4.4 }}>
           <>
-            <div className="d-inline-block" style={{width: "25%", marginLeft: "75%"}}>
-              <div style={{height: "55vh", backgroundColor: "darkkhaki"}}>
+            <div className="d-inline-block pieno quarto" style={{ overflowY: "hidden" ,verticalAlign: "top" ,width: "25%", marginLeft: "75%"}}>
+              <div className="position-relative" style={{height: "55vh", backgroundColor: "darkkhaki"}}>
                 Second way
               </div>
             </div>
