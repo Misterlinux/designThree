@@ -295,7 +295,7 @@ function Home(){
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2.2}}>
+        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2.5}}>
           <>
             <div className="d-inline-block pieno secondo" style={{overflowY: "hidden",verticalAlign: "top", marginLeft: "75%", width: "25%" }}>
               <div className="position-relative" style={{backgroundColor: "purple", height: "100vh" }}>
