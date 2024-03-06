@@ -273,7 +273,7 @@
   }
 
   /* stycky colonne  */
-  .stickycol{
+  #bootlock .stickycol{
     height: calc( 100vh - 5em + var(--col) );
     transition-duration: 0s;
   }

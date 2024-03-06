@@ -60,12 +60,14 @@ function Home(){
   
       //It seems I can use entry.target element value inside the 
       //addEventListener function
+      //We will need to create a section ONLY to talk about ho wheel event works in Parallax
       function altro(entries){
   
         entries.forEach((entry)=>{
 
           if( entry.isIntersecting ){
 
+            //transfering these to the wheel function 
             //console.log( entry.boundingClientRect.height )
             //console.log( entry.intersectionRect.height )
             //console.log( entry.target.clientHeight )
@@ -117,9 +119,8 @@ function Home(){
 
     // ----------
 
-    //remember that intersect and boundingrect clkaslsit() add/remove
-    //diodn't work coz both were playing at the same time, so we just included 
-    //pieno at base kit
+    //remember that intersect and boundingrect classlist() add/remove
+    //diodn't work coz intersect and boundingRect were embeeded between each other
     if(finalmente.length){
 
       let coloptions = {
@@ -132,77 +133,40 @@ function Home(){
 
         entries.forEach((entry)=>{
 
-          if(entry.isIntersecting){
+          //When using intercept for the sticky columns font push the end of sticky too behind
+          //it might trigger the stickycol beyond its space and create 2 heights columns
+          if(entry.isIntersecting && entry.boundingClientRect.top <= 80){
 
+            //WE add the variable height of the column once it intersects the top
+            document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
+            
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("lato")
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("pieno")
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("stickycol")
+            /*
             if( entry.boundingClientRect.top <= 80 ){
               
-              /*
-              if( entry.target.id == "primo" ){
-                console.log( entry.boundingClientRect )
-              }
-              */
-              //console.log( entry.target.id )
               document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
             
-              console.log( document.querySelector(`.d-inline-block.${entry.target.id}`).classList )
-
               document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("pieno")
               document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("stickycol")
-
-              console.log( document.querySelector(`.d-inline-block.${entry.target.id}`).classList )
-              //console.log( document.querySelector(`.lato.${entry.target.id}`) )
-              //stickycol
-
-              //console.log( document.querySelector(`.d-inline-block.${entry.target.id}`) )
-              //document.querySelector(`.lato.${entry.target.id}`).classList.add( "stickycol" )
-            }else{
-              //document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol")
-              //document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("pieno")
-              //document.querySelector(`.lato.${entry.target.id}`).classList.remove( "stickycol" )
-            } 
-
-            /*
-            entries.forEach((element)=>{
-              element.target.classList.toggle('active', element.isIntersecting)
-            })
-            */
-           /*
-            console.log( entry.boundingClientRect.top <= 80 )
-            console.log( entry.target.classList )
-            document.querySelector(`.lato.${entry.target.id}`).classList.toggle( "stickycol", entry.boundingClientRect.top <= 80 )
-            */
-
-            /*
-            entry.forEach((element)=>{
-              console.log( entry )
-              console.log( element )
-              console.log("-----------------")
-              element.target.classList.toggle( "stickycol", entry.boundingClientRect.top <= 80 )
-            })
-            */
-
-            /*
-            if( entry.target.id == "primo" ){
-              //console.log( entry.intersectionRatio )
-              //console.log( entry.boundingClientRect.top- 80 )
-              //console.log( entry.intersectionRect.top- 80 )
-              //console.log("----------------")
-              //alto.start( entry.boundingClientRect.top- 80, {immediate: true})
-            
-              document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
             }
-
-            console.log( entry.boundingClientRect.top )
-            console.log( entry )
-            console.log( "-----------" )
             */
+          }else if( entry.isIntersecting ){
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("pieno")
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("lato")
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol")
 
           }else{
+
+            if( entry.target.id == "secondo" ){
+              console.log( entry )
+            }
+
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("pieno")
             document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("lato")
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol")
+            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol") 
           }
-
-
 
 
         })
@@ -217,35 +181,18 @@ function Home(){
 
     }
 
-    //the return for the added wheel effect
+    //the return for the added wheel effect, if we were to add it 
     return () => {
       window.removeEventListener('wheel', handleWheelEvent);
     };
 
   }, [parallaxLayerMounted])
  
-  /*
-  let parle = useRef(null)
-  const { scrollY } = useScroll(parle);
-  
-  useEffect(() => {
-    console.log("Parallax scroll position:", scrollY);
-  }, [scrollY]);
-
-  const handleParallaxScroll = () => {
-    console.log("Parallax scroll event triggered");
-  };
-  */
 
   function vario(){
     console.log("donde vamos")
   }
 
-  /*
-  useEffect(()=> {
-    console.log( parle )
-  } )
-  */
 
   //lets try an external wheel that gets the target element
   function proviamo(){
@@ -270,7 +217,7 @@ function Home(){
   //For the singular sections we can use primo.current.clientHeight
   
   /*
-    let primate = useRef()
+  let primate = useRef()
   const scrollListener = () => {
 
     const handleWheelEvent = () => {
@@ -290,34 +237,10 @@ function Home(){
   useEffect(scrollListener, []);
   */
 
-  /*
-  const { scrollY: pixel, scrollYProgress: percent } = useScroll({
-    container: parle.current,
-    onChange: ({ value: { scrollYProgress, scrollY } }) => {
-  
-      console.log( scrollYProgress )
-      console.log( scrollY )
-    },
-    default: {immediate: true}
-  })
-  */
-
   //Read the useMount paragraph in the notes
   useMount(() => {
     setParallaxLayerMounted(true);
   });
-
-  //Maybe we will need the useResize() maybe not
-  /*
-  let quad = useRef(null)
-
-  const { width, height } = useResize({
-    container: quad,
-    onChange: ({value: {width} })=> {
-      console.log( width )
-    }
-  })
-  */
 
   //check the notes for how we spaced the sticky columns
   return(
@@ -372,7 +295,7 @@ function Home(){
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2.4}}>
+        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2.2}}>
           <>
             <div className="d-inline-block pieno secondo" style={{overflowY: "hidden",verticalAlign: "top", marginLeft: "75%", width: "25%" }}>
               <div className="position-relative" style={{backgroundColor: "purple", height: "100vh" }}>
