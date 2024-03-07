@@ -124,12 +124,14 @@ function Home(){
 
     //remember that intersect and boundingrect classlist() add/remove
     //diodn't work coz intersect and boundingRect were embeeded between each other
+
+    //Is there a difference in view when we add more thresholds?
     if(finalmente.length){
 
       let coloptions = {
         root: base, 
         rootMargin: "0px",
-        threshold: [...Array(100).keys()].map(x => x / 100),
+        threshold: [...Array(150).keys()].map(x => x / 150),
       }
 
       let largo = parle.current.clientWidth
@@ -148,18 +150,16 @@ function Home(){
           //console.log(parle.current.clientWidth)
           //console.log(parle.current.clientHeight)
 
-          console.log( largo )
-          console.log( largo> 537 ? 70 : 5 )
-
           if(entry.isIntersecting && entry.boundingClientRect.top <= (largo> 537 ? 70 : 5) ){
+            /*
             console.log( entry.boundingClientRect.top )
-
             if( entry.target.id == "primo" ){
               console.log( "Pri " + entry.boundingClientRect.top )
             }
             if(entry.target.id == "secondo" ){
               console.log( "Sec " + entry.boundingClientRect.top )
-            }
+            } 
+            */
 
             //WE add the variable height of the column once it intersects the top
             document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
@@ -283,7 +283,7 @@ function Home(){
             <div className="position-relative d-inline-block pieno primo" 
               style={{ verticalAlign: "top", overflowY: "hidden",width: "25%", backgroundColor: "brown" }}>
 
-              <div className="position-relative" style={{ backgroundColor: "brown", height: "100%" }} >
+              <div className="position-relative" style={{ backgroundColor: "brown", height: "100vh" }} >
 
                 <div className="position-absolute colonna1">
                 </div>
