@@ -41,9 +41,10 @@ function Home(){
 
   let alto = useSpringValue(0, {immediate: true})
 
+  let parle = useRef(null)
 
+  //Instead of useResize we just use the current.clientWidth
 
-  let parle = useRef()
   //e need to create a different interect ith a different options object
   useEffect(()=>{
 
@@ -131,6 +132,7 @@ function Home(){
         threshold: [...Array(100).keys()].map(x => x / 100),
       }
 
+      let largo = parle.current.clientWidth
       //The parallax including the freaking nacbar from google affects ALSO the boundingRect
       function scrolled(entries){
 
@@ -142,7 +144,15 @@ function Home(){
           //when scrolling from bottom top, the boundingRectTop goes from 80 + to 500+ (being from teh next thing)
           //so the previous column almost dissapers
           //from 70 to 10
-          if(entry.isIntersecting && entry.boundingClientRect.top <= 5 ){
+
+          //console.log(parle.current.clientWidth)
+          //console.log(parle.current.clientHeight)
+
+          console.log( largo )
+          console.log( largo> 537 ? 70 : 5 )
+
+          if(entry.isIntersecting && entry.boundingClientRect.top <= (largo> 537 ? 70 : 5) ){
+            console.log( entry.boundingClientRect.top )
 
             if( entry.target.id == "primo" ){
               console.log( "Pri " + entry.boundingClientRect.top )
@@ -256,8 +266,8 @@ function Home(){
   //check the notes for how we spaced the sticky columns
   // 5em / 10em for the mobile testing
   return(
-    <div style={{width: "100%" , marginTop: "5em", height: "calc(100vh - 5em)" }}>
-      <Parallax ref={parle} pages={4.7} className="meno" id="questo">
+    <div ref={parle} style={{width: "100%" , marginTop: "5em", height: "calc(100vh - 5em)" }}>
+      <Parallax pages={4.7} className="meno" id="questo">
         <ParallaxLayer  offset={0}>
           <Intro/>
         </ParallaxLayer>
