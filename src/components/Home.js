@@ -43,11 +43,6 @@ function Home(){
 
   //let esempio = useRef(null)
 
-  const variableMap = {
-    esempio: useRef(null),
-    // Add more variables as needed
-  };
-
   let parle = useRef(null)
 
   //Instead of useResize we just use the current.clientWidth
@@ -65,7 +60,7 @@ function Home(){
 
       let options = {
         root: base,
-        rootMargin: "0px 0px -100% 0px",
+        rootMargin: "0px 0px -95% 0px",
         threshold: 0,
       }
   
@@ -174,8 +169,7 @@ function Home(){
             //We cannot console.log() the document.queryselct style BUT we can edit it
           
             reffe = document.querySelector(`.vero.${entry.target.id}`)
-
-            reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - 80 + "px"} )`
+            reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - (largo> 537 ? 70 : 5) + "px"} )`
           }
 
 
@@ -254,42 +248,51 @@ function Home(){
 
   //check the notes for how we spaced the sticky columns
   // 5em / 10em for the mobile testing
+
+  //so, to avoid having 2 scrollBars for a scrollable Parallax and the fixed window scroll we
+  //include the Parallax without a marginTop, (add an empty space that wil be covered)
+  //and add The margin to the sticky columns, while also cutting up their start to compesate the margin
+
+  //watch out for the padding, it can cut the image height/width 100%
   return(
-    <div ref={parle} style={{width: "100%" , marginTop: "5em", height: "calc(100vh - 5em)" }}>
-      <Parallax pages={4.7} className="meno" id="questo">
+    <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "calc(100vh - 5em)" }}>
+      <Parallax pages={4.75} className="meno" id="questo">
         <ParallaxLayer  offset={0}>
           <Intro/>
         </ParallaxLayer>
 
-        <ParallaxLayer  offset={0.5} style={{ backgroundColor: "lightskyblue" }}>
+        <ParallaxLayer  offset={0.55} style={{ backgroundColor: "lightskyblue" }}>
           <div ref={primate} className="stratos" id="primo" move="17%" color={318} >
             <Primo />
           </div>
         </ParallaxLayer>
         
-        <ParallaxLayer offset={1.5} style={{ backgroundColor: "pink" }}>
+        <ParallaxLayer offset={1.55} style={{ backgroundColor: "pink" }}>
           <div ref={secondate} className="stratos" id="secondo" move="34%" color={227}>
             <Secondo />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.5} style={{ backgroundColor: "silver" }}>
+        <ParallaxLayer offset={2.55} style={{ backgroundColor: "silver" }}>
           <div className="stratos" id="terzo" move="51%" color={137}>
             <Terzo />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.5} style={{ backgroundColor: "sandybrown" }}>
+        <ParallaxLayer offset={3.55} style={{ backgroundColor: "sandybrown" }}>
           <div className="stratos" id="quarto" move="68%" color={47}>
             <Quarto />
           </div>
         </ParallaxLayer>
 
+        <ParallaxLayer offset={4.55} factor={0.2} style={{ backgroundColor: "navajowhite" }}>
+          <Footer/>
+        </ParallaxLayer>
 
-        <ParallaxLayer onScroll={vario} offset={0.35} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 1.5 }}>
+        <ParallaxLayer onScroll={vario} offset={0.30} style={{ height: 0 ,display: "inline-block"}} sticky={{ start: 0.30, end: 1.55 }}>
           <> 
-            <div ref={ variableMap['esempio'] } targetrefname="esempio"  className="position-relative d-inline-block vero primo" 
-              style={{ verticalAlign: "top", overflowY: "hidden",width: "25%", backgroundColor: "brown" }}>
+            <div targetrefname="esempio"  className="position-relative d-inline-block vero primo" 
+              style={{ verticalAlign: "top", marginTop: "5em" ,overflowY: "hidden",width: "25%", backgroundColor: "brown" }}>
 
               <div className="position-relative" style={{ backgroundColor: "brown", height: "100vh" }} >
 
@@ -306,11 +309,9 @@ function Home(){
           </>
         </ParallaxLayer>
 
-
-
-        <ParallaxLayer offset={1.4} style={{height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 1.4}}>
+        <ParallaxLayer offset={1.37} style={{height: 0, display: "inline-block"}} sticky={{start: 1.37, end: 1.37 }}>
           <>
-            <div className="d-inline-block" style={{verticalAlign: "top", marginLeft: "25%" ,width: "50%" }}>
+            <div className="d-inline-block" style={{verticalAlign: "top", marginTop: "5em", marginLeft: "25%" ,width: "50%" }}>
               <div className="d-flex justify-content-center align-items-center position-relative" 
               style={{backgroundColor: "lightblue", height: "calc(20vh - 5em)" }}>
                 <h3> Band </h3>
@@ -319,10 +320,10 @@ function Home(){
           </>
         </ParallaxLayer>
 
-
-        <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2.5}}>
+        <ParallaxLayer offset={1.37} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.37, end: 2.55}}>
           <>
-            <div targetrefname="esempio1" className="d-inline-block vero secondo" style={{overflowY: "hidden",verticalAlign: "top", marginLeft: "75%", width: "25%" }}>
+            <div targetrefname="esempio1" className="d-inline-block vero secondo" 
+              style={{overflowY: "hidden",verticalAlign: "top", marginTop: "5em" , marginLeft: "75%", width: "25%" }}>
               <div className="position-relative" style={{backgroundColor: "purple", height: "100vh" }}>
                 <h3>Siamo stati</h3>
               </div>
@@ -330,10 +331,9 @@ function Home(){
           </>
         </ParallaxLayer>
 
-
-        <ParallaxLayer offset={2.45} style={{height: 0, display: "inline-block"}} sticky={{start: 2.45, end: 2.45}}>
+        <ParallaxLayer offset={2.41} style={{height: 0, display: "inline-block"}} sticky={{start: 2.41, end: 2.41}}>
           <>
-            <div className="d-inline-block" style={{marginLeft: "20%", width: "55%"}}>
+            <div className="d-inline-block" style={{marginTop: "5em", marginLeft: "20%", width: "55%"}}>
               <div style={{backgroundColor: "green", height: "calc(20vh - 5em"}}>
                 The Duo
               </div>
@@ -341,9 +341,10 @@ function Home(){
           </>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.45} style={{height: 0, display: "inline-block"}} sticky={{start: 2.45,end: 3.45}}>
+        <ParallaxLayer offset={2.41} style={{height: 0, display: "inline-block"}} sticky={{start: 2.41,end: 3.37}}>
           <>
-            <div className="d-inline-block vero terzo" style={{ overflowY: "hidden" ,verticalAlign: "top" ,width: "20%"}}>
+            <div className="d-inline-block vero terzo" 
+              style={{ overflowY: "hidden", marginTop: "5em", verticalAlign: "top" ,width: "20%"}}>
               <div className="position-relative" style={{height: "100vh", backgroundColor: "navy", color: "yellow"}}>
                 That way
               </div>
@@ -365,9 +366,10 @@ function Home(){
         >
         </ParallaxLayer>
 
-        <ParallaxLayer className="d-none d-md-inline-block" offset={3.4} style={{height: 0 }} sticky={{start: 3.4,end: 4.4 }}>
+        <ParallaxLayer className="d-none d-md-inline-block" offset={3.43} style={{height: 0 }} sticky={{start: 3.43,end: 4.55}}>
           <>
-            <div className="d-inline-block vero quarto" style={{ overflowY: "hidden" ,verticalAlign: "top" ,width: "25%", marginLeft: "75%"}}>
+            <div className="d-inline-block vero quarto" 
+              style={{ marginTop: "5em" ,overflowY: "hidden" ,verticalAlign: "top" ,width: "25%", marginLeft: "75%"}}>
               <div className="position-relative" style={{height: "55vh", backgroundColor: "darkkhaki"}}>
                 Second way
               </div>
@@ -375,9 +377,6 @@ function Home(){
           </>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={4.5} factor={0.2} style={{ backgroundColor: "navajowhite" }}>
-          <Footer/>
-        </ParallaxLayer>
       </Parallax>
 
     </div>

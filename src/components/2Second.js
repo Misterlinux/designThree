@@ -93,7 +93,7 @@ function Secondo(){
   return(
     <div style={{height: "100vh"}} ref={tutto}>
 
-      <div style={{paddingTop: "4.5vh", width: "75%"}}>
+      <div style={{paddingTop: "3vh", width: "75%"}}>
         <h1>The Beatniks</h1>
         <p className="px-1">
           They tour the nation with their soulful blend 

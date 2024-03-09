@@ -54,15 +54,15 @@ function Terzo(){
   return(   
     <div style={{marginLeft: "22%", height: "100vh"}} ref={terzo}>
 
-      <div style={{paddingTop: "10vh"}}>
+      <div style={{paddingTop: "5vh"}}>
         <h1>This is the duo</h1>
       </div>
 
       <div className="d-flex justify-content-center row mx-0 col-12">
 
-        <div className="col-12 row mx-0 d-flex align-items-center" style={{height: "40vh"}}>
+        <div className="col-12 row mx-0 px-1 d-flex align-items-center" style={{height: "40vh"}}>
 
-          <div className="col-4" style={{height: "100%"}}>
+          <div className="col-4 px-0" style={{height: "100%"}}>
             <div className="d-flex justify-content-center align-items-center position-relative" style={{overflow: "hidden", borderLeft: "2px solid red"}}>
               <div className="d-flex justify-content-center align-items-center" style={{width: "100%", height: "40vh", backgroundColor: "purple" }}>
                 <FontAwesomeIcon icon={faMusic} style={{fontSize: "5em"}}/>
