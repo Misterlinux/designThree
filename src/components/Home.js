@@ -41,9 +41,19 @@ function Home(){
 
   let alto = useSpringValue(0, {immediate: true})
 
+  //let esempio = useRef(null)
+
+  const variableMap = {
+    esempio: useRef(null),
+    // Add more variables as needed
+  };
+
   let parle = useRef(null)
 
   //Instead of useResize we just use the current.clientWidth
+
+  let reffe;
+  let mio;
 
   //e need to create a different interect ith a different options object
   useEffect(()=>{
@@ -126,6 +136,13 @@ function Home(){
     //diodn't work coz intersect and boundingRect were embeeded between each other
 
     //Is there a difference in view when we add more thresholds?
+
+    //When we querySelect we can't acces ref coz its ot a dom attribute, its specific 
+    //to react/JSX, 
+
+    //we dont use css variables to edit in a changeable className, nor we use a useRef()
+    //style we access throught another attribut to then use in an array of useRef()
+    //To access the correct one, we just edit the target's height
     if(finalmente.length){
 
       let coloptions = {
@@ -139,7 +156,6 @@ function Home(){
       function scrolled(entries){
 
         entries.forEach((entry)=>{
-
           //When using intercept for the sticky columns font push the end of sticky too behind
           //it might trigger the stickycol beyond its space and create 2 heights columns
 
@@ -147,46 +163,19 @@ function Home(){
           //so the previous column almost dissapers
           //from 70 to 10
 
-          //console.log(parle.current.clientWidth)
-          //console.log(parle.current.clientHeight)
-
           if(entry.isIntersecting && entry.boundingClientRect.top <= (largo> 537 ? 70 : 5) ){
-            /*
-            console.log( entry.boundingClientRect.top )
+            
+            //console.log( entry.boundingClientRect.top )
             if( entry.target.id == "primo" ){
-              console.log( "Pri " + entry.boundingClientRect.top )
+              console.log( "Pri top" + entry.boundingClientRect.top )
             }
-            if(entry.target.id == "secondo" ){
-              console.log( "Sec " + entry.boundingClientRect.top )
-            } 
-            */
+            //entry.target.ref.current.style.height = "500px"
 
-            //WE add the variable height of the column once it intersects the top
-            document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
-            
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("lato")
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("pieno")
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("stickycol")
+            //We cannot console.log() the document.queryselct style BUT we can edit it
+          
+            reffe = document.querySelector(`.vero.${entry.target.id}`)
 
-            /*
-            if( entry.boundingClientRect.top <= 80 ){
-              
-              document.documentElement.style.setProperty("--col", entry.boundingClientRect.top - 80 + "px" )
-            
-              document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("pieno")
-              document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("stickycol")
-            }
-            */
-          }else if( entry.isIntersecting ){
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("pieno")
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("lato")
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol")
-          }else{
-            
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("pieno")
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.add("lato")
-            document.querySelector(`.d-inline-block.${entry.target.id}`).classList.remove("stickycol") 
-            
+            reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - 80 + "px"} )`
           }
 
 
@@ -278,9 +267,28 @@ function Home(){
           </div>
         </ParallaxLayer>
         
+        <ParallaxLayer offset={1.5} style={{ backgroundColor: "pink" }}>
+          <div ref={secondate} className="stratos" id="secondo" move="34%" color={227}>
+            <Secondo />
+          </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={2.5} style={{ backgroundColor: "silver" }}>
+          <div className="stratos" id="terzo" move="51%" color={137}>
+            <Terzo />
+          </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={3.5} style={{ backgroundColor: "sandybrown" }}>
+          <div className="stratos" id="quarto" move="68%" color={47}>
+            <Quarto />
+          </div>
+        </ParallaxLayer>
+
+
         <ParallaxLayer onScroll={vario} offset={0.35} style={{ height: 0, display: "inline-block"}} sticky={{ start: 0.35, end: 1.5 }}>
           <> 
-            <div className="position-relative d-inline-block pieno primo" 
+            <div ref={ variableMap['esempio'] } targetrefname="esempio"  className="position-relative d-inline-block vero primo" 
               style={{ verticalAlign: "top", overflowY: "hidden",width: "25%", backgroundColor: "brown" }}>
 
               <div className="position-relative" style={{ backgroundColor: "brown", height: "100vh" }} >
@@ -311,15 +319,10 @@ function Home(){
           </>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.5} style={{ backgroundColor: "pink" }}>
-          <div ref={secondate} className="stratos" id="secondo" move="34%" color={227}>
-            <Secondo />
-          </div>
-        </ParallaxLayer>
 
         <ParallaxLayer offset={1.4} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.4, end: 2.5}}>
           <>
-            <div className="d-inline-block pieno secondo" style={{overflowY: "hidden",verticalAlign: "top", marginLeft: "75%", width: "25%" }}>
+            <div targetrefname="esempio1" className="d-inline-block vero secondo" style={{overflowY: "hidden",verticalAlign: "top", marginLeft: "75%", width: "25%" }}>
               <div className="position-relative" style={{backgroundColor: "purple", height: "100vh" }}>
                 <h3>Siamo stati</h3>
               </div>
@@ -327,11 +330,6 @@ function Home(){
           </>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.5} style={{ backgroundColor: "silver" }}>
-          <div className="stratos" id="terzo" move="51%" color={137}>
-            <Terzo />
-          </div>
-        </ParallaxLayer>
 
         <ParallaxLayer offset={2.45} style={{height: 0, display: "inline-block"}} sticky={{start: 2.45, end: 2.45}}>
           <>
@@ -345,7 +343,7 @@ function Home(){
 
         <ParallaxLayer offset={2.45} style={{height: 0, display: "inline-block"}} sticky={{start: 2.45,end: 3.45}}>
           <>
-            <div className="d-inline-block pieno terzo" style={{ overflowY: "hidden" ,verticalAlign: "top" ,width: "20%"}}>
+            <div className="d-inline-block vero terzo" style={{ overflowY: "hidden" ,verticalAlign: "top" ,width: "20%"}}>
               <div className="position-relative" style={{height: "100vh", backgroundColor: "navy", color: "yellow"}}>
                 That way
               </div>
@@ -353,11 +351,6 @@ function Home(){
           </>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.5} style={{ backgroundColor: "sandybrown" }}>
-          <div className="stratos" id="quarto" move="68%" color={47}>
-            <Quarto />
-          </div>
-        </ParallaxLayer>
 
         <ParallaxLayer offset={3.78} speed={0.5}
           style={{
@@ -374,7 +367,7 @@ function Home(){
 
         <ParallaxLayer className="d-none d-md-inline-block" offset={3.4} style={{height: 0 }} sticky={{start: 3.4,end: 4.4 }}>
           <>
-            <div className="d-inline-block pieno quarto" style={{ overflowY: "hidden" ,verticalAlign: "top" ,width: "25%", marginLeft: "75%"}}>
+            <div className="d-inline-block vero quarto" style={{ overflowY: "hidden" ,verticalAlign: "top" ,width: "25%", marginLeft: "75%"}}>
               <div className="position-relative" style={{height: "55vh", backgroundColor: "darkkhaki"}}>
                 Second way
               </div>

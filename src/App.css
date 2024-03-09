@@ -208,18 +208,6 @@
   --col: 0px
 }
 
-.lato{
-  height: 0vh;
-}
-
-.pieno{
-  height: 100vh;
-}
-
-#bootlock .stickycol{
-  height: calc( 100vh + var(--col) );
-  transition: none;
-}
 
 
 @media only screen and (max-width: 576px){
@@ -273,10 +261,6 @@
   }
 
   /* stycky colonne  */
-  #bootlock .stickycol{
-    height: calc( 100vh - 5em + var(--col) );
-    transition: none;
-  }
 
 }
 
