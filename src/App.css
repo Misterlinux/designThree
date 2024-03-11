@@ -2,6 +2,7 @@
 
 #bootlock h1, 
 #bootlock h4,
+#bootlock h3,
 #bootlock h5{
   margin: 0;
 }
@@ -143,11 +144,15 @@
 
 /* Terzo */
 
+.thirdImage{
+  background-position: center center;
+  background-size: cover;
+}
+
 .centered{
   background-size: cover;
   background-position: center center;
 }
-
 
 /* Quarto */
 
