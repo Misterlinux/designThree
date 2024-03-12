@@ -60,7 +60,7 @@ function Home(){
 
       let options = {
         root: base,
-        rootMargin: "0px 0px -95% 0px",
+        rootMargin: "0px 0px -85% 0px",
         threshold: 0,
       }
   
@@ -261,25 +261,25 @@ function Home(){
           <Intro/>
         </ParallaxLayer>
 
-        <ParallaxLayer  offset={0.55} style={{ backgroundColor: "lightskyblue" }}>
+        <ParallaxLayer  offset={0.55} style={{ backgroundColor: "#001F3F" }}>
           <div ref={primate} className="stratos" id="primo" move="17%" color={318} >
             <Primo />
           </div>
         </ParallaxLayer>
         
-        <ParallaxLayer offset={1.55} style={{ backgroundColor: "pink" }}>
+        <ParallaxLayer offset={1.55} style={{ backgroundColor: " pink " }}>
           <div ref={secondate} className="stratos" id="secondo" move="34%" color={227}>
             <Secondo />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.55} style={{ backgroundColor: "silver" }}>
+        <ParallaxLayer offset={2.55} style={{ backgroundColor: " #001F3F " }}>
           <div className="stratos" id="terzo" move="51%" color={137}>
             <Terzo />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.55} style={{ backgroundColor: "sandybrown" }}>
+        <ParallaxLayer offset={3.55} style={{ backgroundColor: " #001F3F " }}>
           <div className="stratos" id="quarto" move="68%" color={47}>
             <Quarto />
           </div>

@@ -73,8 +73,8 @@
 }
 
 #bootlock .meno{
-  left: 0px;
-  scrollbar-width: none;
+  /*left: 0px;
+  scrollbar-width: none;*/
 }
 
 
@@ -162,8 +162,8 @@
 /* Quarto */
 
 .scrollo{
-  scrollbar-width: none;
-  scrollbar-color: yellow orange;
+  /*scrollbar-width: none;
+  scrollbar-color: yellow orange;*/
 }
 
 

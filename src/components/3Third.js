@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 
 import basso from "../imma/basso.jpg"
-import ice from "../imma/ice.png"
+import ice from "../imma/transCat.png"
 
 function Terzo(){
 
@@ -28,10 +28,10 @@ function Terzo(){
   //This is how we use the easing steps on a pixel animation, to substitute and controll
   //The css version
   let [{backgroundPosition}, posiApi] = useSpring(()=>({
-    backgroundPosition: terzoView ? "-145px" : "50px",
+    backgroundPosition: terzoView ? "-574px" : "50px",
     config: { 
       duration: terzoView ? 1000 : 300, 
-      easing: easings.steps(4),
+      easing: easings.steps(13),
     }
   }), [terzoView])
 
@@ -39,7 +39,7 @@ function Terzo(){
     //x: terzoView ? stato.barre[i] : 0,
 
     from: {x: 0},
-    to: {x: terzoView ? stato.barre[i] : 0, config: {duration: 200} },
+    to: {x: terzoView ? (stato.barre[i]-30) : 0, config: {duration: 200} },
 
     config: {duration: terzoView ? 1000 : 300, easing: easings.steps(20) }
   }), [terzoView])
@@ -97,7 +97,7 @@ function Terzo(){
  
             <p> Bandinst of teh group, expert in drumns and ready to show his new drum </p>
 
-            <animated.div style={{width: 50, height: 50, x: walk[0].x}}>
+            <animated.div style={{width: 50, height: 48, x: walk[0].x}}>
               <animated.div style={{height: "100%", width: "100%",
                 backgroundImage: `url(${ice})`,
                 backgroundPosition,
@@ -150,7 +150,7 @@ function Terzo(){
 
             <p> Bandinst of teh group, expert in drumns and ready to show his new drum </p>
 
-            <animated.div style={{width: 50, height: 50, x: walk[0].x}}>
+            <animated.div style={{width: 50, height: 48, x: walk[0].x}}>
               <animated.div style={{height: "100%", width: "100%",
                 backgroundImage: `url(${ice})`,
                 backgroundPosition,
@@ -179,30 +179,94 @@ function Terzo(){
         <div className="row col-12 mx-0 px-0 d-flex justify-content-center" style={{height: "20vw"}}>
 
           <div className="px-0" style={{width: "20vw", height: "inherit"}}>
-            <div className="centered bg-warning" style={{width: "100%", height: "100%" }}>
+            <div className="bg-warning position-relative" style={{width: "100%", height: "100%" }}>
+            
+              <animated.div className="thirdImage position-absolute" 
+                style={{backgroundImage: `url(${basso})`, height: "20vw", width: "20vw", left: ruolo[0].x}}>
+              </animated.div>
+
+              <div className="d-flex justify-content-center align-items-center" 
+                style={{width: "20vw", height: "20vw", backgroundColor: "purple"}}>
+                <FontAwesomeIcon icon={faMusic} style={{fontSize: "3em"}}/>
+              </div>
+            
             </div>
           </div>
           
-          <div style={{width: "50vw"}} className=" bg-success text-white d-flex flex-column justify-content-center align-items-center">
+          <div style={{width: "50vw"}} className="position-relative bg-success text-white d-flex flex-column justify-content-center align-items-start">
+            
             <h3>Watt Watterson</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Vero voluptatum similique sunt? 
             </p>
+            <p> Bandinst of teh group, expert in drumns and ready to show his new drum </p>
+
+            <animated.div style={{width: 50, height: 48, x: walk[0].x}}>
+              <animated.div style={{height: "100%", width: "100%",
+                backgroundImage: `url(${ice})`,
+                backgroundPosition,
+              }}
+              >
+              </animated.div>
+            </animated.div>
+
+            <div className="d-flex justify-content-start align-items-center position-relative">
+              <div style={{width: "1em", height: "1em", borderRadius: "50%", backgroundColor: "red" }}>
+              </div>
+
+              <div className="d-flex align-items-center position-absolute">
+                <animated.div style={{height: 3, width: pros[0].width, backgroundColor: "red", transformOrigin: "right" }}>
+                </animated.div>
+              </div>
+            </div>
+
           </div>
         </div>
 
         <div className="row col-12 mx-0 px-0 d-flex justify-content-center" style={{height: "20vw"}}>
-          <div style={{width: "50vw"}} className=" bg-success text-white d-flex flex-column justify-content-center align-items-center">
+          <div style={{width: "50vw"}} className=" bg-success text-white d-flex flex-column justify-content-center align-items-start">
+
             <h3>Watt Watterson</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Vero voluptatum similique sunt? 
             </p>
+            <p> Bandinst of teh group, expert in drumns and ready to show his new drum </p>
+
+            <animated.div style={{width: 50, height: 48, x: walk[0].x}}>
+              <animated.div style={{height: "100%", width: "100%",
+                backgroundImage: `url(${ice})`,
+                backgroundPosition,
+              }}
+              >
+              </animated.div>
+            </animated.div>
+
+            <div className="d-flex justify-content-start align-items-center position-relative">
+              <div style={{width: "1em", height: "1em", borderRadius: "50%", backgroundColor: "red" }}>
+              </div>
+
+              <div className="d-flex align-items-center position-absolute">
+                <animated.div style={{height: 3, width: pros[0].width, backgroundColor: "red", transformOrigin: "right" }}>
+                </animated.div>
+              </div>
+            </div>
+
           </div>
 
           <div className="px-0" style={{width: "20vw", height: "inherit"}}>
-            <div className="centered bg-warning" style={{width: "100%", height: "100%" }}>
+            <div className="bg-warning position-relative" style={{width: "100%", height: "100%" }}>
+
+              <animated.div className="thirdImage position-absolute" 
+                style={{backgroundImage: `url(${basso})`, height: "20vw", width: "20vw", right: ruolo[0].x}}>
+              </animated.div>
+
+              <div className="d-flex justify-content-center align-items-center" 
+                style={{width: "20vw", height: "20vw", backgroundColor: "purple"}}>
+                <FontAwesomeIcon icon={faMusic} style={{fontSize: "3em"}}/>
+              </div>
+
             </div>
           </div>
         </div>
