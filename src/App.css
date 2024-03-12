@@ -154,6 +154,11 @@
   background-position: center center;
 }
 
+.thirdPresent{
+  height: 100%;
+  padding-top: calc(30vw + 4%);
+}
+
 /* Quarto */
 
 .scrollo{
@@ -251,6 +256,9 @@
     top: 82%;
     left: 6%;
   }
+
+  /* Terzo.js */
+
 
   /*  */
   .taglio, .sini, .des{

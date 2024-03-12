@@ -61,14 +61,15 @@ function Terzo(){
   return(   
     <div style={{marginLeft: "22%", height: "100vh"}} ref={terzo}>
 
-      <div style={{paddingTop: "5vh"}}>
+      <div style={{paddingTop: "5vh", height: "15%"}}>
         <h1>This is the duo</h1>
       </div>
 
-      <div className="d-flex justify-content-center align-items-center row mx-0 px-2 col-12 mt-5">
+      <div className="d-flex d-md-none justify-content-center align-items-center row mx-0 px-2 col-12"
+        style={{height: "85%"}}>
 
         <div className="row col-12 mx-0 px-0 d-flex justify-content-start align-items-start position-relative" style={{height: "40vh"}}>
-          <div className="position-relative d-flex px-0" 
+          <div className="position-relative d-flex d-md-none px-0" 
             style={{top: "2%", width: "100%", height: "30vw", zIndex: 5 }}>
             <div style={{height: "100%", width: "30vw" }}>
               
@@ -91,8 +92,8 @@ function Terzo(){
             </div>
           </div>
 
-          <div className="col-10 bg-success position-absolute px-2" 
-            style={{height: "90%", top: "0%", right: "0%", paddingTop: "calc(30vw + 4%)"}}>
+          <div className="thirdPresent col-10 bg-success position-absolute px-2" 
+            style={{ right: "0%" }}>
  
             <p> Bandinst of teh group, expert in drumns and ready to show his new drum </p>
 
@@ -145,7 +146,7 @@ function Terzo(){
           </div>
 
           <div className="col-10 bg-success position-absolute px-2" 
-            style={{height: "90%", top: "0%", left: "0%", paddingTop: "calc(30vw + 2%)"}}>
+            style={{height: "100%", left: "0%", paddingTop: "calc(30vw + 2%)"}}>
 
             <p> Bandinst of teh group, expert in drumns and ready to show his new drum </p>
 
@@ -172,6 +173,42 @@ function Terzo(){
         </div>
 
       </div>
+
+
+      <div className="d-none d-md-flex align-items-center row col-12 px-2 mx-0" style={{height: "80%"}}>
+        <div className="row col-12 mx-0 px-0 d-flex justify-content-center" style={{height: "20vw"}}>
+
+          <div className="px-0" style={{width: "20vw", height: "inherit"}}>
+            <div className="centered bg-warning" style={{width: "100%", height: "100%" }}>
+            </div>
+          </div>
+          
+          <div style={{width: "50vw"}} className=" bg-success text-white d-flex flex-column justify-content-center align-items-center">
+            <h3>Watt Watterson</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Vero voluptatum similique sunt? 
+            </p>
+          </div>
+        </div>
+
+        <div className="row col-12 mx-0 px-0 d-flex justify-content-center" style={{height: "20vw"}}>
+          <div style={{width: "50vw"}} className=" bg-success text-white d-flex flex-column justify-content-center align-items-center">
+            <h3>Watt Watterson</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Vero voluptatum similique sunt? 
+            </p>
+          </div>
+
+          <div className="px-0" style={{width: "20vw", height: "inherit"}}>
+            <div className="centered bg-warning" style={{width: "100%", height: "100%" }}>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
 
     </div>
   )
