@@ -77,13 +77,13 @@ function Terzo(){
                 style={{backgroundImage: `url(${basso})`, height: "100%", width: "30vw", left: ruolo[0].x}}>
               </animated.div>
 
-              <div className="d-flex justify-content-center align-items-center" 
-                style={{width: "30vw", height: "100%", backgroundColor: "purple"}}>
+              <div className="d-flex justify-content-center align-items-center bg-secondary" 
+                style={{width: "30vw", height: "100%"}}>
                 <FontAwesomeIcon icon={faMusic} style={{fontSize: "3em"}}/>
               </div>
             </div>
 
-            <div className="bg-success text-white text-start d-flex flex-column justify-content-center align-items-center" 
+            <div className="bg-primary text-primary text-start d-flex flex-column justify-content-center align-items-center" 
               style={{height: "100%", width: "45vw"}}>
               <h3 className="ps-1">Watt Watterson</h3>
               <p>The main member
@@ -124,7 +124,7 @@ function Terzo(){
           <div className="position-relative d-flex px-0"
             style={{top: "2%", width: "100%", height: "30vw", zIndex: 5 }}>
 
-            <div className="bg-success text-white d-flex flex-column justify-content-center align-items-center" 
+            <div className="bg-primary text-primary text-white d-flex flex-column justify-content-center align-items-center" 
               style={{height: "100%", width: "45vw"}}>
               <h3 className="ps-1">Watt Watterson</h3>
               <p>The main member
@@ -179,7 +179,7 @@ function Terzo(){
         <div className="row col-12 mx-0 px-0 d-flex justify-content-center" style={{height: "20vw"}}>
 
           <div className="px-0" style={{width: "20vw", height: "inherit"}}>
-            <div className="bg-warning position-relative" style={{width: "100%", height: "100%" }}>
+            <div className="bg-secondary text-primary position-relative" style={{width: "100%", height: "100%" }}>
             
               <animated.div className="thirdImage position-absolute" 
                 style={{backgroundImage: `url(${basso})`, height: "20vw", width: "20vw", left: ruolo[0].x}}>
@@ -193,7 +193,7 @@ function Terzo(){
             </div>
           </div>
           
-          <div style={{width: "50vw"}} className="position-relative bg-success text-white d-flex flex-column justify-content-center align-items-start">
+          <div style={{width: "50vw"}} className="position-relative bg-primary text-white d-flex flex-column justify-content-center align-items-start">
             
             <h3>Watt Watterson</h3>
             <p>
@@ -225,7 +225,7 @@ function Terzo(){
         </div>
 
         <div className="row col-12 mx-0 px-0 d-flex justify-content-center" style={{height: "20vw"}}>
-          <div style={{width: "50vw"}} className=" bg-success text-white d-flex flex-column justify-content-center align-items-start">
+          <div style={{width: "50vw"}} className=" bg-primary text-white d-flex flex-column justify-content-center align-items-start">
 
             <h3>Watt Watterson</h3>
             <p>

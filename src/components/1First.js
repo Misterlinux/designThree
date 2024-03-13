@@ -41,14 +41,14 @@ function Primo(){
 
   let [mosso, mossoApi] = useSprings(nome.length, (i)=>({
     from: {
-      backgroundColor: "pink"
+      backgroundColor: "#00b800"
     },
     to: inView ? [
       {backgroundColor: "red"},
-      {backgroundColor: "pink"}
+      {backgroundColor: "#00b800"}
     ] :
     {
-      backgroundColor: "pink"
+      backgroundColor: "#00b800"
     },
     delay: i * 550,
     config: {
@@ -65,9 +65,9 @@ function Primo(){
     <div className="d-flex row mx-0" ref={ref} style={{width: "70%", marginLeft: "28%", height: "100vh", overflow: "hidden" }}>
       <div className="col-11 d-flex flex-column">
 
-      <animated.div className="bg-primary d-flex justify-content-start align-items-center position-absolute barraintro" 
+      <animated.div className="bg-primary text-primary d-flex justify-content-start align-items-center position-absolute barraintro" 
         style={{x: horin.x }}>
-        <h2> 
+        <h2 className="text-secondary"> 
           Check our program 
           <FontAwesomeIcon className="ps-2" icon={faUserAstronaut}/>  
         </h2>
@@ -77,18 +77,18 @@ function Primo(){
         <div className="position-relative singlepresent" 
           style={{ width: "100%", height: "100%", backgroundImage: `url(${single})`}}>
 
-          <animated.div className="bg-danger position-absolute"
+          <animated.div className="bg-primary position-absolute"
             style={{ height: "10vh", width: "10vh", marginLeft: "-15px", marginTop: "-15px", zIndex: -5, y: toppo.y }}>
           </animated.div>
 
-          <div className="bg-success position-relative singletext">
+          <div className=" position-relative singletext">
 
-            <div className="d-flex row col-12 mx-0 bg-danger">
+            <div className="d-flex row col-12 mx-0 bg-primary text-secondary">
               <div className="singlesecond" style={{backgroundImage: `url(${singlesec})`}}>
               </div>
 
               <div className="singlename px-0 d-flex justify-content-center align-items-center">
-                <h1 className="text-white">
+                <h1 className="text-primary bg-secondary">
 
                   {nome.map((cont, index)=>(
                     <animated.span className="d-inline-block text-center" key={index}
@@ -101,7 +101,7 @@ function Primo(){
               </div>
             </div>
 
-            <div className="p-3">
+            <div className="p-3 bg-secondary text-white">
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                 Aliquam voluptatibus repellendus reprehenderit quaerat 

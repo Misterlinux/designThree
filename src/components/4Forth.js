@@ -37,7 +37,7 @@ function Quarto(){
 
   return(
     <div ref={cart}>
-      <div className="text-center" style={{paddingTop: "4em"}}>
+      <div className="text-center text-primary" style={{paddingTop: "4em"}}>
         <h3>The organitation</h3>
       </div>
 

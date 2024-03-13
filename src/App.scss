@@ -1,27 +1,40 @@
 
 $enable-important-utilities: false;
 
+/* what if, to do the navbar columns,  */
+
 /*
 The four colors used for this webpage will be
 #FFCD10 / hsla(47, 100%, 53%, 1)
 #10FF55 / hsla(137, 100%, 53%, 1)
 #1042FF / hsla(227, 100%, 53%, 1)
-#FF10B9 / hsla(318, 100%, 53%, 1)
+#FF10B9 / hsla(318, 100%, 53%, 1) magenta
 
 The order will be red/blue/green/yellow
 318, 137, 227, 47
 
 */
 
+
+
+
 $base: 318;
 
-#bootlock .text-danger{
-  color: hsl(var(--base, $base), 100%, 45%);
+#bootlock .text-primary{
+  color: hsl(var(--base, $base), 100%, 25%);
 }
 
-#bootlock .bg-danger{
-  background-color: hsl(var(--base, $base), 100%, 45%);
+#bootlock .bg-primary{
+  background-color: hsl(var(--base, $base), 100%, 36%);
   transition: 1s;
+}
+
+#bootlock .text-secondary{
+  color: hsl(calc( var(--base) + 180 ), 100%, 70%);
+}
+
+#bootlock .bg-secondary{
+  background-color: hsl(calc( var(--base) + 180 ), 100%, 36%);
 }
 
 .nav-item.col-3.active{

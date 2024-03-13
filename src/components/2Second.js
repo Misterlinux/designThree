@@ -111,10 +111,10 @@ function Secondo(){
                 x: pre[piccolo.current ? index : (stato.band.length-1)-index].x, 
                 marginTop: cont.marginTop[piccolo.current ? 1 : 0]  
               }}>
-              <div className="bg-danger position-relative" style={{height: "100%", width: "100%"}}>
+              <div className="bg-primary position-relative" style={{height: "100%", width: "100%"}}>
                 <div className="position-absolute present" style={{backgroundImage: `url(${cont.src})`}}></div>
 
-                <div className="position-relative text-white">
+                <div className="position-relative text-secondary">
                   <p>Mickaela Noin</p>
                   <p>Drumminst</p>
                   <p>I played the drum while everyone told be to play music</p>

@@ -38,7 +38,7 @@ function Navbar(){
 
   //WE don't display the name on mobile, and also change the dimentions of the icon
   return(
-    <div className="d-flex justify-content-between row mx-0 col-12 bg-danger naviga">
+    <div className="bg-primary d-flex justify-content-between row mx-0 col-12 naviga">
 
       <div className="col-2 col-md-3 d-flex justify-content-center align-items-center">
         <div style={{ height: 35, width: 35 }}>

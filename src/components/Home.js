@@ -254,6 +254,9 @@ function Home(){
   //and add The margin to the sticky columns, while also cutting up their start to compesate the margin
 
   //watch out for the padding, it can cut the image height/width 100%
+
+  //The bg-primary includes in it the transition we use for its change of color on navbar
+  //we avoid teh columns to be affected by placing teh class NOT where the heigth gets changed but in the child tags
   return(
     <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "calc(100vh - 5em)" }}>
       <Parallax pages={4.75} className="meno" id="questo">
@@ -262,25 +265,25 @@ function Home(){
         </ParallaxLayer>
 
         <ParallaxLayer  offset={0.55} style={{ backgroundColor: "#001F3F" }}>
-          <div ref={primate} className="stratos" id="primo" move="17%" color={318} >
+          <div ref={primate} className="stratos" id="primo" move="17%" color={300} >
             <Primo />
           </div>
         </ParallaxLayer>
         
         <ParallaxLayer offset={1.55} style={{ backgroundColor: " pink " }}>
-          <div ref={secondate} className="stratos" id="secondo" move="34%" color={227}>
+          <div ref={secondate} className="stratos" id="secondo" move="34%" color={210}>
             <Secondo />
           </div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={2.55} style={{ backgroundColor: " #001F3F " }}>
-          <div className="stratos" id="terzo" move="51%" color={137}>
+          <div className="stratos" id="terzo" move="51%" color={120}>
             <Terzo />
           </div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={3.55} style={{ backgroundColor: " #001F3F " }}>
-          <div className="stratos" id="quarto" move="68%" color={47}>
+          <div className="stratos" id="quarto" move="68%" color={30}>
             <Quarto />
           </div>
         </ParallaxLayer>
@@ -292,9 +295,9 @@ function Home(){
         <ParallaxLayer onScroll={vario} offset={0.30} style={{ height: 0 ,display: "inline-block"}} sticky={{ start: 0.30, end: 1.55 }}>
           <> 
             <div targetrefname="esempio"  className="position-relative d-inline-block vero primo" 
-              style={{ verticalAlign: "top", marginTop: "5em" ,overflowY: "hidden",width: "25%", backgroundColor: "brown" }}>
+              style={{ verticalAlign: "top", marginTop: "5em" ,overflowY: "hidden",width: "25%" }}>
 
-              <div className="position-relative" style={{ backgroundColor: "brown", height: "100vh" }} >
+              <div className="position-relative bg-primary" style={{ height: "100vh" }} >
 
                 <div className="position-absolute colonna1">
                 </div>
@@ -324,7 +327,7 @@ function Home(){
           <>
             <div targetrefname="esempio1" className="d-inline-block vero secondo" 
               style={{overflowY: "hidden",verticalAlign: "top", marginTop: "5em" , marginLeft: "75%", width: "25%" }}>
-              <div className="position-relative" style={{backgroundColor: "purple", height: "100vh" }}>
+              <div className="position-relative bg-primary text-secondary" style={{height: "100vh" }}>
                 <h3>Siamo stati</h3>
               </div>
             </div>
@@ -345,7 +348,7 @@ function Home(){
           <>
             <div className="d-inline-block vero terzo" 
               style={{ overflowY: "hidden", marginTop: "5em", verticalAlign: "top" ,width: "20%"}}>
-              <div className="position-relative" style={{height: "100vh", backgroundColor: "navy", color: "yellow"}}>
+              <div className="bg-primary text-secondary  position-relative" style={{height: "100vh"}}>
                 That way
               </div>
             </div>
@@ -370,7 +373,7 @@ function Home(){
           <>
             <div className="d-inline-block vero quarto" 
               style={{ marginTop: "5em" ,overflowY: "hidden" ,verticalAlign: "top" ,width: "25%", marginLeft: "75%"}}>
-              <div className="position-relative" style={{height: "55vh", backgroundColor: "darkkhaki"}}>
+              <div className="bg-primary text-white position-relative" style={{height: "55vh"}}>
                 Second way
               </div>
             </div>
