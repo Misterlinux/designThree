@@ -162,7 +162,7 @@ function Home(){
             
             //console.log( entry.boundingClientRect.top )
             if( entry.target.id == "primo" ){
-              console.log( "Pri top" + entry.boundingClientRect.top )
+              //console.log( "Pri top" + entry.boundingClientRect.top )
             }
             //entry.target.ref.current.style.height = "500px"
 
@@ -299,7 +299,7 @@ function Home(){
 
               <div className="position-relative bg-primary" style={{ height: "100vh" }} >
 
-                <div className="position-absolute colonna1">
+                <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/firstDay.jpg")` }}>
                 </div>
 
                 <div className="position-relative">
@@ -327,9 +327,14 @@ function Home(){
           <>
             <div targetrefname="esempio1" className="d-inline-block vero secondo" 
               style={{overflowY: "hidden",verticalAlign: "top", marginTop: "5em" , marginLeft: "75%", width: "25%" }}>
+
               <div className="position-relative bg-primary text-secondary" style={{height: "100vh" }}>
+                <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/dayTwo.jpg")` }}>
+                </div>
+
                 <h3>Siamo stati</h3>
               </div>
+  
             </div>
           </>
         </ParallaxLayer>
@@ -349,6 +354,9 @@ function Home(){
             <div className="d-inline-block vero terzo" 
               style={{ overflowY: "hidden", marginTop: "5em", verticalAlign: "top" ,width: "20%"}}>
               <div className="bg-primary text-secondary  position-relative" style={{height: "100vh"}}>
+                <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/thirdDay.jpg")` }}>
+                </div>
+
                 That way
               </div>
             </div>
@@ -374,6 +382,9 @@ function Home(){
             <div className="d-inline-block vero quarto" 
               style={{ marginTop: "5em" ,overflowY: "hidden" ,verticalAlign: "top" ,width: "25%", marginLeft: "75%"}}>
               <div className="bg-primary text-white position-relative" style={{height: "55vh"}}>
+                <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/fourthDay.jpg")` }}>
+                </div>
+
                 Second way
               </div>
             </div>

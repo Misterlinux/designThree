@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { useStato, useStatoset } from "../data/Context";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { useSpring, useSprings, animated, useInView} from "react-spring";
+import { useSpring, useSprings, animated, useInView, easings} from "react-spring";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
@@ -37,22 +37,35 @@ function Primo(){
       duration: 500
     }
   })
+  
+  //what differenciated the different looped animated elements its delay, 
+  //but duration is the actual single animated duration for each
 
-
+  //also for some reason the initial value of the background was set
+  //to the TO value of the ending point
+  //we prefered usingg fixed numbers instead of the variable to avoid
+  //issued when doing the + 180 complementary hue
   let [mosso, mossoApi] = useSprings(nome.length, (i)=>({
     from: {
-      backgroundColor: "#00b800"
+      //backgroundColor: `hsl( 120 , 100%, 36%)`,
+      top: 0
     },
     to: inView ? [
-      {backgroundColor: "red"},
-      {backgroundColor: "#00b800"}
+      {/*backgroundColor: `hsl( 220 , 100%, 36%)`,*/ top: 20},
+      {/*backgroundColor: `hsl( 300 , 100%, 36%)`,*/ top: -20},
+            {/*backgroundColor: `hsl( 220 , 100%, 36%)`,*/ top: 10},
+      {/*backgroundColor: `hsl( 300 , 100%, 36%)`,*/ top: -10},
+      {/*backgroundColor: `hsl( 120 , 100%, 36%)`,*/ top: 0}
     ] :
     {
-      backgroundColor: "#00b800"
+      //backgroundColor: `hsl( 120, 100%, 36%)`,
+      top: 0
     },
-    delay: i * 550,
+    delay: inView ? (i * 200) : 10,
     config: {
-      duration: 300
+      duration: inView ? 400 : 10,
+      loop: 2,
+      //easing: easings.steps(1)
     }
 
   }), [inView])
@@ -88,16 +101,17 @@ function Primo(){
               </div>
 
               <div className="singlename px-0 d-flex justify-content-center align-items-center">
-                <h1 className="text-primary bg-secondary">
+                <div className="text-primary bg-primary d-flex align-items-center">
 
                   {nome.map((cont, index)=>(
-                    <animated.span className="d-inline-block text-center" key={index}
-                      style={{width: "0.7em", height: "1em", backgroundColor: mosso[index].backgroundColor}}>
+                    <animated.h1 className="bg-secondary text-center position-relative" key={index}
+                      style={{width: "0.7em", height: "1em", top: mosso[index].top,
+                        backgroundColor: mosso[index].backgroundColor}}>
                       {cont}
-                    </animated.span>)
+                    </animated.h1>)
                   )}
 
-                </h1>
+                </div>
               </div>
             </div>
 

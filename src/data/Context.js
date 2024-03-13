@@ -8,7 +8,7 @@ let Stato = createContext(null)
 let StatoSet = createContext(null)
     
 document.documentElement.style.setProperty("--primo", "brown")
-document.documentElement.style.setProperty("--base", 318)
+document.documentElement.style.setProperty("--base", 300)
 
 export default function Task({children}){
 
@@ -35,7 +35,7 @@ export default function Task({children}){
   }
 
   const initial = { 
-    base: 120, 
+    base: 300, 
     springa: useSpringValue("17%",{ config:{ mass: 3, tension: 400, friction: 40 }} ),
     topic: ["TuneFuse"],
     galleria: galleria,
