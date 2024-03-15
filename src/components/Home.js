@@ -10,6 +10,10 @@ import Footer from "./Footer";
 
 import camera from "../imma/fotoicon.svg"
 
+import guitar from "../imma/guitar.svg"
+import { ReactComponent as Guir } from "../imma/guitar.svg"
+
+
 import { useMount } from "../data/Data";
 import {
   useResize,
@@ -257,6 +261,16 @@ function Home(){
 
   //The bg-primary includes in it the transition we use for its change of color on navbar
   //we avoid teh columns to be affected by placing teh class NOT where the heigth gets changed but in the child tags
+  
+  //about the sticky ICONS, if we use scale() to make the image bigger we lose the 
+  //d-flex center to the avaiable width/height
+
+  //WE need to study the SVG more, lets see if this website works https://svgcrop.com/
+  //try to memorize a formula to hanlder it tho
+
+  //We tried the component and the image for the SVG files but we didnt want to overlay the actual content of
+  //the parallaxLayer with teh icons, so we separated the background color to another layer AND put the icon there
+  //we cant use spoeed tho
   return(
     <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "calc(100vh - 5em)" }}>
       <Parallax pages={4.75} className="meno" id="questo">
@@ -264,26 +278,61 @@ function Home(){
           <Intro/>
         </ParallaxLayer>
 
-        <ParallaxLayer  offset={0.55} style={{ backgroundColor: "#001F3F" }}>
-          <div ref={primate} className="stratos" id="primo" move="17%" color={300} >
+        <ParallaxLayer offset={0.55} className="d-flex justify-content-center align-items-center" style={{
+          backgroundSize: "100% 100%",
+          /*backgroundRepeat: "no-repeat",
+          backgroundPosition: "45% center",
+          backgroundImage: `url(${guitar})`,
+          opacity: 1,*/
+          backgroundColor: "hsla(280, 100%, 20%, 1)",
+        }}
+        >
+          <Guir className="position-relative firstback" 
+            style={{ fill: `hsl(${stato.base}, 100%, 36%)`, 
+            height: "45vh", width: "12%" }}/>
+        </ParallaxLayer>
+
+        <ParallaxLayer  offset={0.55} style={{ /*backgroundColor: "hsla(280, 100%, 20%, 1)"*/ }}>
+          <div ref={primate} className="stratos" id="primo" move="25%" color={300} >
             <Primo />
           </div>
         </ParallaxLayer>
         
+
+        {/* we used the component version coz its simpler to handler proportions and color
+        <ParallaxLayer offset={0.95} style={{ height: 0, display: "inline-block"}}>
+          <>
+            <img src={guitar} className="position-absolute" style={{ width: "25%", right: "0%" }} />     
+          </>
+        </ParallaxLayer>
+        */}
+        
+        {/*
+        <ParallaxLayer offset={0.85} speed={0.2} style={{ height: 0, display: "inline-block"}} >
+          <>
+            <Guir className="position-absolute" 
+              style={{ fill: `hsl(${stato.base}, 100%, 36%)`, left: "calc(45vw + 30% + 15vh)", height: "40vh", width: "12%" }}/>
+          </>
+        </ParallaxLayer>
+        */}
+
+
+
         <ParallaxLayer offset={1.55} style={{ backgroundColor: " pink " }}>
-          <div ref={secondate} className="stratos" id="secondo" move="34%" color={210}>
+          <div ref={secondate} className="stratos" id="secondo" move="50%" color={210}>
             <Secondo />
           </div>
         </ParallaxLayer>
 
+
         <ParallaxLayer offset={2.55} style={{ backgroundColor: " #001F3F " }}>
-          <div className="stratos" id="terzo" move="51%" color={120}>
+          <div className="stratos" id="terzo" move="75%" color={120}>
             <Terzo />
           </div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={3.55} style={{ backgroundColor: " #001F3F " }}>
-          <div className="stratos" id="quarto" move="68%" color={30}>
+          <div className="stratos" id="quarto" move="100%" color={30}>
             <Quarto />
           </div>
         </ParallaxLayer>
@@ -299,12 +348,44 @@ function Home(){
 
               <div className="position-relative bg-primary" style={{ height: "100vh" }} >
 
-                <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/firstDay.jpg")` }}>
+                <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/dayOne.jpg")` }}>
                 </div>
 
-                <div className="position-relative">
+                <div className="position-relative d-flex flex-column justify-content-start align-items-center" 
+                  style={{ height: "100%", width: "100%" }}>
+                  
+                  <div className="d-md-block d-none">
                   <h2 className="text-center" style={{ color: "yellow" }}>First day</h2>
-                  <p>Welcome to the way</p>
+                  
+                  <div className="">
+                    <h1>Place:</h1>
+                    <h5 className="text-white">East Music Theatre</h5>
+                    <h5 className="text-white">1200 avaiable seats</h5>
+
+                    <div className="d-flex justify-content-center">
+                      <img src={`./imma/basso3.jpg`} alt="" style={{height: "20vh", width: "20vh"}} />                      
+                    </div>
+                  </div>
+
+                  <div className="">
+                    <h1>Time:</h1>
+                    <h5 className="text-white">10:00 AM</h5>
+                    <h5 className="text-white">4:30 PM</h5>
+                  </div>
+                  </div>
+
+                  <div className="d-block d-md-none text-warning pt-3 mobilefirst">
+                    <h1>F</h1>
+                    <h1>I</h1>
+                    <h1>R</h1>
+                    <h1>S</h1>
+                    <h1>T</h1>
+                    <h1> </h1>
+                    <h1>D</h1>
+                    <h1>A</h1>
+                    <h1>Y</h1>
+                  </div>
+
                 </div>
               </div>
 

@@ -26,7 +26,7 @@ $base: 300;
 
 #bootlock .bg-primary{
   background-color: hsl(var(--base, $base), 100%, 36%);
-  transition: 1s;
+  /*transition: 1s;*/
 }
 
 #bootlock .text-secondary{
@@ -46,7 +46,7 @@ $base: 300;
 #bootlock .barra{
   position: absolute;
   bottom: 0;
-  border-bottom: 3px solid hsl(var(--base, $base), 100%, 35%);
+  border-bottom: 3px solid hsl( calc( var(--base) + 180 ) , 100%, 70%);
   width: 17%;
 }
 

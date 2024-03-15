@@ -48,7 +48,7 @@ function Navbar(){
         <h1 className="px-1 d-none d-md-flex">Tunefuse</h1>
       </div>
 
-      <div className="d-none d-sm-flex col-sm-6 row">
+      <div className="d-none d-sm-flex col-sm-6 row position-relative">
         <nav className="col-3 nav-item primo d-flex justify-content-center align-items-center">
           <h4> Singer </h4>
         </nav>
@@ -66,7 +66,7 @@ function Navbar(){
         </animated.div>
       </div>
 
-      <div className="d-flex d-sm-none row col-8">
+      <div className="d-flex d-sm-none row col-8 position-relative">
         {navigate((style, item)=> (
           <div className="d-flex justify-content-center align-items-center" style={{overflow: "hidden"}}>
             <animated.p className="text-white" style={style}>

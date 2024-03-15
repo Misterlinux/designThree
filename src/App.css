@@ -20,6 +20,14 @@
 }
 
 /* Primo.js */
+.firstback{
+  top: -10%;
+  left: 38vw;
+}
+
+#bootlock .unofirst{
+  margin-left: 30%;
+}
 
 .barraintro{
   margin-left: 0%;
@@ -32,10 +40,20 @@
   padding-left: 5%;
 }
 
+/* single was 10vh */
+
+.mobilefirst h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8em;
+  height: 2em;
+}
+
 .single{
   height: 45vh;
   width: 45vh;
-  margin-top: 10vh;
+  margin-top: 12vh;
 }
 
 .singlepresent{
@@ -55,10 +73,10 @@
 }
 
 .singletext{
-  width: 56vw;
+  width: 45vw;
   z-index: 5;
   top: 70%;
-  left: 38%;
+  left: 60%;
 }
 
 
@@ -231,9 +249,17 @@
   }
 
   /* Primo.js */
+  .firstback{
+    top: 20%;
+    left: 0vw;
+  }
+
+  #bootlock .unofirst{
+    margin-left: 28%;
+  }
 
   .barraintro{
-    margin-left: -11%;
+    margin-left: -18%;
     top: -5vh;
     width: 70%;
     height: 8vh;

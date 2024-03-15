@@ -36,7 +36,7 @@ export default function Task({children}){
 
   const initial = { 
     base: 300, 
-    springa: useSpringValue("17%",{ config:{ mass: 3, tension: 400, friction: 40 }} ),
+    springa: useSpringValue("25%",{ config:{ mass: 3, tension: 400, friction: 40 }} ),
     topic: ["TuneFuse"],
     galleria: galleria,
     band: band,
