@@ -2,7 +2,7 @@ import { useReducer, useContext, createContext} from 'react';
 import { animated, useTransition, useScroll, useSpringValue} from '@react-spring/web'
 import { micro } from './Data';
 import { passo } from '../components/Home';
-import { galleria, band } from './Data';
+import { galleria, band, duo } from './Data';
 
 let Stato = createContext(null)
 let StatoSet = createContext(null)
@@ -41,7 +41,8 @@ export default function Task({children}){
     galleria: galleria,
     band: band,
 
-    barre: [100, 200]
+    barre: [50, 200],
+    duo: duo
   }
 
   const [instate, dispatch] = useReducer(reducer, initial);

@@ -10,6 +10,11 @@ import basso1 from "../imma/basso1.jpg"
 import basso2 from "../imma/basso2.jpg"
 import basso3 from "../imma/basso3.jpg"
 
+import duo1 from "../imma/duo1.jpg"
+import duo2 from "../imma/duo2.jpg"
+
+import { faMusic } from "@fortawesome/free-solid-svg-icons";
+
 export let galleria = [
   {
     src: team,
@@ -60,6 +65,47 @@ export let band = [
   }
 ]
 
+/* 
+-backgroundImage
+-icon on desc
+-nome + mini descrizione
+- descript
+- loading bar (%)
+- vies and albums sold
+
+*/
+
+export let duo = [
+  {
+    name: "Lily Rivers",
+    icon: faMusic,
+    photo: duo1,
+    role: "A vocational vocalist",
+    desc: [
+    `She mesmerizes audiences with her soulful 
+    delivery and captivating stage presence.`,
+    `Lily Rivers captivates with folk-inspired melodies and 
+    emotive lyricism. Experience her acoustic mastery and 
+    heartfelt storytelling at the festival.`],
+    views: ["1.750.000", 70],
+    albums: [6, 30],
+  },    
+  {
+    name: "Max Hayes",
+    icon: faMusic,
+    photo: duo2,
+    role: "The IN-strumentalist",
+    desc: [`Max's fingers weave intricate melodies 
+    that stir the soul and ignite the imagination.`,
+    `Max mesmerizes with soulful guitar riffs 
+    and intricate piano melodies. Prepare for a 
+    performance filled with passion and depth at 
+    the festival.`
+    ],
+    views: ["900.000", 40],
+    albums: [10, 55],
+  }
+]
 
 
 

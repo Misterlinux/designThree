@@ -325,7 +325,7 @@ function Home(){
         </ParallaxLayer>
 
 
-        <ParallaxLayer offset={2.55} style={{ backgroundColor: " #001F3F " }}>
+        <ParallaxLayer offset={2.55} style={{ backgroundColor: `hsla(${stato.base + 20}, 100%, 20%, 1)` }}>
           <div className="stratos" id="terzo" move="75%" color={120}>
             <Terzo />
           </div>
@@ -347,31 +347,33 @@ function Home(){
               style={{ verticalAlign: "top", marginTop: "5em" ,overflowY: "hidden",width: "25%" }}>
 
               <div className="position-relative bg-primary" style={{ height: "100vh" }} >
-
                 <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/dayOne.jpg")` }}>
                 </div>
 
                 <div className="position-relative d-flex flex-column justify-content-start align-items-center" 
                   style={{ height: "100%", width: "100%" }}>
                   
-                  <div className="d-md-block d-none">
-                  <h2 className="text-center" style={{ color: "yellow" }}>First day</h2>
-                  
-                  <div className="">
-                    <h1>Place:</h1>
-                    <h5 className="text-white">East Music Theatre</h5>
-                    <h5 className="text-white">1200 avaiable seats</h5>
-
-                    <div className="d-flex justify-content-center">
-                      <img src={`./imma/basso3.jpg`} alt="" style={{height: "20vh", width: "20vh"}} />                      
+                  <div className="d-none d-md-flex flex-column pt-4 justify-content-around" style={{height: "80%"}}>
+                    <h2 className="text-center text-secondary bg-primary p-2" style={{fontSize: "3.5em" }}>
+                      First day
+                    </h2>
+                    
+                    <div className="text-white">
+                      <h3 className="text-secondary">Place:</h3>
+                      <h5 className="ps-2">East Music Theatre</h5>
+                      <h5 className="ps-2">1200 avaiable seats</h5>
                     </div>
-                  </div>
 
-                  <div className="">
-                    <h1>Time:</h1>
-                    <h5 className="text-white">10:00 AM</h5>
-                    <h5 className="text-white">4:30 PM</h5>
-                  </div>
+                    <div className="text-white">
+                      <h3 className="text-secondary">Time:</h3>
+                      <h5 className="ps-2">10:00 AM</h5>
+                      <h5 className="ps-2">4:30 PM</h5>
+                    </div>
+
+                    <div className="d-flex justify-content-start py-3">
+                      <img src={`./imma/building.jpg`} alt="" className="border border-2 border-primary"
+                        style={{height: "20vh", width: "20vh", borderRadius: "30%"}} />                      
+                    </div>
                   </div>
 
                   <div className="d-block d-md-none text-warning pt-3 mobilefirst">
@@ -397,7 +399,7 @@ function Home(){
           <>
             <div className="d-inline-block" style={{verticalAlign: "top", marginTop: "5em", marginLeft: "25%" ,width: "50%" }}>
               <div className="d-flex justify-content-center align-items-center position-relative" 
-              style={{backgroundColor: "lightblue", height: "calc(20vh - 5em)" }}>
+                style={{backgroundColor: "lightblue", height: "calc(20vh - 5em)" }}>
                 <h3> Band </h3>
               </div>
             </div>
@@ -434,11 +436,49 @@ function Home(){
           <>
             <div className="d-inline-block vero terzo" 
               style={{ overflowY: "hidden", marginTop: "5em", verticalAlign: "top" ,width: "20%"}}>
-              <div className="bg-primary text-secondary  position-relative" style={{height: "100vh"}}>
+              <div className="bg-primary text-secondary position-relative" style={{height: "100vh"}}>
                 <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/thirdDay.jpg")` }}>
                 </div>
 
-                That way
+                <div className="position-relative d-flex flex-column justify-content-start align-items-center" 
+                  style={{ height: "100%", width: "100%" }}>
+                  
+                  <div className="d-none d-md-flex flex-column pt-4 justify-content-around" style={{height: "80%"}}>
+                    <h2 className="text-center text-secondary bg-primary p-2 mx-auto" style={{fontSize: "3em", width: "90%" }}>
+                      Third Day
+                    </h2>
+                    
+                    <div className="text-white ps-3">
+                      <h3 className="text-secondary">Place:</h3>
+                      <h5 className="ps-2">East Music Theatre</h5>
+                      <h5 className="ps-2">1200 avaiable seats</h5>
+                    </div>
+
+                    <div className="text-white ps-3">
+                      <h3 className="text-secondary">Time:</h3>
+                      <h5 className="ps-2">10:00 AM</h5>
+                      <h5 className="ps-2">4:30 PM</h5>
+                    </div>
+
+                    <div className="d-flex justify-content-start py-3 ps-3">
+                      <img src={`./imma/building.jpg`} alt="" className="border border-2 border-primary"
+                        style={{height: "20vh", width: "20vh", borderRadius: "30%"}} />                      
+                    </div>
+                  </div>
+
+                  <div className="d-block d-md-none text-secondary pt-3 mobilefirst">
+                    <h1>T</h1>
+                    <h1>H</h1>
+                    <h1>I</h1>
+                    <h1>R</h1>
+                    <h1>D</h1>
+                    <h1> </h1>
+                    <h1>D</h1>
+                    <h1>A</h1>
+                    <h1>Y</h1>
+                  </div>
+                </div>
+
               </div>
             </div>
           </>
