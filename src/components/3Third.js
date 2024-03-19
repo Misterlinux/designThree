@@ -94,7 +94,7 @@ function Terzo(){
           translateX doesnt change the layout so won't change theother elements' 
         */}
         {/* Mobile design */}
-        {stato.duo.map((cont, index)=>( /* justify-content-end[1] */
+        {stato.duo.map((cont, index)=>(
           <div className={`row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} style={{height: "40vh"}}>
             
             <div className="position-relative d-flex d-md-none px-0" style={{top: "2%", width: "100%", height: "30vw", zIndex: 5 }}>
@@ -105,20 +105,20 @@ function Terzo(){
             or we can put the arrays elements directly on the inline*/}
             <div className="position-absolute" style={{height: "100%", width: "30vw", [["left", "right"][index%2]]: "0%" }}>
               <animated.div className="thirdImage position-absolute" 
-                style={{backgroundImage: `url(${basso})`, height: "100%", width: "30vw", [["left", "right"][index%2]]: ruolo[0].x }}>
+                style={{backgroundImage: `url(${cont.photo})`, height: "100%", width: "30vw", [["left", "right"][index%2]]: ruolo[0].x }}>
               </animated.div>
 
               <div className="d-flex justify-content-center align-items-center bg-secondary" 
                 style={{width: "30vw", height: "100%"}}>
-                <FontAwesomeIcon icon={stato.duo[index].icon} style={{fontSize: "3em"}}/>
+                <FontAwesomeIcon icon={cont.icon} style={{fontSize: "3em"}}/>
               </div>
             </div>
 
             <div className={`bg-primary position-absolute text-white text-center d-flex flex-column justify-content-center align-items-center`}
               style={{height: "100%", width: "45vw", [["right", "left"][index%2]]: "0%"}}>
-              <h3 className="ps-1"> {stato.duo[index].name} </h3>
-              <p> {stato.duo[index].role}
-                <FontAwesomeIcon className="ps-1" icon={stato.duo[index].icon} />
+              <h3 className="ps-1"> {cont.name} </h3>
+              <p className="px-2"> {cont.role}
+                <FontAwesomeIcon className="ps-1" icon={cont.icon} />
               </p>
             </div>
 
@@ -127,11 +127,11 @@ function Terzo(){
           {/* actual text container*/}
           <div className="thirdPresent col-10 bg-primary text-white position-absolute px-2" style={{ [["right", "left"][index%2]]: "0%" /*right: "0%"*/ }}>
  
-            <p> {stato.duo[index].desc[0]} </p>
+            <p style={{fontSize: "0.8em"}}> {cont.desc[0]} </p>
 
-            <div className="d-flex flex-column mt-2">
+            <div className="d-flex flex-column mt-0 mt-md-2 ">
 
-            <p className="fw-bold">Global views: {stato.duo[index].views[0]}</p>
+            <p className="fw-bold"> Global views: {cont.views[0]} </p>
             <div className="position-relative" style={{height: 26, width: "100%"}}>
             <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
               <animated.div style={{height: "100%", width: "100%",
@@ -152,7 +152,7 @@ function Terzo(){
               </animated.div>
             </div>
 
-            <p className="fw-bold"> TESTi Albums sold: {stato.duo[index].albums[0]}</p>
+            <p className="fw-bold">Albums sold: {cont.albums[0]}</p>
             <div className="position-relative" style={{height: 26, width: "100%"}}>
             <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].albums}}>
               <animated.div style={{height: "100%", width: "100%",
@@ -195,18 +195,18 @@ function Terzo(){
           className={`position-absolute bg-primary text-white ${index%2 ? "d-flex" : "d-flex" } d-flex flex-column justify-content-around align-items-start`}>
           
           <div>
-            <h3>{stato.duo[index].name}</h3>
-            <p> {stato.duo[index].role} 
-              <FontAwesomeIcon className="ps-1" icon={stato.duo[index].icon} />
+            <h3>{cont.name}</h3>
+            <p> {cont.role} 
+              <FontAwesomeIcon className="ps-1" icon={cont.icon} />
             </p>
           </div>
 
-          <p className="pe-4"> {stato.duo[index].desc[1]} </p>
+          <p className="pe-4"> {cont.desc[1]} </p>
           
           <div className="d-flex row mx-0 col-12">
 
           <div className="col-6 px-0">
-          <p className="fw-bold"> TEST Global views: {stato.duo[index].views[0]} </p>
+          <p className="fw-bold"> TEST Global views: {cont.views[0]} </p>
           <div className="position-relative" style={{height: 26, width: "100%"}}>
           <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
             <animated.div style={{height: "100%", width: "100%",
@@ -230,7 +230,7 @@ function Terzo(){
           </div>
 
           <div className="col-6 px-0">
-          <p className="fw-bold"> TEST Global albums: {stato.duo[index].albums[0]} </p>
+          <p className="fw-bold"> TEST Global albums: {cont.albums[0]} </p>
           <div className="position-relative" style={{height: 26, width: "100%"}}>
           <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].albums}}>
             <animated.div style={{height: "100%", width: "100%",

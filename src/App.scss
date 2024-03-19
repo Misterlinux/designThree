@@ -20,6 +20,10 @@ The order will be red/blue/green/yellow
 
 $base: 300;
 
+#bootlock .bg-main{
+  background-color: hsl(calc( var(--base) + 20 ), 100%, 20%);
+}
+
 #bootlock .text-primary{
   color: hsl(var(--base, $base), 100%, 25%);
 }

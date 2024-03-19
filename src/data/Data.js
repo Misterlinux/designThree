@@ -13,7 +13,7 @@ import basso3 from "../imma/basso3.jpg"
 import duo1 from "../imma/duo1.jpg"
 import duo2 from "../imma/duo2.jpg"
 
-import { faMusic } from "@fortawesome/free-solid-svg-icons";
+import { faMusic, faGuitar } from "@fortawesome/free-solid-svg-icons";
 
 export let galleria = [
   {
@@ -92,7 +92,7 @@ export let duo = [
   },    
   {
     name: "Max Hayes",
-    icon: faMusic,
+    icon: faGuitar,
     photo: duo2,
     role: "The IN-strumentalist",
     desc: [`Max's fingers weave intricate melodies 

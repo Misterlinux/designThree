@@ -271,6 +271,9 @@ function Home(){
   //We tried the component and the image for the SVG files but we didnt want to overlay the actual content of
   //the parallaxLayer with teh icons, so we separated the background color to another layer AND put the icon there
   //we cant use spoeed tho
+
+  //APPARENTLY WE cant use stato.base directly in this file to stile the elements, only in the other files
+  //
   return(
     <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "calc(100vh - 5em)" }}>
       <Parallax pages={4.75} className="meno" id="questo">
@@ -292,7 +295,7 @@ function Home(){
             height: "45vh", width: "12%" }}/>
         </ParallaxLayer>
 
-        <ParallaxLayer  offset={0.55} style={{ /*backgroundColor: "hsla(280, 100%, 20%, 1)"*/ }}>
+        <ParallaxLayer  offset={0.55} style={{ backgroundColor: `hsla(${parseInt(stato.base) + 20}, 100%, 20%, 1)` }}>
           <div ref={primate} className="stratos" id="primo" move="25%" color={300} >
             <Primo />
           </div>
@@ -318,20 +321,19 @@ function Home(){
 
 
 
-        <ParallaxLayer offset={1.55} style={{ backgroundColor: " pink " }}>
+        <ParallaxLayer offset={1.55} style={{ backgroundColor: `hsla(${parseInt(stato.base) + 20}, 100%, 20%, 1)` }}>
           <div ref={secondate} className="stratos" id="secondo" move="50%" color={210}>
             <Secondo />
           </div>
         </ParallaxLayer>
 
-
-        <ParallaxLayer offset={2.55} style={{ backgroundColor: `hsla(${stato.base + 20}, 100%, 20%, 1)` }}>
+        <ParallaxLayer offset={2.55} style={{ backgroundColor: `hsla(${parseInt(stato.base) + 20}, 100%, 20%, 1)` }}>
           <div className="stratos" id="terzo" move="75%" color={120}>
             <Terzo />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.55} style={{ backgroundColor: " #001F3F " }}>
+        <ParallaxLayer offset={3.55} style={{ backgroundColor: `hsla(${parseInt(stato.base) + 20}, 100%, 20%, 1)` }}>
           <div className="stratos" id="quarto" move="100%" color={30}>
             <Quarto />
           </div>
@@ -498,11 +500,11 @@ function Home(){
         >
         </ParallaxLayer>
 
-        <ParallaxLayer className="d-none d-md-inline-block" offset={3.43} style={{height: 0 }} sticky={{start: 3.43,end: 4.55}}>
+        <ParallaxLayer className="d-none d-md-inline-block" offset={3.41} style={{height: 0 }} sticky={{start: 3.41,end: 3.70}}>
           <>
             <div className="d-inline-block vero quarto" 
               style={{ marginTop: "5em" ,overflowY: "hidden" ,verticalAlign: "top" ,width: "25%", marginLeft: "75%"}}>
-              <div className="bg-primary text-white position-relative" style={{height: "55vh"}}>
+              <div className="bg-primary text-white position-relative" style={{height: "100vh"}}>
                 <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/fourthDay.jpg")` }}>
                 </div>
 
