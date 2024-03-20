@@ -329,7 +329,7 @@ function Home(){
         </ParallaxLayer>
 
         <ParallaxLayer offset={2.55} className="bg-main">
-          <div className="stratos" id="terzo" move="75%" color={120}>
+          <div className="stratos" id="terzo" move="75%" color={120} style={{ height: "100vh" }}>
             <Terzo />
           </div>
         </ParallaxLayer>
