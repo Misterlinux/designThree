@@ -38,7 +38,7 @@ function Quarto(){
 
   return(
     <div ref={cart}>
-      <div className="text-center text-secondary" style={{paddingTop: "4em", backgroundColor: `hsla(calc(${parseInt(stato.base) + 20}), 100%, 20%, 1)`}}>
+      <div className="text-center text-secondary" style={{paddingTop: "4em"}}>
         <h3>The organitation {stato.base} </h3>
       </div>
 

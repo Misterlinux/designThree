@@ -334,7 +334,7 @@ function Home(){
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.55} className="bg-main">
+        <ParallaxLayer offset={3.55} className="bg-danger">
           <div className="stratos" id="quarto" move="100%" color={30}>
             <Quarto />
           </div>
