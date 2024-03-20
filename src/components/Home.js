@@ -275,6 +275,9 @@ function Home(){
   //APPARENTLY WE cant use stato.base directly in this file to stile the elements, only in the other files
   //no, the problem is that any useReducer data even if numbers, will be converted to string when
   //trying to use it on the DOM, we first need to style={parsetInt(stato.base)}
+  
+  //Lets try to avoid the browser UI (navbar) from cutting away the height of our design
+  //
   return(
     <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "calc(100vh - 5em)" }}>
       <Parallax pages={4.75} className="meno" id="questo">
