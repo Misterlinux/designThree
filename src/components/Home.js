@@ -400,8 +400,8 @@ function Home(){
         <ParallaxLayer offset={1.37} style={{height: 0, display: "inline-block"}} sticky={{start: 1.37, end: 1.37 }}>
           <>
             <div className="d-inline-block" style={{verticalAlign: "top", marginTop: "5em", marginLeft: "25%" ,width: "55%" }}>
-              <div className="d-flex justify-content-center align-items-center position-relative" 
-                style={{backgroundColor: "lightblue", height: "calc(20vh - 5em)" }}>
+              <div className="cent-flex position-relative middlecol" 
+                style={{backgroundColor: "lightblue" }}>
                 <h3> Band </h3>
               </div>
             </div>

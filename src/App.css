@@ -19,6 +19,9 @@
   align-items: center;
 }
 
+.middlecol{
+  height: calc(20vh - 5em)
+}
 
 /* intro */
 
@@ -256,6 +259,12 @@
 
 
 @media only screen and (max-width: 576px){
+  
+  /* --- */
+  .middlecol{
+    height: calc(18vh - 5em)
+  }
+  
 
   /*quarto */
   .quartotest{
