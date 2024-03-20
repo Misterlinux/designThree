@@ -98,7 +98,7 @@ function Terzo(){
         */}
         {/* Mobile design */}
         {stato.duo.map((cont, index)=>(
-          <div className={`row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} style={{height: "40vh"}}>
+          <div className={`row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} style={{height: "40dvh"}}>
             
             <div className="position-relative d-flex d-md-none px-0" style={{top: "2%", width: "100%", height: "25vw", zIndex: 5 }}>
 
