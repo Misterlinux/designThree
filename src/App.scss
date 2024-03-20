@@ -24,6 +24,10 @@ $base: 300;
   background-color: hsl(calc( var(--base) + 20 ), 100%, 20%);
 }
 
+#bootlock .border-primary{
+  border-color: hsl(var(--base, $base), 100%, 25%);
+}
+
 #bootlock .text-primary{
   color: hsl(var(--base, $base), 100%, 25%);
 }

@@ -273,7 +273,8 @@ function Home(){
   //we cant use spoeed tho
 
   //APPARENTLY WE cant use stato.base directly in this file to stile the elements, only in the other files
-  //
+  //no, the problem is that any useReducer data even if numbers, will be converted to string when
+  //trying to use it on the DOM, we first need to style={parsetInt(stato.base)}
   return(
     <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "calc(100vh - 5em)" }}>
       <Parallax pages={4.75} className="meno" id="questo">
@@ -295,7 +296,7 @@ function Home(){
             height: "45vh", width: "12%" }}/>
         </ParallaxLayer>
 
-        <ParallaxLayer  offset={0.55} style={{ backgroundColor: `hsla(${parseInt(stato.base) + 20}, 100%, 20%, 1)` }}>
+        <ParallaxLayer  offset={0.55} className="bg-main">
           <div ref={primate} className="stratos" id="primo" move="25%" color={300} >
             <Primo />
           </div>
@@ -321,19 +322,19 @@ function Home(){
 
 
 
-        <ParallaxLayer offset={1.55} style={{ backgroundColor: `hsla(${parseInt(stato.base) + 20}, 100%, 20%, 1)` }}>
+        <ParallaxLayer offset={1.55} className="bg-main">
           <div ref={secondate} className="stratos" id="secondo" move="50%" color={210}>
             <Secondo />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.55} style={{ backgroundColor: `hsla(${parseInt(stato.base) + 20}, 100%, 20%, 1)` }}>
+        <ParallaxLayer offset={2.55} className="bg-main">
           <div className="stratos" id="terzo" move="75%" color={120}>
             <Terzo />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.55} style={{ backgroundColor: `hsla(${parseInt(stato.base) + 20}, 100%, 20%, 1)` }}>
+        <ParallaxLayer offset={3.55} className="bg-main">
           <div className="stratos" id="quarto" move="100%" color={30}>
             <Quarto />
           </div>
@@ -356,25 +357,24 @@ function Home(){
                   style={{ height: "100%", width: "100%" }}>
                   
                   <div className="d-none d-md-flex flex-column pt-4 justify-content-around" style={{height: "80%"}}>
-                    <h2 className="text-center text-secondary bg-primary p-2" style={{fontSize: "3.5em" }}>
+                    <h2 className="text-center text-secondary bg-primary p-2 mx-2" style={{fontSize: "3.5em" }}>
                       First day
                     </h2>
                     
-                    <div className="text-white">
+                    <div className="ps-2 text-white">
+
                       <h3 className="text-secondary">Place:</h3>
-                      <h5 className="ps-2">East Music Theatre</h5>
-                      <h5 className="ps-2">1200 avaiable seats</h5>
-                    </div>
+                        <h5 className="ps-2">East Music Theatre</h5>
+                        <h5 className="ps-2">1200 avaiable seats</h5>
 
-                    <div className="text-white">
                       <h3 className="text-secondary">Time:</h3>
-                      <h5 className="ps-2">10:00 AM</h5>
-                      <h5 className="ps-2">4:30 PM</h5>
-                    </div>
+                        <h5 className="ps-2">10:00 AM</h5>
+                        <h5 className="ps-2">4:30 PM</h5>
 
-                    <div className="d-flex justify-content-start py-3">
-                      <img src={`./imma/building.jpg`} alt="" className="border border-2 border-primary"
-                        style={{height: "20vh", width: "20vh", borderRadius: "30%"}} />                      
+                      <div className="d-flex justify-content-start py-3">
+                        <img src={`./imma/building.jpg`} alt="" className="border border-2 border-primary"
+                          style={{height: "20vh", width: "20vh", borderRadius: "30%"}} />                      
+                      </div>
                     </div>
                   </div>
 
@@ -399,7 +399,7 @@ function Home(){
 
         <ParallaxLayer offset={1.37} style={{height: 0, display: "inline-block"}} sticky={{start: 1.37, end: 1.37 }}>
           <>
-            <div className="d-inline-block" style={{verticalAlign: "top", marginTop: "5em", marginLeft: "25%" ,width: "50%" }}>
+            <div className="d-inline-block" style={{verticalAlign: "top", marginTop: "5em", marginLeft: "25%" ,width: "55%" }}>
               <div className="d-flex justify-content-center align-items-center position-relative" 
                 style={{backgroundColor: "lightblue", height: "calc(20vh - 5em)" }}>
                 <h3> Band </h3>
@@ -411,13 +411,52 @@ function Home(){
         <ParallaxLayer offset={1.37} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.37, end: 2.55}}>
           <>
             <div targetrefname="esempio1" className="d-inline-block vero secondo" 
-              style={{overflowY: "hidden",verticalAlign: "top", marginTop: "5em" , marginLeft: "75%", width: "25%" }}>
+              style={{overflowY: "hidden",verticalAlign: "top", marginTop: "5em" , marginLeft: "80%", width: "20%" }}>
 
               <div className="position-relative bg-primary text-secondary" style={{height: "100vh" }}>
                 <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/dayTwo.jpg")` }}>
                 </div>
 
-                <h3>Siamo stati</h3>
+
+                <div className="position-relative d-flex flex-column justify-content-start align-items-center" 
+                  style={{ height: "100%", width: "100%" }}>
+                  
+                  <div className="d-none d-md-flex flex-column pt-4 " style={{height: "80%"}}>
+                    <h2 className="text-center text-secondary bg-primary p-2 mx-auto" style={{fontSize: "3em", width: "90%" }}>
+                      Second Day
+                    </h2>
+                    
+                    <div className="text-white ps-3">
+
+                      <h3 className="text-secondary">Place:</h3>
+                        <h5 className="ps-2">Central Music park</h5>
+                        <h5 className="ps-2">1600 avaiable seats</h5>
+
+                      <h3 className="text-secondary">Time:</h3>
+                        <h5 className="ps-2">12:00 AM</h5>
+                        <h5 className="ps-2">8:30 PM</h5>
+
+                      <div className="d-flex justify-content-start py-3">
+                        <img src={`./imma/building.jpg`} alt="" className="border border-2 border-primary"
+                          style={{height: "20vh", width: "20vh", borderRadius: "30%"}} />                      
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="d-block d-md-none text-secondary pt-3 mobilefirst">
+                    <h1>S</h1>
+                    <h1>E</h1>
+                    <h1>C</h1>
+                    <h1>O</h1>
+                    <h1>N</h1>
+                    <h1>D</h1>
+                    <h1> </h1>
+                    <h1>D</h1>
+                    <h1>A</h1>
+                    <h1>Y</h1>
+                  </div>
+                </div>
+
               </div>
   
             </div>
@@ -426,7 +465,7 @@ function Home(){
 
         <ParallaxLayer offset={2.41} style={{height: 0, display: "inline-block"}} sticky={{start: 2.41, end: 2.41}}>
           <>
-            <div className="d-inline-block" style={{marginTop: "5em", marginLeft: "20%", width: "55%"}}>
+            <div className="d-inline-block" style={{marginTop: "5em", marginLeft: "20%", width: "60%"}}>
               <div style={{backgroundColor: "green", height: "calc(20vh - 5em"}}>
                 The Duo
               </div>
@@ -445,27 +484,28 @@ function Home(){
                 <div className="position-relative d-flex flex-column justify-content-start align-items-center" 
                   style={{ height: "100%", width: "100%" }}>
                   
-                  <div className="d-none d-md-flex flex-column pt-4 justify-content-around" style={{height: "80%"}}>
+                  <div className="d-none d-md-flex flex-column pt-4" style={{height: "80%"}}>
                     <h2 className="text-center text-secondary bg-primary p-2 mx-auto" style={{fontSize: "3em", width: "90%" }}>
                       Third Day
                     </h2>
                     
                     <div className="text-white ps-3">
+
                       <h3 className="text-secondary">Place:</h3>
-                      <h5 className="ps-2">East Music Theatre</h5>
-                      <h5 className="ps-2">1200 avaiable seats</h5>
-                    </div>
+                        <h5 className="ps-2">West Sound Studio</h5>
+                        <h5 className="ps-2">800 avaiable seats</h5>
 
-                    <div className="text-white ps-3">
                       <h3 className="text-secondary">Time:</h3>
-                      <h5 className="ps-2">10:00 AM</h5>
-                      <h5 className="ps-2">4:30 PM</h5>
+                        <h5 className="ps-2">7:30 AM</h5>
+                        <h5 className="ps-2">1:15 PM</h5>
+                        <h5 className="ps-2">7:30 PM</h5>
+
+                      <div className="d-flex justify-content-start py-3 ps-3">
+                        <img src={`./imma/building.jpg`} alt="" className="border border-2 border-primary"
+                          style={{height: "20vh", width: "20vh", borderRadius: "30%"}} />                      
+                      </div>
                     </div>
 
-                    <div className="d-flex justify-content-start py-3 ps-3">
-                      <img src={`./imma/building.jpg`} alt="" className="border border-2 border-primary"
-                        style={{height: "20vh", width: "20vh", borderRadius: "30%"}} />                      
-                    </div>
                   </div>
 
                   <div className="d-block d-md-none text-secondary pt-3 mobilefirst">
@@ -503,12 +543,52 @@ function Home(){
         <ParallaxLayer className="d-none d-md-inline-block" offset={3.41} style={{height: 0 }} sticky={{start: 3.41,end: 3.70}}>
           <>
             <div className="d-inline-block vero quarto" 
-              style={{ marginTop: "5em" ,overflowY: "hidden" ,verticalAlign: "top" ,width: "25%", marginLeft: "75%"}}>
+              style={{ marginTop: "5em" ,overflowY: "hidden" ,verticalAlign: "top" ,width: "20%", marginLeft: "80%"}}>
               <div className="bg-primary text-white position-relative" style={{height: "100vh"}}>
                 <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/fourthDay.jpg")` }}>
                 </div>
 
-                Second way
+                <div className="position-relative d-flex flex-column justify-content-start align-items-center" 
+                  style={{ height: "100%", width: "100%" }}>
+                  
+                  <div className="d-none d-md-flex flex-column pt-4" style={{height: "80%"}}>
+                    <h2 className="text-center text-secondary bg-primary p-2 mx-auto" style={{fontSize: "3em", width: "90%" }}>
+                      Fourth Day
+                    </h2>
+                    
+                    <div className="text-white ps-3">
+
+                      <h3 className="text-secondary">Place:</h3>
+                        <h5 className="ps-2">West Sound Studio</h5>
+                        <h5 className="ps-2">800 avaiable seats</h5>
+
+                      <h3 className="text-secondary">Time:</h3>
+                        <h5 className="ps-2">7:30 AM</h5>
+                        <h5 className="ps-2">1:15 PM</h5>
+                        <h5 className="ps-2">7:30 PM</h5>
+
+                      <div className="d-flex justify-content-start py-3 ps-3">
+                        <img src={`./imma/building.jpg`} alt="" className="border border-2 border-primary"
+                          style={{height: "20vh", width: "20vh", borderRadius: "30%"}} />                      
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div className="d-block d-md-none text-secondary pt-3 mobilefirst">
+                    <h1>F</h1>
+                    <h1>O</h1>
+                    <h1>U</h1>
+                    <h1>R</h1>
+                    <h1>T</h1>
+                    <h1>H</h1>
+                    <h1> </h1>
+                    <h1>D</h1>
+                    <h1>A</h1>
+                    <h1>Y</h1>
+                  </div>
+                </div>
+
               </div>
             </div>
           </>

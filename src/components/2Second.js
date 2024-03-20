@@ -3,6 +3,9 @@ import { useStato, useStatoset } from "../data/Context";
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { animated, useSprings, to as interpolate, useTrail, useResize} from '@react-spring/web'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandsClapping } from "@fortawesome/free-solid-svg-icons";
+
 import basso from "../imma/basso.jpg"
 
 function Secondo(){
@@ -35,9 +38,9 @@ function Secondo(){
   function axis(x){
 
     if( piccolo.current ){
-      return {x: ((x%2)) ? "38vw" : "0vw" }
+      return {x: ((x%2)) ? "50%" : "0%" }
     }else{
-      return {x: 18 * (3-x)  + "vw"}
+      return {x: 25 * (3-x)  + "%"}
     }
   }
 
@@ -72,11 +75,11 @@ function Secondo(){
   let [pre, preApi] = useSprings(4, i => {{
     
     return {
-    from: {
-      x: "0vw" ,
-    },
-    to: reve ? axis(i) : "0vw",
-    delay: 500 * i,
+      from: {
+        x: "0%" ,
+      },
+      to: reve ? axis(i) : "0%",
+      delay: 500 * i,
     }
   } }, [reve])
 
@@ -93,22 +96,27 @@ function Secondo(){
   return(
     <div style={{height: "100vh"}} ref={tutto}>
 
-      <div style={{paddingTop: "3vh", width: "75%"}}>
-        <h1>The Beatniks</h1>
-        <p className="px-1">
-          They tour the nation with their soulful blend 
-          of blues and rock, driven by a passionate tight-knit group of musicians.
-        </p>
+      <div className="flex-column cent-flex pt-md-4" style={{width: "80%"}}>
+        <div className="secondTitle" >
+          <h1 className="text-secondary text-center p-1">
+            The Beatniks <FontAwesomeIcon className="px-1" icon={faHandsClapping} />
+          </h1>
+          <p className="p-1 p-md-2 text-white bg-secondary">
+            They tour the nation with their soulful blend 
+            of blues and rock, driven by a passionate tight-knit group of musicians.
+          </p>
+        </div>
       </div>
 
-      <div className="pt-2" style={{width: "72%"}}>
+      <div className="pt-2 pt-md-2" style={{width: "80%"}}>
         <div className="row col-12 mx-0 position-relative">
             
           {stato.band.map((cont, index)=> (
             
             <animated.div className="col-6 col-md-3 position-absolute carta" key={index}
               style={{
-                x: pre[piccolo.current ? index : (stato.band.length-1)-index].x, 
+                //x: pre[piccolo.current ? index : (stato.band.length-1)-index].x, 
+                left: pre[piccolo.current ? index : (stato.band.length-1)-index].x,
                 marginTop: cont.marginTop[piccolo.current ? 1 : 0]  
               }}>
               <div className="bg-primary position-relative" style={{height: "100%", width: "100%"}}>

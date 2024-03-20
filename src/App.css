@@ -86,8 +86,6 @@
   left: 60%;
 }
 
-
-
 /**/
 
 .naviga{
@@ -104,6 +102,15 @@
 
 
 /* secondo */
+.secondTitle{
+  width: 80%;
+  height: 8em;
+}
+
+.secondTitle > p{
+  font-size: 1.15em;
+}
+
 .present{
   height: 100%;
   width: 100%;
@@ -291,6 +298,16 @@
     width: 64vw;
     top: 82%;
     left: 6%;
+  }
+
+  /* Secondo.js */
+  .secondTitle{
+    width: 95%;
+    height: 9em;
+  }
+
+  .secondTitle > p{
+    font-size: 1em;
   }
 
   /* Terzo.js */
