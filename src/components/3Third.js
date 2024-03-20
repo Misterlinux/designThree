@@ -76,10 +76,13 @@ function Terzo(){
   return(   
     <div style={{marginLeft: "22%", height: "100vh"}} ref={terzo}>
 
-      <div className="text-secondary" style={{paddingTop: "5vh", height: "15%"}}>
-        <h1>This is the duo</h1>
+      <div className="text-secondary flex-column cent-flex" style={{paddingTop: "5vh", height: "15%"}}>
+        <h1 className="text-secondary"> HarmoNavs </h1>
+        <div className="p-1 p-md-2 text-white bg-secondary">
+          <p><b>Place</b> : East Theatre/ 1200 avaiable seats</p>
+          <p><b>Hour</b>: 10:00 PM/ 4:30 PM</p>
+        </div>
       </div>
-
 
       <div className="d-flex d-md-none cent-flex row mx-0 px-2 col-12"
         style={{height: "85%"}}>
@@ -97,19 +100,19 @@ function Terzo(){
         {stato.duo.map((cont, index)=>(
           <div className={`row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} style={{height: "40vh"}}>
             
-            <div className="position-relative d-flex d-md-none px-0" style={{top: "2%", width: "100%", height: "30vw", zIndex: 5 }}>
+            <div className="position-relative d-flex d-md-none px-0" style={{top: "2%", width: "100%", height: "25vw", zIndex: 5 }}>
 
             {/* we can variable interpèolation for property names, only values
             so we use an array 
             so we store the property names in the array and use it with index as index while keeping the animated string value fixed
             or we can put the arrays elements directly on the inline*/}
-            <div className="position-absolute" style={{height: "100%", width: "30vw", [["left", "right"][index%2]]: "0%" }}>
+            <div className="position-absolute" style={{height: "100%", width: "25vw", [["left", "right"][index%2]]: "0%" }}>
               <animated.div className="thirdImage position-absolute" 
-                style={{backgroundImage: `url(${cont.photo})`, height: "100%", width: "30vw", [["left", "right"][index%2]]: ruolo[0].x }}>
+                style={{backgroundImage: `url(${cont.photo})`, height: "100%", width: "25vw", [["left", "right"][index%2]]: ruolo[0].x }}>
               </animated.div>
 
               <div className="d-flex justify-content-center align-items-center bg-secondary" 
-                style={{width: "30vw", height: "100%"}}>
+                style={{width: "25vw", height: "100%"}}>
                 <FontAwesomeIcon icon={cont.icon} style={{fontSize: "3em"}}/>
               </div>
             </div>

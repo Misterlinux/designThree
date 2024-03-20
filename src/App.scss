@@ -16,13 +16,16 @@ The order will be red/blue/green/yellow
 */
 
 
-
-
 $base: 300;
 
 #bootlock .bg-main{
   background-color: hsl(calc( var(--base) + 20 ), 100%, 20%);
 }
+
+#bootlock .bg-main-second{
+  background-color: hsl(calc( var(--base) + 200 ), 100%, 70%);
+}
+
 
 #bootlock .border-primary{
   border-color: hsl(var(--base, $base), 100%, 25%);

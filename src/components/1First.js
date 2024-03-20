@@ -117,7 +117,7 @@ function Primo(){
                 <div className="text-secondary d-flex align-items-center">
 
                   {nome.map((cont, index)=>(
-                    <animated.h1 className="text-center position-relative pb-1" key={index}
+                    <animated.h1 className="cent-flex position-relative pb-1" key={index}
                       style={{width: "0.7em", height: "1em", top: mosso[index].top,
                         }}>
                       {cont}
@@ -128,18 +128,17 @@ function Primo(){
               </div>
             </div>
 
-            <div className="p-3 bg-secondary text-white">
+            <div className="p-2 p-md-3 bg-secondary text-white">
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                 Aliquam voluptatibus repellendus reprehenderit quaerat 
                 consequuntur molestias culpa, ipsa tempora, accusantium qui 
-                voluptas possimus aspernatur rem pariatur eligendi non blanditiis, assumenda ad?
+                voluptas possimus aspernatur rem pariatur eligendi.
               </p>
               
               <div className="d-block d-md-none pt-3">
-                <p>Place: East Theatre/ 1200 avaiable seats</p>
-
-                <p>Hour: 10:00 PM/ 4:30 PM</p>
+                <p><b>Place</b> : East Theatre/ 1200 avaiable seats</p>
+                <p><b>Hour</b>: 10:00 PM/ 4:30 PM</p>
               </div>
             </div>
 
