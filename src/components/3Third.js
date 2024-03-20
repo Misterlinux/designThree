@@ -74,10 +74,10 @@ function Terzo(){
   //so if its forst on teh container it will overlay with teh next (that wont change due to it)
   //and if placed below it will start from the end of the previous, without overlaying
   return(   
-    <div style={{marginLeft: "22%", height: "100vh"}} ref={terzo}>
+    <div style={{marginLeft: "22%", height: "100dvh"}} ref={terzo}>
 
       <div className="text-secondary flex-column cent-flex" style={{paddingTop: "5vh", height: "15%"}}>
-        <h1 className="text-secondary"> HarmoNavs </h1>
+        <h1 className="text-secondary"> HarmoNavs 11 </h1>
         <div className="p-1 p-md-2 text-white bg-secondary">
           <p><b>Place</b> : East Theatre/ 1200 avaiable seats</p>
           <p><b>Hour</b>: 10:00 PM/ 4:30 PM</p>
