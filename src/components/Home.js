@@ -279,7 +279,7 @@ function Home(){
   //Lets try to avoid the browser UI (navbar) from cutting away the height of our design
   //
   return(
-    <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "calc(100vh - 5em)" }}>
+    <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "calc(100vh)" }}>
       <Parallax pages={4.75} className="meno" id="questo">
         <ParallaxLayer  offset={0}>
           <Intro/>
