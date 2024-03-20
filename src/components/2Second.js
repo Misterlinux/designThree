@@ -97,7 +97,7 @@ function Secondo(){
     <div style={{height: "100vh"}} ref={tutto}>
 
       <div className="flex-column cent-flex pt-md-4" style={{width: "80%"}}>
-        <div className="secondTitle" >
+        <div className="secondTitle flex-column cent-flex">
           <h1 className="text-secondary text-center p-1">
             The Beatniks <FontAwesomeIcon className="px-1" icon={faHandsClapping} />
           </h1>
