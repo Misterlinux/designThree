@@ -277,9 +277,16 @@ function Home(){
   //trying to use it on the DOM, we first need to style={parsetInt(stato.base)}
   
   //Lets try to avoid the browser UI (navbar) from cutting away the height of our design
+  //Well this may take us in a jorney toward sthe viewpoint enlightment
+  //https://css-tricks.com/the-large-small-and-dynamic-viewports/
+  //https://cloudfour.com/thinks/a-bashful-button-worth-8-million/
+  //contrary to vh the dvh will work on percentage of the ACTUAL usable space
+  //*dynamic consideration of any UA interfaces*
+  //and will vary between 100vh (maximus) and 100svh minimun
+  //svh is based if any ua interface is currently active, acts like
   //
   return(
-    <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "calc(100vh)" }}>
+    <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "100dvh" }}>
       <Parallax pages={4.75} className="meno" id="questo">
         <ParallaxLayer  offset={0}>
           <Intro/>
