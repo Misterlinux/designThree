@@ -343,13 +343,13 @@ function Home(){
         </ParallaxLayer>
 
         <ParallaxLayer offset={2.55} className="bg-main" factor={window.innerWidth< 600 ? 1.05 : 1}>
-          <div className="stratos" id="terzo" move="75%" color={120} style={{ height: "100vh" }}>
+          <div className="stratos" id="terzo" move="75%" color={120} style={{ height: "100%" }}>
             <Terzo />
           </div>
         </ParallaxLayer>
 
         {/* 3.55  */}
-        <ParallaxLayer offset={window.innerWidth< 600 ? 3.60 : 3.55} className={window.innerWidth< 500 ? "bg-danger" : "bg-success" }>
+        <ParallaxLayer offset={window.innerWidth< 600 ? 3.60 : 3.55} className="bg-main">
           <div className="stratos" id="quarto" move="100%" color={30}>
             <Quarto />
           </div>

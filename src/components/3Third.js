@@ -4,7 +4,7 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 import { useSpring, animated, easings, useSprings, useInView} from "react-spring";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMusic } from "@fortawesome/free-solid-svg-icons";
+import { faMusic, faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
 
 import basso from "../imma/basso.jpg"
 import ice from "../imma/trueTransCat.png"
@@ -74,13 +74,15 @@ function Terzo(){
   //so if its forst on teh container it will overlay with teh next (that wont change due to it)
   //and if placed below it will start from the end of the previous, without overlaying
   return(   
-    <div style={{marginLeft: "22%", height: "100vh"}} ref={terzo}>
+    <div style={{marginLeft: "22%", height: "100%"}} ref={terzo}>
 
-      <div className="text-secondary flex-column cent-flex" style={{paddingTop: "5vh", height: "15%"}}>
-        <h1 className="text-secondary"> HarmoNavs 11 </h1>
+      <div className="text-secondary flex-column cent-flex justify-content-between" style={{paddingTop: "3vh", height: "15%"}}>
+        <h1 className="text-secondary"> 
+          The HarmoNavs <FontAwesomeIcon className="ps-1" icon={faChampagneGlasses} /> 
+        </h1>
         <div className="p-1 p-md-2 text-white bg-secondary">
-          <p><b>Place</b> : East Theatre/ 1200 avaiable seats</p>
-          <p><b>Hour</b>: 10:00 PM/ 4:30 PM</p>
+          <p>East Theatre/ 1200 avaiable seats</p>
+          <p>10:00 PM/ 4:30 PM XX</p>
         </div>
       </div>
 
@@ -134,7 +136,7 @@ function Terzo(){
 
             <div className="d-flex flex-column mt-0 mt-md-2 ">
 
-            <p className="fw-bold"> Global views13: {cont.views[0]} </p>
+            <p className="fw-bold"> Global views: {cont.views[0]} </p>
             <div className="position-relative" style={{height: 26, width: "100%"}}>
             <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
               <animated.div style={{height: "100%", width: "100%",
