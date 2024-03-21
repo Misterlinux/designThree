@@ -196,7 +196,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 .thirdPresent{
   height: 100%;
-  padding-top: calc(30vw + 4%);
+  padding-top: calc(25vw + 4%);
 }
 
 /* Quarto */
@@ -264,7 +264,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
   /* --- */
   .middlecol{
-    height: calc(18vh - 5em)
+    height: calc(16vh - 5em)
   }
   
   /*quarto */

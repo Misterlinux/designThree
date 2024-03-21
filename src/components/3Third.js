@@ -74,7 +74,7 @@ function Terzo(){
   //so if its forst on teh container it will overlay with teh next (that wont change due to it)
   //and if placed below it will start from the end of the previous, without overlaying
   return(   
-    <div style={{marginLeft: "22%", height: "100dvh"}} ref={terzo}>
+    <div style={{marginLeft: "22%", height: "100vh"}} ref={terzo}>
 
       <div className="text-secondary flex-column cent-flex" style={{paddingTop: "5vh", height: "15%"}}>
         <h1 className="text-secondary"> HarmoNavs 11 </h1>
@@ -85,7 +85,7 @@ function Terzo(){
       </div>
 
       <div className="d-flex d-md-none cent-flex row mx-0 px-2 col-12"
-        style={{height: "85%"}}>
+        style={{height: "90%"}}>
 
         {/* for some reason, in a positio-absolute animation
         a % x movement doesnt work as well as a left position movement
@@ -98,7 +98,7 @@ function Terzo(){
         */}
         {/* Mobile design */}
         {stato.duo.map((cont, index)=>(
-          <div className={`row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} style={{height: "40dvh"}}>
+          <div className={`row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} style={{height: "42vh"}}>
             
             <div className="position-relative d-flex d-md-none px-0" style={{top: "2%", width: "100%", height: "25vw", zIndex: 5 }}>
 
@@ -128,13 +128,13 @@ function Terzo(){
           </div>
 
           {/* actual text container*/}
-          <div className="thirdPresent col-10 bg-primary text-white position-absolute px-2" style={{ [["right", "left"][index%2]]: "0%" /*right: "0%"*/ }}>
+          <div className="thirdPresent col-11 bg-primary text-white position-absolute px-2" style={{ [["right", "left"][index%2]]: "0%" /*right: "0%"*/ }}>
  
             <p style={{fontSize: "0.8em"}}> {cont.desc[0]} </p>
 
             <div className="d-flex flex-column mt-0 mt-md-2 ">
 
-            <p className="fw-bold"> Global views: {cont.views[0]} </p>
+            <p className="fw-bold"> Global views11: {cont.views[0]} </p>
             <div className="position-relative" style={{height: 26, width: "100%"}}>
             <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
               <animated.div style={{height: "100%", width: "100%",

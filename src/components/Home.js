@@ -284,9 +284,13 @@ function Home(){
   //*dynamic consideration of any UA interfaces*
   //and will vary between 100vh (maximus) and 100svh minimun
   //svh is based if any ua interface is currently active, acts like
-  //
+  //well maybe another time, at the end the height is reduced, but the vh is consistent between the components
+
+  //anyway if we wanted to use window.innerHeigth for the dymaic set of style props
+  //we would need a resize event listener BUT during the ParallaxLayer scroll it counts so it updates its values
+  
   return(
-    <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "100dvh" }}>
+    <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "100vh" }}>
       <Parallax pages={4.75} className="meno" id="questo">
         <ParallaxLayer  offset={0}>
           <Intro/>
@@ -338,13 +342,14 @@ function Home(){
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.55} className="bg-main">
+        <ParallaxLayer offset={2.55} className="bg-main" factor={window.innerWidth< 600 ? 1.05 : 1}>
           <div className="stratos" id="terzo" move="75%" color={120} style={{ height: "100vh" }}>
             <Terzo />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.55} className="bg-danger">
+        {/* 3.55  */}
+        <ParallaxLayer offset={window.innerWidth< 600 ? 3.60 : 3.55} className={window.innerWidth< 500 ? "bg-danger" : "bg-success" }>
           <div className="stratos" id="quarto" move="100%" color={30}>
             <Quarto />
           </div>
