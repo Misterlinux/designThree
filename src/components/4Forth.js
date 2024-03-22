@@ -38,9 +38,16 @@ function Quarto(){
     
   let mosso = useSpringValue( 0, {config: {duration: 500}})
 
-
+  {/* when using vh remember, my mistake was that, in a 95VH component, using vh just meant adding to 95
+  BUT I ignored the fact that vh is based on the entire of the uncut windoew, and that each of the vh woulkd carry a 0.05 error
+  , so we use % so that the 95vh (I guess) we inherit from teh ParallaLayer works*/}
   return(
     <div ref={cart} style={{height: "100%"}}>
+
+      <div className="bg-danger position-absolute" style={{ width: "50%", height: "95vh"}}>
+
+      </div>
+
       {/* from 20% to 25% on text intro height */}
       <div className="text-secondary flex-column cent-flex justify-content-around mx-auto" style={{paddingTop: "1vh", height: "22vh", width: "80%"}}>
         <h1 className="text-secondary"> 
@@ -108,7 +115,7 @@ function Quarto(){
           <p>Team Q&A, Central Studio, 9:30 AM/ 11:15 PM/ 2:30 PM/ 5:30 PM</p>
         </div>
 
-        <h5 className="text-white"> Join our newsletter Pickle</h5>
+        <h5 className="text-white"> Join our newsletter theVHcase</h5>
       </div>
     </div>
   )
