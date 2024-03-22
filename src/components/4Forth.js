@@ -9,6 +9,9 @@ import build from "../imma/building.jpg"
 import logo from "../imma/logo.png"
 import camera from "../imma/fotoicon.svg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
+
 function Quarto(){
 
   let stato = useStato();
@@ -37,9 +40,18 @@ function Quarto(){
 
 
   return(
-    <div ref={cart}>
-      <div className="text-center text-secondary" style={{paddingTop: "4em"}}>
-        <h3>The organitation {stato.base} </h3>
+    <div ref={cart} style={{height: "100%"}}>
+
+      <div className="text-secondary flex-column cent-flex justify-content-around justify-content-md-end mx-auto" style={{paddingTop: "3vh", height: "25%", width: "80%"}}>
+        <h1 className="text-secondary"> 
+          Our Organitation 11<FontAwesomeIcon className="ps-1" icon={faUserGroup} />
+        </h1>
+        <div className="bg-secondary p-1 p-md-2 text-white">
+          <p>
+            We aims to orchestrate an unforgettable 
+            festival experience for music lovers worldwide. 
+          </p>
+        </div>
       </div>
 
       <div className="quartotest row mx-0 caroselheight">
@@ -79,8 +91,8 @@ function Quarto(){
       </div>
 
       <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" style={{height: "14vh", overflowX: "scroll", marginTop: "2vh"}}>
-        <animated.div className="position-absolute immagine1" style={{border: "3px solid red", 
-        x: mosso.to(value => `${value*0.7}vh`) }}>
+        <animated.div className="position-absolute immagine1 border border border-3 border-secondary" 
+          style={{ x: mosso.to(value => `${value*0.7}vh`) }}>
         </animated.div>
 
         {stato.galleria.map((cont, index)=>(
@@ -91,8 +103,8 @@ function Quarto(){
       </div>
 
 
-      <div className="mx-auto position-fixed w-100" style={{bottom: 0}}>
-        <h5 className="text-center"> Sign in to the newsletter </h5>
+      <div className="cent-flex position-fixed w-100 text-secondary" style={{bottom: 0, height: "6%"}}>
+        <h5 className="  "> Join our newsletter </h5>
       </div>
     </div>
   )

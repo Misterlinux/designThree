@@ -37,6 +37,11 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   left: 38vw;
 }
 
+.fourthback{
+  top: -46%;
+  left: -40%
+}
+
 #bootlock .unofirst{
   margin-left: 30%;
 }
@@ -166,19 +171,19 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 .sini{
   height: 9vh;
-  background-color: orange;
+
   clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
 }
 
 .des{
   height: 9vh;
-  background-color: orange;
+
   clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
 }
 
 /* to change on media query */
 .taglio{
-  background-color: orange;
+
   height: 9vh;
 }
 

@@ -32,10 +32,11 @@ function Footer(){
 
 
         <div className="row col-12 col-sm-6 col-md-6 px-0 py-0 d-flex justify-content-center">
-          <div style={{width: "5vh"}} className="sini px-0">
+          <div style={{width: "5vh"}} className="sini px-0 bg-main">
           </div>  
 
-          <div className="col-9 col-sm-9 col-md-8 taglio px-0 py-2">
+          {/* for some reason if we use d-flex it shortens the space on desktop */}
+          <div className="col-9 col-sm-9 col-md-8 taglio px-0 py-1 py-md-2 bg-main">
             <form onSubmit={segna} className="row mx-0 d-flex justify-content-center">
               <div className="col-8 col-md-7 px-0">
                 <input type="text" className="form-control w-100" name="indi" 
@@ -49,7 +50,7 @@ function Footer(){
             </form>
           </div>
 
-          <div style={{width: "5vh"}} className="des">
+          <div style={{width: "5vh"}} className="des bg-main">
           </div>
 
           <div className="d-flex justify-content-around col-9 col-md-8 pt-2">
@@ -84,6 +85,8 @@ function Footer(){
           </div>
 
         </div>
+
+
 
         <div className="d-none d-sm-block col-sm-3 col-md-3 px-0">
           <h4 className="text-center">Contact Us</h4>

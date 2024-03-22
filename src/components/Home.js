@@ -12,7 +12,7 @@ import camera from "../imma/fotoicon.svg"
 
 import guitar from "../imma/guitar.svg"
 import { ReactComponent as Guir } from "../imma/guitar.svg"
-
+import { ReactComponent as Lamp } from "../imma/lampost1.svg" 
 
 import { useMount } from "../data/Data";
 import {
@@ -296,13 +296,14 @@ function Home(){
           <Intro/>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.55} className="d-flex justify-content-center align-items-center" style={{
+        <ParallaxLayer offset={0.55} className="d-flex justify-content-center align-items-center bg-main" style={{
           backgroundSize: "100% 100%",
           /*backgroundRepeat: "no-repeat",
           backgroundPosition: "45% center",
           backgroundImage: `url(${guitar})`,
           opacity: 1,*/
-          backgroundColor: "hsla(280, 100%, 20%, 1)",
+          //backgroundColor: "hsla(280, 100%, 20%, 1)",
+          //Position relative is needed for the positioning
         }}
         >
           <Guir className="position-relative firstback" 
@@ -310,7 +311,7 @@ function Home(){
             height: "45vh", width: "12%" }}/>
         </ParallaxLayer>
 
-        <ParallaxLayer  offset={0.55} className="bg-main">
+        <ParallaxLayer  offset={0.55} className="">
           <div ref={primate} className="stratos" id="primo" move="25%" color={300} >
             <Primo />
           </div>
@@ -348,9 +349,16 @@ function Home(){
           </div>
         </ParallaxLayer>
 
+        <ParallaxLayer offset={3.60} className="bg-main cent-flex"
+          style={{ backgroundSize: "100% 100%" }}>
+          <Lamp className="position-relative fourthback" 
+            style={{ fill: `hsl(${parseInt(stato.base) + 180 }, 100%, 36%)`, 
+            height: "45vh", width: "12%" }}/>
+        </ParallaxLayer>
+
         {/* 3.55  */}
-        <ParallaxLayer offset={window.innerWidth< 600 ? 3.60 : 3.55} className="bg-main">
-          <div className="stratos" id="quarto" move="100%" color={30}>
+        <ParallaxLayer offset={window.innerWidth< 600 ? 3.60 : 3.55} factor={window.innerWidth< 600 ? 0.95 : 1}>
+          <div className="stratos" id="quarto" move="100%" color={30} style={{ height: "100%" }}>
             <Quarto />
           </div>
         </ParallaxLayer>
