@@ -349,7 +349,7 @@ function Home(){
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3.60} className="bg-main cent-flex"
+        <ParallaxLayer offset={window.innerWidth< 600 ? 3.60 : 3.55} className="bg-main cent-flex"
           style={{ backgroundSize: "100% 100%" }}>
           <Lamp className="position-relative fourthback" 
             style={{ fill: `hsl(${parseInt(stato.base) + 180 }, 100%, 36%)`, 
@@ -548,20 +548,6 @@ function Home(){
           </>
         </ParallaxLayer>
 
-
-        <ParallaxLayer offset={3.78} speed={0.5}
-          style={{
-            display: "inline-block",
-            width: "10vw",
-            height: "10vw",
-            marginLeft: "62%",
-            backgroundImage: `URL(${camera})`,
-            backgroundPosition: "center center",
-            backgroundSize: "contain"
-          }}
-        >
-        </ParallaxLayer>
-
         <ParallaxLayer className="d-none d-md-inline-block" offset={3.41} style={{height: 0 }} sticky={{start: 3.41,end: 3.70}}>
           <>
             <div className="d-inline-block vero quarto" 
@@ -575,19 +561,20 @@ function Home(){
                   
                   <div className="d-none d-md-flex flex-column pt-4" style={{height: "80%"}}>
                     <h2 className="text-center text-secondary bg-primary p-2 mx-auto" style={{fontSize: "3em", width: "90%" }}>
-                      Fourth Day
+                      Team Q&A
                     </h2>
                     
                     <div className="text-white ps-3">
 
                       <h3 className="text-secondary">Place:</h3>
-                        <h5 className="ps-2">West Sound Studio</h5>
-                        <h5 className="ps-2">800 avaiable seats</h5>
+                        <h5 className="ps-2">Central Studio</h5>
+                        <h5 className="ps-2">100 avaiable seats</h5>
 
                       <h3 className="text-secondary">Time:</h3>
-                        <h5 className="ps-2">7:30 AM</h5>
-                        <h5 className="ps-2">1:15 PM</h5>
-                        <h5 className="ps-2">7:30 PM</h5>
+                        <h5 className="ps-2">9:30 AM</h5>
+                        <h5 className="ps-2">11:15 PM</h5>
+                        <h5 className="ps-2">2:30 PM</h5>
+                        <h5 className="ps-2">5:30 PM</h5>
 
                       <div className="d-flex justify-content-start py-3 ps-3">
                         <img src={`./imma/building.jpg`} alt="" className="border border-2 border-primary"
@@ -597,18 +584,6 @@ function Home(){
 
                   </div>
 
-                  <div className="d-block d-md-none text-secondary pt-3 mobilefirst">
-                    <h1>F</h1>
-                    <h1>O</h1>
-                    <h1>U</h1>
-                    <h1>R</h1>
-                    <h1>T</h1>
-                    <h1>H</h1>
-                    <h1> </h1>
-                    <h1>D</h1>
-                    <h1>A</h1>
-                    <h1>Y</h1>
-                  </div>
                 </div>
 
               </div>

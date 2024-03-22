@@ -42,9 +42,9 @@ function Quarto(){
   return(
     <div ref={cart} style={{height: "100%"}}>
 
-      <div className="text-secondary flex-column cent-flex justify-content-around justify-content-md-end mx-auto" style={{paddingTop: "3vh", height: "25%", width: "80%"}}>
+      <div className="text-secondary flex-column cent-flex justify-content-around mx-auto" style={{paddingTop: "3vh", height: "25%", width: "80%"}}>
         <h1 className="text-secondary"> 
-          Our Organitation 13<FontAwesomeIcon className="ps-1" icon={faUserGroup} />
+          Our Organitation <FontAwesomeIcon className="ps-1" icon={faUserGroup} />
         </h1>
         <div className="bg-secondary p-1 p-md-2 text-white">
           <p>
@@ -54,11 +54,11 @@ function Quarto(){
         </div>
       </div>
 
-      <div className="quartotest row mx-0 caroselheight">
+      <div className="quartotest row mx-0 cent-flex caroselheight px-1">
 
-        <div className="d-none d-md-block col-3 p-0 scrollo position-relative" style={{ height: "100%", overflowY: "scroll" }}>
-          <animated.div className="position-absolute immagine" style={{border: "3px solid red", 
-            y: mosso.to(value => `${value}vh`) }}>
+        <div className="d-none d-md-block col-2 p-0 scrollo position-relative" style={{ height: "100%", overflowY: "scroll" }}>
+          <animated.div className="position-absolute immagine border border-3 border-secondary" 
+            style={{ y: mosso.to(value => `${value}vh`) }}>
           </animated.div>
 
           {stato.galleria.map((cont, index)=>(
@@ -68,7 +68,7 @@ function Quarto(){
           ))}
         </div>
 
-        <div className="col-12 col-md-8 px-2 px-sm-3">
+        <div className="col-12 col-md-9 px-2 px-sm-2">
           <div style={{width: "100%", height: "100%"}}>
 
             <Carousel onSelect={(e)=> mossi(e)} activeIndex={conta}>
@@ -90,7 +90,7 @@ function Quarto(){
 
       </div>
 
-      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" style={{height: "14vh", overflowX: "scroll", marginTop: "2vh"}}>
+      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" style={{height: "14vh", overflowX: "scroll", marginTop: "1vh"}}>
         <animated.div className="position-absolute immagine1 border border border-3 border-secondary" 
           style={{ x: mosso.to(value => `${value*0.7}vh`) }}>
         </animated.div>
@@ -103,8 +103,12 @@ function Quarto(){
       </div>
 
 
-      <div className="cent-flex position-fixed w-100 text-secondary" style={{bottom: 0, height: "6%"}}>
-        <h5 className="  "> Join our newsletter </h5>
+      <div className="cent-flex flex-column position-fixed w-100 text-secondary" style={{bottom: 0, height: "10%"}}>
+        <div className="text-white bg-secondary text-center" style={{ width: "82%" }}>
+          <p>Team Q&A, Central Studio, 9:30 AM/ 11:15 PM/ 2:30 PM/ 5:30 PM</p>
+        </div>
+
+        <h5 className="text-white"> Join our newsletter 11</h5>
       </div>
     </div>
   )

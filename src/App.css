@@ -37,11 +37,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   left: 38vw;
 }
 
-.fourthback{
-  top: -46%;
-  left: -40%
-}
-
 #bootlock .unofirst{
   margin-left: 30%;
 }
@@ -206,6 +201,11 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 /* Quarto */
 
+.fourthback{
+  top: -32%;
+  left: -45%;
+}
+
 .scrollo{
   scrollbar-width: none;
   scrollbar-color: yellow orange;
@@ -255,7 +255,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 
 .quartotest{
-  width: 82%;
+  width: 80%;
 }
 
 /* --------------------- */
@@ -327,8 +327,13 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
   /* Terzo.js */
 
+  /* Fourth */
+  .fourthback{
+    top: -46%;
+    left: -40%
+  }
 
-  /*  */
+  /* footer */
   .taglio, .sini, .des{
     height: 6.5vh;
   }
