@@ -41,8 +41,8 @@ function Quarto(){
 
   return(
     <div ref={cart} style={{height: "100%"}}>
-
-      <div className="text-secondary flex-column cent-flex justify-content-around mx-auto" style={{paddingTop: "3vh", height: "25%", width: "80%"}}>
+      {/* from 20% to 25% on text intro height */}
+      <div className="text-secondary flex-column cent-flex justify-content-around mx-auto" style={{paddingTop: "1vh", height: "22%", width: "80%"}}>
         <h1 className="text-secondary"> 
           Our Organitation <FontAwesomeIcon className="ps-1" icon={faUserGroup} />
         </h1>
@@ -103,12 +103,12 @@ function Quarto(){
       </div>
 
 
-      <div className="cent-flex flex-column position-fixed w-100 text-secondary" style={{bottom: 0, height: "10%"}}>
+      <div className="cent-flex flex-column position-fixed w-100 text-secondary" style={{bottom: 0, height: "12%"}}>
         <div className="text-white bg-secondary text-center" style={{ width: "82%" }}>
           <p>Team Q&A, Central Studio, 9:30 AM/ 11:15 PM/ 2:30 PM/ 5:30 PM</p>
         </div>
 
-        <h5 className="text-white"> Join our newsletter 11</h5>
+        <h5 className="text-white"> Join our newsletter XX</h5>
       </div>
     </div>
   )
