@@ -353,7 +353,7 @@ function Home(){
           style={{ backgroundSize: "100% 100%" }}>
           <Lamp className="position-relative fourthback" 
             style={{ fill: `hsl(${parseInt(stato.base) + 180 }, 100%, 36%)`, 
-            height: "45vh", width: "12%" }}/>
+            height: "28vh", width: "12%" }}/>
         </ParallaxLayer>
 
         {/* 3.55  */}

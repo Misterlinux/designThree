@@ -44,7 +44,7 @@ function Quarto(){
 
       <div className="text-secondary flex-column cent-flex justify-content-around justify-content-md-end mx-auto" style={{paddingTop: "3vh", height: "25%", width: "80%"}}>
         <h1 className="text-secondary"> 
-          Our Organitation 11<FontAwesomeIcon className="ps-1" icon={faUserGroup} />
+          Our Organitation 13<FontAwesomeIcon className="ps-1" icon={faUserGroup} />
         </h1>
         <div className="bg-secondary p-1 p-md-2 text-white">
           <p>
