@@ -45,20 +45,20 @@ function Navbar(){
           <div className="fondo"></div>
         </div>
 
-        <h1 className="px-1 d-none d-md-flex">Tunefuse 11</h1>
+        <h1 className="px-1 d-none d-md-flex marker">Tunefuse 11</h1>
       </div>
 
       <div className="d-none d-sm-flex col-sm-6 row position-relative">
-        <nav className="col-3 nav-item primo d-flex justify-content-center align-items-center">
+        <nav className="col-3 nav-item primo cent-flex">
           <h4> Singer </h4>
         </nav>
-        <nav className="col-3 nav-item secondo d-flex align-items-center justify-content-center">
+        <nav className="col-3 nav-item secondo cent-flex">
           <h4 className=""> Band </h4>
         </nav>
-        <nav className="col-3 nav-item terzo d-flex align-items-center justify-content-center">
+        <nav className="col-3 nav-item terzo cent-flex">
           <h4 className=""> Duo </h4>
         </nav>
-        <nav className="col-3 nav-item quarto d-flex align-items-center justify-content-center">
+        <nav className="col-3 nav-item quarto cent-flex">
           <p className=""> Organization </p>
         </nav>
 

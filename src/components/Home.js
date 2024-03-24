@@ -290,8 +290,8 @@ function Home(){
   //we would need a resize event listener BUT during the ParallaxLayer scroll it counts so it updates its values
   
   return(
-    <div ref={parle} style={{width: "100%" /*marginTop: "5em"*/, height: "100vh" }}>
-      <Parallax pages={4.75} className="meno" id="questo">
+    <div ref={parle} style={{width: "100%" /*marginTop: "5em", height: "100vh"*/ }}>
+      <Parallax pages={4.75} className="meno" id="questo" style={{ height: "100vh" }}>
         <ParallaxLayer  offset={0}>
           <Intro/>
         </ParallaxLayer>
