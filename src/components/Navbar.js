@@ -45,7 +45,7 @@ function Navbar(){
           <div className="fondo"></div>
         </div>
 
-        <h1 className="px-1 d-none d-md-flex">Tunefuse</h1>
+        <h1 className="px-1 d-none d-md-flex">Tunefuse 11</h1>
       </div>
 
       <div className="d-none d-sm-flex col-sm-6 row position-relative">
