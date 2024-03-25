@@ -49,19 +49,39 @@ export const useMount = (callback) =>{
 export let band = [
   {
     src: basso,
-    marginTop: ["0vh", "0vh"]
+    marginTop: ["0vh", "0vh"],
+    name: `John Smith`,
+    title: `"The Groove Master"`,
+    play: `Bass Guitar`,
+    desc: `The backbone of The Beatnicks, 
+      his groovy basslines keep the band's sound tight and infectious.`
   },
   {
     src: basso1,
-    marginTop: ["5vh", "4vh"]
+    marginTop: ["5vh", "4vh"],
+    name: `Alice Johnson`,
+    title: `"The Shredder"`,
+    play: `Lead Guitar`,
+    desc: `She is known for her electrifying solos and 
+      impressive technical prowess,which elevate the band's sound.`,
   },
   {
     src: basso2,
-    marginTop: ["10vh", "36vh"]
+    marginTop: ["10vh", "36vh"],
+    name: `Mark Davis`,
+    title: `"The Rhythm King"`,
+    play: `Drums`,
+    desc: `The undisputed heartbeat of the Beatniks, 
+      fueling the band's performance with his powerful and dynamic drumming.`
   },
   {
     src: basso3,
-    marginTop: ["15vh", "40vh"]
+    marginTop: ["15vh", "40vh"],
+    name: `Sarah Chang`,
+    title: `"The Melody Maker"`,
+    play: `Keyboard/Synth`,
+    desc: `She is responsible for crafting the atmospheric melodies on stage, 
+      her keen sense of harmony defines the band's sound`
   }
 ]
 

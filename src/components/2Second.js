@@ -93,6 +93,11 @@ function Secondo(){
   //We can use 100vh and the %
 
   //also remember that length is +1 of index array 
+
+  //remember that when using d-flex to justify and align multiple elements you need the container to re-set
+  //it to 100% for its height and width
+
+  console.log( stato.band )
   return(
     <div style={{height: "100vh"}} ref={tutto}>
 
@@ -122,10 +127,18 @@ function Secondo(){
               <div className="bg-primary position-relative" style={{height: "100%", width: "100%"}}>
                 <div className="position-absolute present" style={{backgroundImage: `url(${cont.src})`}}></div>
 
-                <div className="position-relative text-secondary">
-                  <p>Mickaela Noin</p>
-                  <p>Drumminst</p>
-                  <p>I played the drum while everyone told be to play music</p>
+                <div className="position-relative text-white p-2 d-flex flex-column justify-content-between"
+                  style={{ height: "100%" }}>
+                  <div className="text-center text-md-start">
+                    <h3 className=""> {cont.name} </h3>
+                    <p className="d-none d-md-flex"> {cont.title} </p>
+                    <p className="d-none d-md-flex"><b> {cont.play} </b></p>
+                  </div>
+                  <div className="text-center text-md-start" style={{height: "auto"}}>
+                    <p className="d-none d-md-flex"> {cont.desc} </p>
+                    <p className="d-block mx-auto d-md-none"> {cont.title} </p>
+                    <p className="d-block mx-auto d-md-none"><b> {cont.play} </b></p>
+                  </div>
                 </div>
               </div>
             </animated.div>
