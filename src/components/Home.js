@@ -289,6 +289,8 @@ function Home(){
   //anyway if we wanted to use window.innerHeigth for the dymaic set of style props
   //we would need a resize event listener BUT during the ParallaxLayer scroll it counts so it updates its values
   
+  //Parallax is 100% height by efault but DO NOT, trust the container, it won't inherit the 100vh on some
+  //mobile designs
   return(
     <div ref={parle} style={{width: "100%" /*marginTop: "5em", height: "100vh"*/ }}>
       <Parallax pages={4.75} className="meno" id="questo" style={{ height: "100vh" }}>
