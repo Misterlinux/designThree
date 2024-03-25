@@ -14,9 +14,10 @@ function Terzo(){
   let stato = useStato()
   let dispatch = useStatoset()
 
+  //we use a different INview from the home.js one, this one is for the pixels
   let [terzo, terzoView] = useInView({
     rootMargin: "0px",
-    threshold: 0.3
+    threshold: 0.2
   })
 
   //Image icon
@@ -77,10 +78,10 @@ function Terzo(){
     <div style={{marginLeft: "22%", height: "100%"}} ref={terzo}>
 
       <div className="text-secondary flex-column cent-flex justify-content-between justify-content-md-end" style={{paddingTop: "3vh", height: "15%"}}>
-        <h1 className="text-secondary"> 
+        <h2 className="text-secondary"> 
           The HarmoNavs <FontAwesomeIcon className="ps-1" icon={faChampagneGlasses} /> 
-        </h1>
-        <div className="p-1 p-md-2 text-white bg-secondary d-flex d-md-none">
+        </h2>
+        <div className="p-1 mx-2 p-md-2 text-white bg-secondary d-flex d-md-none">
           <p>West Sound Studio/ 800 avaiable seats</p>
           <p>7:30 AM, 1:15 PM, 7:30 PM </p>
         </div>

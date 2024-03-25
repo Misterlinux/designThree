@@ -162,7 +162,7 @@ function Home(){
           //so the previous column almost dissapers
           //from 70 to 10
 
-          if(entry.isIntersecting && entry.boundingClientRect.top <= (largo> 537 ? 70 : 120) ){
+          if(entry.isIntersecting && entry.boundingClientRect.top <= (largo> 537 ? 75 : 75) ){
             
             //console.log( entry.boundingClientRect.top )
             if( entry.target.id == "primo" ){
@@ -173,7 +173,7 @@ function Home(){
             //We cannot console.log() the document.queryselct style BUT we can edit it
           
             reffe = document.querySelector(`.vero.${entry.target.id}`)
-            reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - (largo> 537 ? 70 : 120) + "px"} )`
+            reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - (largo> 537 ? 75 : 75) + "px"} )`
           }
 
 
