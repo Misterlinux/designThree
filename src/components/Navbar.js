@@ -66,10 +66,11 @@ function Navbar(){
         </animated.div>
       </div>
 
+      {/*this is the mobile navbar animated scrolled */}
       <div className="d-flex d-sm-none row col-8 position-relative">
         {navigate((style, item)=> (
           <div className="d-flex justify-content-center align-items-center" style={{overflow: "hidden"}}>
-            <animated.p className="text-white" style={style}>
+            <animated.p className="text-white marker" style={{fontSize: "3em" ,...style}}>
               {item}
             </animated.p>
           </div>

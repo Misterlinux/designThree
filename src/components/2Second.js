@@ -136,7 +136,9 @@ function Secondo(){
                   </div>
                   <div className="text-center text-md-start" >
                     <p className="d-none d-md-flex"> {cont.desc} </p>
-                    <p className="d-block mx-auto d-md-none"> {cont.title} </p>
+                    <p className="d-block mx-auto d-md-none"> {cont.title} 
+                      <FontAwesomeIcon className="ps-1" icon={cont.icon} />
+                    </p>
                     <p className="d-block mx-auto d-md-none text-wrap"><b> {cont.play} </b></p>
                   </div>
                 </div>

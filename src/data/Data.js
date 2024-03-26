@@ -13,7 +13,7 @@ import basso3 from "../imma/basso3.jpg"
 import duo1 from "../imma/duo1.jpg"
 import duo2 from "../imma/duo2.jpg"
 
-import { faMusic, faGuitar } from "@fortawesome/free-solid-svg-icons";
+import { faMusic, faGuitar, faDrum, faMicrophoneLines} from "@fortawesome/free-solid-svg-icons";
 
 export let galleria = [
   {
@@ -53,6 +53,7 @@ export let band = [
     name: `John Smith`,
     title: `"The Groove Master"`,
     play: `Bass Guitar`,
+    icon: faMusic,
     desc: `The backbone of The Beatnicks, 
       his groovy basslines keep the band's sound tight and infectious.`
   },
@@ -62,6 +63,7 @@ export let band = [
     name: `Alice Johnson`,
     title: `"The Shredder"`,
     play: `Lead Guitar`,
+    icon: faMusic,
     desc: `She is known for her electrifying solos and 
       impressive technical prowess,which elevate the band's sound.`,
   },
@@ -71,6 +73,7 @@ export let band = [
     name: `Mark Davis`,
     title: `"The Rhythm King"`,
     play: `Drums`,
+    icon: faMusic,
     desc: `The undisputed heartbeat of the Beatniks, 
       fueling the band's performance with his powerful and dynamic drumming.`
   },
@@ -80,6 +83,7 @@ export let band = [
     name: `Sarah Chang`,
     title: `"The Melody Maker"`,
     play: `Keyboard/ Synth`,
+    icon: faMusic,
     desc: `She is responsible for crafting the atmospheric melodies on stage, 
       her keen sense of harmony defines the band's sound`
   }
