@@ -133,7 +133,9 @@ function Terzo(){
           {/* actual text container*/}
           <div className="thirdPresent col-11 bg-primary text-white position-absolute px-2" style={{ [["right", "left"][index%2]]: "0%" /*right: "0%"*/ }}>
  
-            <p style={{fontSize: "0.8em", height: "35%"}}> {cont.desc[0]} </p>
+            <div className="d-flex flex-column justify-content-around" style={{fontSize: "0.9em", height: "35%"}}> 
+              {cont.desc[0]} 
+            </div>
 
             <div className="d-flex flex-column justify-content-around mt-0 mt-md-2" style={{height: "65%"}} >
 
