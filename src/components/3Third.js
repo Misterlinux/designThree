@@ -77,18 +77,22 @@ function Terzo(){
   return(   
     <div style={{marginLeft: "22%", height: "100%"}} ref={terzo}>
 
-      <div className="text-secondary flex-column cent-flex justify-content-between justify-content-md-end" style={{paddingTop: "3vh", height: "15%"}}>
+      <div className="text-secondary flex-column cent-flex justify-content-between justify-content-md-end" 
+        style={{paddingTop: "3vh", height: /*"15%"*/ "6%" }}>
         <h2 className="text-secondary"> 
           The HarmoNavs <FontAwesomeIcon className="ps-1" icon={faChampagneGlasses} /> 
         </h2>
-        <div className="p-1 mx-2 p-md-2 text-white bg-secondary d-flex d-md-none">
+        {/*
+        <div className="p-1 ms-2 p-md-2 text-white bg-secondary d-flex flex-column d-md-none" 
+          style={{  }}>
           <p>West Sound Studio/ 800 avaiable seats</p>
           <p>7:30 AM, 1:15 PM, 7:30 PM </p>
         </div>
+        */}
       </div>
 
-      <div className="d-flex d-md-none flex-column row mx-0 px-2 col-12"
-        style={{height: "90%"}}>
+      <div className="d-flex d-md-none flex-column row mx-0 px-2 col-12 position-relative"
+        style={{height: "90vh"}}>
 
         {/* for some reason, in a positio-absolute animation
         a % x movement doesnt work as well as a left position movement
@@ -101,7 +105,7 @@ function Terzo(){
         */}
         {/* Mobile design */}
         {stato.duo.map((cont, index)=>(
-          <div className={`mt-3 row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} style={{height: "45%"}}>
+          <div className={`mt-3 row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} style={{height: "42vh"}}>
             
             <div className="position-relative d-flex d-md-none px-0" style={{top: "2%", width: "100%", height: "25vw", zIndex: 5 }}>
 
@@ -196,6 +200,10 @@ function Terzo(){
 
       </div>
 
+      <div className="p-1 mx-2 d-flex flex-column d-md-none bg-secondary text-white" style={{ height: "8%" }}>
+        <p><b>West Sound Studio</b></p>
+        <p><b>7:30 AM, 1:15 PM, 7:30 PM</b></p>
+      </div>
 
       
       {/* Desktop version */}
