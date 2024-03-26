@@ -107,7 +107,7 @@ function Quarto(){
 
 
       <div className="cent-flex flex-column justify-content-between justify-content-md-end position-fixed w-100 text-secondary" 
-        style={{bottom: 0, height: "19vh"}}>
+        style={{bottom: 0, height: "17vh"}}>
         <div className="p-2 text-white bg-secondary text-start d-flex flex-column d-md-none" style={{ width: "82%" }}>
           <p className="text-center"><b> Q&A Session 11</b></p>
           <p><b>Place:</b> central studio, 100 seats </p>
