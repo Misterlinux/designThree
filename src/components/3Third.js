@@ -200,7 +200,7 @@ function Terzo(){
 
       </div>
 
-      <div className="p-1 mx-2 d-flex flex-column d-md-none bg-secondary text-white" style={{ height: "8%" }}>
+      <div className="p-1 mx-2 d-flex flex-column justify-content-center d-md-none bg-secondary text-white" style={{ height: "8%" }}>
         <p><b>West Sound Studio</b></p>
         <p><b>7:30 AM, 1:15 PM, 7:30 PM</b></p>
       </div>

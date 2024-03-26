@@ -101,15 +101,17 @@ function Secondo(){
   return(
     <div style={{height: "100vh"}} ref={tutto}>
 
-      <div className="flex-column cent-flex pt-md-4" style={{width: "80%"}}>
+      <div className="flex-column cent-flex pt-md-4" style={{width: "80%", height: "15vh"}}>
         <div className="secondTitle flex-column cent-flex">
           <h1 className="text-secondary text-center p-1">
             The Beatniks <FontAwesomeIcon className="px-1" icon={faHandsClapping} />
           </h1>
-          <p className="p-1 p-md-2 text-white bg-secondary">
-            They tour the nation with their soulful blend 
-            of blues and rock, driven by a passionate tight-knit group of musicians.
-          </p>
+          <div className="p-1 p-md-2 text-white bg-secondary" style={{ width: "100%" }}>
+            {/*They tour the nation with their soulful blend 
+            of blues and rock, driven by a passionate tight-knit group of musicians.*/}
+            <p><b>Central Music park/ 1600 seats</b></p>
+            <p><b> 12:00 AM/ 8:30 PM </b></p>
+          </div>
         </div>
       </div>
 
