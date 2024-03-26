@@ -145,13 +145,12 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   background-image: url("./imma/Roundabout.png");
   background-position: center;
   background-size: cover;
-
 }
 
 .sfondo{
   height: 100%;
   width: 100%;
-  opacity: 0.8;
+  opacity: 0.9;
   background-image: url("./imma/intro.jpg");
   background-position: center center;
   background-size: cover;

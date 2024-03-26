@@ -97,7 +97,7 @@ function Home(){
             */
 
             stato.springa.start( entry.target.attributes.move.value )
-            
+
             navigat.forEach(item=>item.classList.remove("active"))
             document.querySelector(`.nav-item.${entry.target.id }`).classList.add("active")
 
@@ -291,6 +291,8 @@ function Home(){
   
   //Parallax is 100% height by efault but DO NOT, trust the container, it won't inherit the 100vh on some
   //mobile designs
+
+  //the queryseklect stra
   return(
     <div ref={parle} style={{width: "100%" /*marginTop: "5em", height: "100vh"*/ }}>
       <Parallax pages={4.75} className="meno" id="questo" style={{ height: "100vh" }}>
