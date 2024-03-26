@@ -79,7 +79,7 @@ export let band = [
     marginTop: ["15vh", "40vh"],
     name: `Sarah Chang`,
     title: `"The Melody Maker"`,
-    play: `Keyboard/Synth`,
+    play: `Keyboard/ Synth`,
     desc: `She is responsible for crafting the atmospheric melodies on stage, 
       her keen sense of harmony defines the band's sound`
   }

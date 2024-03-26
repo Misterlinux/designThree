@@ -134,10 +134,10 @@ function Secondo(){
                     <p className="d-none d-md-flex"> {cont.title} </p>
                     <p className="d-none d-md-flex"><b> {cont.play} </b></p>
                   </div>
-                  <div className="text-center text-md-start" style={{height: "auto"}}>
+                  <div className="text-center text-md-start" >
                     <p className="d-none d-md-flex"> {cont.desc} </p>
                     <p className="d-block mx-auto d-md-none"> {cont.title} </p>
-                    <p className="d-block mx-auto d-md-none"><b> {cont.play} </b></p>
+                    <p className="d-block mx-auto d-md-none text-wrap"><b> {cont.play} </b></p>
                   </div>
                 </div>
               </div>

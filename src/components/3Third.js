@@ -133,10 +133,11 @@ function Terzo(){
           {/* actual text container*/}
           <div className="thirdPresent col-11 bg-primary text-white position-absolute px-2" style={{ [["right", "left"][index%2]]: "0%" /*right: "0%"*/ }}>
  
-            <p style={{fontSize: "0.8em"}}> {cont.desc[0]} </p>
+            <p style={{fontSize: "0.8em", height: "35%"}}> {cont.desc[0]} </p>
 
-            <div className="d-flex flex-column mt-0 mt-md-2 ">
+            <div className="d-flex flex-column justify-content-around mt-0 mt-md-2" style={{height: "65%"}} >
 
+            <div>
             <p className="fw-bold"> Global views: {cont.views[0]} </p>
             <div className="position-relative" style={{height: 26, width: "100%"}}>
             <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
@@ -157,7 +158,10 @@ function Terzo(){
                 style={{ height: 3, width: pros[index].views }}>
               </animated.div>
             </div>
+            </div>
+            {/*different d-flex align */}
 
+            <div>
             <p className="fw-bold">Albums sold: {cont.albums[0]}</p>
             <div className="position-relative" style={{height: 26, width: "100%"}}>
             <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].albums}}>
@@ -178,6 +182,8 @@ function Terzo(){
                 style={{ height: 3, width: pros[index].albums }}>
               </animated.div>
             </div>
+            </div>
+
 
             </div>
 
