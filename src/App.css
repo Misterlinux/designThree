@@ -405,3 +405,20 @@ It seems how to do the height  */
   }
 
 }
+
+.shortenSect{
+  height: 42vh;
+}
+
+
+@media (max-height: 530px){
+
+  .shortenPixel{
+    display: none;
+  }
+
+  .shortenSect{
+    height: 40vh;
+  }
+
+}

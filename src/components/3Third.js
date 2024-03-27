@@ -105,8 +105,8 @@ function Terzo(){
         */}
         {/* Mobile design */}
         {stato.duo.map((cont, index)=>(
-          <div className={`mt-3 row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} 
-            style={{height: "42vh"}}>
+          <div className={`shortenSect mt-3 row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} 
+            style={{/*height: "42vh"*/}}>
             
             <div className="position-relative d-flex d-md-none px-0" style={{top: "2%", width: "100%", height: "25vw", zIndex: 5 }}>
 
@@ -146,7 +146,7 @@ function Terzo(){
 
             <div>
             <p className="fw-bold"> Global views: {cont.views[0]} </p>
-            <div className="position-relative" style={{height: 26, width: "100%"}}>
+            <div className="position-relative shortenPixel" style={{height: 26, width: "100%"}}>
             <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
               <animated.div style={{height: "100%", width: "100%",
                 backgroundImage: `url(${ice})`,
@@ -170,7 +170,7 @@ function Terzo(){
 
             <div>
             <p className="fw-bold">Albums sold: {cont.albums[0]}</p>
-            <div className="position-relative" style={{height: 26, width: "100%"}}>
+            <div className="position-relative shortenPixel" style={{height: 26, width: "100%"}}>
             <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].albums}}>
               <animated.div style={{height: "100%", width: "100%",
                 backgroundImage: `url(${ice})`,
