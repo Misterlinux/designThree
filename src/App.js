@@ -9,7 +9,7 @@ import Task from './data/Context';
 function App() {
 
   return (
-    <div id='bootlock'>
+    <div id='bootlock' className='bassinimio'>
 
       <Task>
         <Navbar />

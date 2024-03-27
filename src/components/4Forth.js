@@ -41,6 +41,7 @@ function Quarto(){
   {/* when using vh remember, my mistake was that, in a 95VH component, using vh just meant adding to 95
   BUT I ignored the fact that vh is based on the entire of the uncut windoew, and that each of the vh woulkd carry a 0.05 error
   , so we use % so that the 95vh (I guess) we inherit from teh ParallaLayer works*/}
+
   return(
     <div ref={cart} style={{height: "100%"}}>
 
@@ -48,6 +49,7 @@ function Quarto(){
       <div className="text-secondary flex-column cent-flex justify-content-around mx-auto" style={{paddingTop: "1vh", height: "22vh", width: "80%"}}>
         <h1 className="text-secondary"> 
           Our Organitation <FontAwesomeIcon className="ps-1" icon={faUserGroup} />
+          <button className="btn btn-primary" >Siamo</button>
         </h1>
         <div className="bg-secondary p-1 p-md-2 text-white">
           <p>
@@ -109,9 +111,8 @@ function Quarto(){
       <div className="cent-flex flex-column justify-content-between justify-content-md-end position-fixed w-100 text-secondary" 
         style={{bottom: 0, height: "17vh"}}>
         <div className="p-2 text-white bg-secondary text-start d-flex flex-column d-md-none" style={{ width: "82%" }}>
-          <p className="text-center"><b> Q&A Session 11</b></p>
-          <p><b>Place:</b> central studio, 100 seats </p>
-          <p><b>Time:</b> 9:30 AM/ 11:15 PM/ 2:30 PM/ 5:30 PM</p>
+          <p><b>Q&A session:</b> central studio, 100 seats </p>
+          <p className="text-center"><b>Time:</b> 9:30 AM/ 11:15 PM/ 2:30 PM/ 5:30 PM</p>
         </div>
 
         <h5 className="text-white"> Join our newsletter theVHcase</h5>

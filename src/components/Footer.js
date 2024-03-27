@@ -6,10 +6,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faPhone, faMapLocationDot} from "@fortawesome/free-solid-svg-icons";
 
-function Footer(){
+function Footer({forwardedRef}){
+
+  //console.log( forwardedRef.current )
+  let [base, setBase] = useState(0)
+
+  function upper(){
+    console.log("Maybe we can find a solution to this")
+    setBase(1)
+
+    forwardedRef.current.scrollTo(3)
+  }
+
+  //console.log( "------YYY---------" )
 
   function segna(e){
     e.preventDefault()
+    //forwardedRef.current.scrollTo(4)
+
     //maybe we can just add the element to it
     console.log(e)
 
@@ -17,6 +31,8 @@ function Footer(){
   }
 
   let [testo, setTesto] = useState("")
+
+  //Footer, lets try to fix the on FORM re-size of the entire vindow and forced translateY of the page
 
   return(
     <div className="px-0">
@@ -40,7 +56,7 @@ function Footer(){
             <form onSubmit={segna} className="row mx-0 d-flex justify-content-center">
               <div className="col-8 col-md-7 px-0">
                 <input type="text" className="form-control w-100" name="indi" 
-                  value={testo} onChange={(e)=> setTesto(e.target.value)} />
+                  value={testo} onChange={(e)=> setTesto(e.target.value)} onFocus={()=> upper()} onBlur={()=> upper()} />
               </div>
               <div className="col-auto px-0"> {/*col-3 col-sm-4 col-md-3 px-0 text-end*/}
                 <button className="btn btn-sm py-2 btn-success">

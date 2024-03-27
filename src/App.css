@@ -31,6 +31,15 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 /* intro */
+/*
+.meno div:first-child{
+  height: 3382px;
+}
+*/
+.bassinimio{
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
 
 .hammer{
   font-family: 'Racing Sans One', cursive;

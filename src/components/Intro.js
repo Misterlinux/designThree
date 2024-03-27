@@ -2,6 +2,7 @@ import { useStato, useStatoset } from "../data/Context";
 
 function Intro(){
 
+
   //We need the MarginTop to the media query
   return(
     <div className="row mx-0 col-12 d-flex justify-content-center position-relative" style={{ height: "55vh" }}>
