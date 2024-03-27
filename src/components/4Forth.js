@@ -46,7 +46,7 @@ function Quarto(){
     <div ref={cart} style={{height: "100%"}}>
 
       {/* from 20% to 25% on text intro height */}
-      <div className="text-secondary flex-column cent-flex justify-content-around mx-auto" style={{paddingTop: "1vh", height: "22vh", width: "80%"}}>
+      <div className="text-secondary flex-column cent-flex justify-content-around mx-auto" style={{paddingTop: "1vh", height: "23vh", width: "80%"}}>
         <h1 className="text-secondary"> 
           Our Organitation <FontAwesomeIcon className="ps-1" icon={faUserGroup} />
         </h1>
@@ -94,9 +94,9 @@ function Quarto(){
 
       </div>
 
-      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" style={{height: "14vh", overflowX: "scroll", marginTop: "1vh"}}>
+      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" style={{height: "15vh", overflowX: "scroll", marginTop: "1vh"}}>
         <animated.div className="position-absolute immagine1 border border border-3 border-secondary" 
-          style={{ x: mosso.to(value => `${value*0.7}vh`) }}>
+          style={{ x: mosso.to(value => `${value*0.75}vh`) }}>
         </animated.div>
 
         {stato.galleria.map((cont, index)=>(
@@ -107,11 +107,11 @@ function Quarto(){
       </div>
 
 
-      <div className="cent-flex flex-column justify-content-between justify-content-md-end position-fixed w-100 text-secondary" 
+      <div className="cent-flex flex-column justify-content-center justify-content-md-end position-fixed w-100 text-secondary" 
         style={{bottom: 0, height: "17vh"}}>
         <div className="p-2 text-white bg-secondary text-start d-flex flex-column d-md-none" style={{ width: "82%" }}>
           <p><b>Q&A session:</b> central studio, 100 seats </p>
-          <p className="text-center"><b>Time:</b> 9:30 AM/ 11:15 PM/ 2:30 PM/ 5:30 PM</p>
+          <p><b>Time:</b> 9:30 AM/ 11:15 PM/ 2:30 PM/ 5:30 PM</p>
         </div>
 
         {/*<h5 className="text-white"> Join our newsletter</h5>*/}

@@ -100,6 +100,10 @@ function Primo(){
       </animated.div>
 
       <div className="d-flex justify-content-center position-relative single">
+
+        <div className="position-absolute bg-danger single" style={{ marginTop: 0 }}>
+        </div>
+
         <div className="position-relative singlepresent" 
           style={{ width: "100%", height: "100%", backgroundImage: `url(${single})`}}>
 

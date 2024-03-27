@@ -63,7 +63,7 @@ function Footer({forwardedRef}){
             </div>
 
             <h2 style={{ fontSize: "2.5em" }}>
-              <a className="text-center text-secondary text-decoration-none" href="mailto:recipient@example.com">
+              <a className="text-center text-secondary text-decoration-none" href="mailto:tuneFuse@example.com">
                 Contact Us
               </a>
             </h2>

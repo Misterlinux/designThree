@@ -236,7 +236,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 /*This is the red space for the mobile version*/
 .immagine1{
-  width: 14vh;
+  width: 15vh;
   height: 100%;
 }
 
@@ -256,11 +256,11 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 .orizontimma{
   height: 100%;
-  width: 14vh;
+  width: 15vh;
 }
 
 .altofondo{
-  width: 14vh;
+  width: 15vh;
   height: 100%;
   background-position: center;
   background-size: cover;
