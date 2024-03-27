@@ -105,7 +105,8 @@ function Terzo(){
         */}
         {/* Mobile design */}
         {stato.duo.map((cont, index)=>(
-          <div className={`mt-3 row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} style={{height: "42vh"}}>
+          <div className={`mt-3 row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} 
+            style={{height: "42vh"}}>
             
             <div className="position-relative d-flex d-md-none px-0" style={{top: "2%", width: "100%", height: "25vw", zIndex: 5 }}>
 
@@ -137,11 +138,11 @@ function Terzo(){
           {/* actual text container*/}
           <div className="thirdPresent col-11 bg-primary text-white position-absolute px-2" style={{ [["right", "left"][index%2]]: "0%" /*right: "0%"*/ }}>
  
-            <div className="d-flex flex-column justify-content-around" style={{fontSize: "0.9em", height: "35%"}}> 
+            <div className="shortenText flex-column justify-content-around" style={{fontSize: "0.9em", height: "35%"}}> 
               {cont.desc[0]} 
             </div>
 
-            <div className="d-flex flex-column justify-content-around mt-0 mt-md-2" style={{height: "65%"}} >
+            <div className="d-flex flex-column justify-content-around mt-0 mt-md-2 shortenBar" style={{/*height: "65%"*/}} >
 
             <div>
             <p className="fw-bold"> Global views: {cont.views[0]} </p>

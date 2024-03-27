@@ -382,6 +382,26 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   #bootlock .singlename{
     width: calc(100% - 6vh);
   }
+}
 
+.shortenText{
+  display: flex;
+}
+
+.shortenBar{
+  height: 65%;
+}
+
+/* remove text on third and add from 65% to 100% the loadBar 
+It seems how to do the height  */
+@media (max-height: 690px){
+
+  .shortenText{
+    display: none;
+  }
+
+  .shortenBar{
+    height: 100%;
+  }
 
 }
