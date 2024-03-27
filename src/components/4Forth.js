@@ -49,7 +49,6 @@ function Quarto(){
       <div className="text-secondary flex-column cent-flex justify-content-around mx-auto" style={{paddingTop: "1vh", height: "22vh", width: "80%"}}>
         <h1 className="text-secondary"> 
           Our Organitation <FontAwesomeIcon className="ps-1" icon={faUserGroup} />
-          <button className="btn btn-primary" >Siamo</button>
         </h1>
         <div className="bg-secondary p-1 p-md-2 text-white">
           <p>
@@ -115,7 +114,7 @@ function Quarto(){
           <p className="text-center"><b>Time:</b> 9:30 AM/ 11:15 PM/ 2:30 PM/ 5:30 PM</p>
         </div>
 
-        <h5 className="text-white"> Join our newsletter theVHcase</h5>
+        {/*<h5 className="text-white"> Join our newsletter</h5>*/}
       </div>
 
     </div>

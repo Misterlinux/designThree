@@ -293,16 +293,17 @@ function Home(){
   //mobile designs
 
   //the queryseklect stra
+  /*
   let palla = useRef()
 
   function siamo(){
     console.log("SIAMO come arrivati")
     palla.current.scrollTo(4)
   }
-
+  */
   return(
     <div ref={parle} style={{width: "100%" /*marginTop: "5em", height: "100vh"*/ }}>
-      <Parallax ref={palla} pages={4.75} className="meno" id="questo" style={{ height: "100vh" }}>
+      <Parallax pages={4.75} className="meno" id="questo" style={{ height: "100vh" }}>
         <ParallaxLayer  offset={0}>
           <Intro/>
         </ParallaxLayer>
@@ -369,13 +370,13 @@ function Home(){
 
         {/* 3.55  */}
         <ParallaxLayer offset={window.innerWidth< 600 ? 3.60 : 3.55} factor={window.innerWidth< 600 ? 0.95 : 1}>
-          <div className="stratos" id="quarto" move="100%" color={30} style={{ height: "100%" }}>
+          <div className="stratos" id="quarto" move="100%" color={35} style={{ height: "100%" }}>
             <Quarto />
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={4.55} factor={0.2} style={{ backgroundColor: "navajowhite" }}>
-          <Footer forwardedRef={palla}/>
+        <ParallaxLayer offset={4.55} factor={0.2} className="bg-primary">
+          <Footer/>
         </ParallaxLayer>
 
         <ParallaxLayer onScroll={vario} offset={0.30} style={{ height: 0 ,display: "inline-block"}} sticky={{ start: 0.30, end: 1.55 }}>
@@ -436,9 +437,6 @@ function Home(){
             <div className="d-inline-block" style={{verticalAlign: "top", marginTop: "5em", marginLeft: "25%" ,width: "55%" }}>
               <div className="cent-flex position-relative middlecol text-primary bg-main-second">
                 <h4> - Our Band - </h4>
-                <button className="btn btn-primary" onClick={()=> siamo()}>
-                  Vallo
-                </button>
               </div>
             </div>
           </>

@@ -4,18 +4,21 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faPhone, faMapLocationDot} from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faMapLocationDot, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 
 function Footer({forwardedRef}){
 
-  //console.log( forwardedRef.current )
-  let [base, setBase] = useState(0)
+  //let [base, setBase] = useState(0)
 
+  //console.log( forwardedRef.current )
+
+  /*
   function upper(){
     console.log("Maybe we can find a solution to this")
     setBase(1)
 
-    forwardedRef.current.scrollTo(4)
+    window.scrollTo({ bottom: 0, behavior: 'smooth' });
+    //forwardedRef.current.scrollTo(4)
   }
 
   //console.log( "------YYY---------" )
@@ -29,11 +32,13 @@ function Footer({forwardedRef}){
 
     alert("Alright, we will send an email to " + testo + " eventually")
   }
+  */
 
   let [testo, setTesto] = useState("")
 
   //Footer, lets try to fix the on FORM re-size of the entire vindow and forced translateY of the page
-
+  //I didn't manage to fix the mobile keyboard height vh shrink and empty white space on the bottom
+  //So I just added an email button, even importing the parallax Ref and scroollTo () didnt work
   return(
     <div className="px-0">
       <div className="row col-12 mx-0 px-0 d-flex justify-content-center justify-content-sm-around">
@@ -52,18 +57,34 @@ function Footer({forwardedRef}){
           </div>  
 
           {/* for some reason if we use d-flex it shortens the space on desktop */}
-          <div className="col-9 col-sm-9 col-md-8 taglio px-0 py-1 py-md-2 bg-main">
-            <form onSubmit={segna} className="row mx-0 d-flex justify-content-center">
+          <div className="col-9 col-sm-9 col-md-8 taglio d-flex justify-content-around cent-flex px-0 py-1 py-md-2 bg-main text-white">
+            <div>
+              <FontAwesomeIcon style={{animationDuration: "5s"}} icon={faEnvelope} className="ps-1 text-secondary fs-2" beatFade/>
+            </div>
+
+            <h2 style={{ fontSize: "2.5em" }}>
+              <a className="text-center text-secondary text-decoration-none" href="mailto:recipient@example.com">
+                Contact Us
+              </a>
+            </h2>
+
+            <div>
+              <FontAwesomeIcon style={{animationDuration: "5s"}} icon={faEnvelope} className="ps-1 text-secondary fs-2" beatFade/>
+            </div>
+            {/*col-3 col-sm-4 col-md-3 px-0 text-end*/}
+            {/*
+            <form className="row mx-0 d-flex justify-content-center">
               <div className="col-8 col-md-7 px-0">
                 <input type="text" className="form-control w-100" name="indi" 
-                  value={testo} onChange={(e)=> setTesto(e.target.value)} onFocus={()=> upper()} onBlur={()=> upper()} />
+                  value={testo} onChange={(e)=> setTesto(e.target.value)} />
               </div>
-              <div className="col-auto px-0"> {/*col-3 col-sm-4 col-md-3 px-0 text-end*/}
+              <div className="col-auto px-0"> 
                 <button className="btn btn-sm py-2 btn-success">
-                  Sign-in 09
+                  Sign-in 
                 </button>
               </div>
             </form>
+            */}
           </div>
 
           <div style={{width: "5vh"}} className="des bg-main">
@@ -71,17 +92,17 @@ function Footer({forwardedRef}){
 
           <div className="d-flex justify-content-around col-9 col-md-8 pt-2">
             <div className="d-flex justify-content-center align-items-center">
-              <FontAwesomeIcon className="p-3 bg-warning rounded-circle" style={{fontSize: "1em"}} icon={faFacebook} />
+              <FontAwesomeIcon className="p-3 bg-secondary text-white rounded-circle" style={{fontSize: "1em"}} icon={faFacebook} />
             </div>
             <div className="d-flex justify-content-center align-items-center">
-              <FontAwesomeIcon className="p-3 bg-warning rounded-circle" style={{fontSize: "1em"}} icon={faTwitter} />
+              <FontAwesomeIcon className="p-3 bg-secondary text-white rounded-circle" style={{fontSize: "1em"}} icon={faTwitter} />
             </div>
             <div className="d-flex justify-content-center align-items-center">
-              <FontAwesomeIcon className="p-3 bg-warning rounded-circle" style={{fontSize: "1em"}} icon={faFacebook} />
+              <FontAwesomeIcon className="p-3 bg-secondary text-white rounded-circle" style={{fontSize: "1em"}} icon={faFacebook} />
             </div>
           </div>
 
-          <div className="d-flex d-sm-none justify-content-around row col-12 px-0 pt-2">
+          <div className="text-white d-flex d-sm-none justify-content-around row col-12 px-0 pt-2">
             <div className="col-6 row px-0">
               <div className="col-3 col-md-2 pe-0 align-self-center text-end">
                 <FontAwesomeIcon icon={faMapLocationDot} />
