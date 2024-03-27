@@ -15,7 +15,7 @@ function Footer({forwardedRef}){
     console.log("Maybe we can find a solution to this")
     setBase(1)
 
-    //forwardedRef.current.scrollTo(3)
+    forwardedRef.current.scrollTo(4)
   }
 
   //console.log( "------YYY---------" )
@@ -60,7 +60,7 @@ function Footer({forwardedRef}){
               </div>
               <div className="col-auto px-0"> {/*col-3 col-sm-4 col-md-3 px-0 text-end*/}
                 <button className="btn btn-sm py-2 btn-success">
-                  Sign-in 11
+                  Sign-in 09
                 </button>
               </div>
             </form>
