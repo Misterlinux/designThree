@@ -54,7 +54,7 @@ function Home(){
   let reffe;
   let mio;
 
-  //e need to create a different interect ith a different options object
+  //we need to create a different interect ith a different options object
   useEffect(()=>{
 
     let finalmente = document.querySelectorAll(".stratos")
@@ -165,7 +165,7 @@ function Home(){
           if(entry.isIntersecting && entry.boundingClientRect.top <= (largo> 537 ? 75 : 75) ){
             
             //console.log( entry.boundingClientRect.top )
-            if( entry.target.id == "primo" ){
+            if( entry.target.id == "main" ){
               //console.log( "Pri top" + entry.boundingClientRect.top )
             }
             //entry.target.ref.current.style.height = "500px"
@@ -324,7 +324,7 @@ function Home(){
         </ParallaxLayer>
 
         <ParallaxLayer  offset={0.55} className="">
-          <div ref={primate} className="stratos" id="primo" move="25%" color={300} >
+          <div ref={primate} className="stratos" id="TuneFuse" move="25%" color={300} >
             <Primo />
           </div>
         </ParallaxLayer>
@@ -350,13 +350,13 @@ function Home(){
 
 
         <ParallaxLayer offset={1.55} className="bg-main">
-          <div ref={secondate} className="stratos" id="secondo" move="50%" color={210}>
+          <div ref={secondate} className="stratos" id="Band" move="50%" color={210}>
             <Secondo />
           </div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={2.55} className="bg-main" factor={window.innerWidth< 600 ? 1.05 : 1}>
-          <div className="stratos" id="terzo" move="75%" color={120} style={{ height: "100%" }}>
+          <div className="stratos" id="Duo" move="75%" color={120} style={{ height: "100%" }}>
             <Terzo />
           </div>
         </ParallaxLayer>
@@ -370,7 +370,7 @@ function Home(){
 
         {/* 3.55  */}
         <ParallaxLayer offset={window.innerWidth< 600 ? 3.60 : 3.55} factor={window.innerWidth< 600 ? 0.95 : 1}>
-          <div className="stratos" id="quarto" move="100%" color={35} style={{ height: "100%" }}>
+          <div className="stratos" id="Team" move="100%" color={35} style={{ height: "100%" }}>
             <Quarto />
           </div>
         </ParallaxLayer>
@@ -381,7 +381,7 @@ function Home(){
 
         <ParallaxLayer onScroll={vario} offset={0.30} style={{ height: 0 ,display: "inline-block"}} sticky={{ start: 0.30, end: 1.55 }}>
           <> 
-            <div targetrefname="esempio"  className="position-relative d-inline-block vero primo" 
+            <div targetrefname="esempio"  className="position-relative d-inline-block vero TuneFuse" 
               style={{ verticalAlign: "top", marginTop: "5em" ,overflowY: "hidden",width: "25%" }}>
 
               <div className="position-relative bg-primary" style={{ height: "100vh" }} >
@@ -444,7 +444,7 @@ function Home(){
 
         <ParallaxLayer offset={1.37} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.37, end: 2.55}}>
           <>
-            <div targetrefname="esempio1" className="d-inline-block vero secondo" 
+            <div targetrefname="esempio1" className="d-inline-block vero Band" 
               style={{overflowY: "hidden",verticalAlign: "top", marginTop: "5em" , marginLeft: "80%", width: "20%" }}>
 
               <div className="position-relative bg-primary text-secondary" style={{height: "100vh" }}>
@@ -509,7 +509,7 @@ function Home(){
 
         <ParallaxLayer offset={2.41} style={{height: 0, display: "inline-block"}} sticky={{start: 2.41,end: 3.37}}>
           <>
-            <div className="d-inline-block vero terzo" 
+            <div className="d-inline-block vero Duo" 
               style={{ overflowY: "hidden", marginTop: "5em", verticalAlign: "top" ,width: "20%"}}>
               <div className="bg-primary text-secondary position-relative" style={{height: "100vh"}}>
                 <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/thirdDay.jpg")` }}>
@@ -562,7 +562,7 @@ function Home(){
 
         <ParallaxLayer className="d-none d-md-inline-block" offset={3.41} style={{height: 0 }} sticky={{start: 3.41,end: 3.70}}>
           <>
-            <div className="d-inline-block vero quarto" 
+            <div className="d-inline-block vero Team" 
               style={{ marginTop: "5em" ,overflowY: "hidden" ,verticalAlign: "top" ,width: "20%", marginLeft: "80%"}}>
               <div className="bg-primary text-white position-relative" style={{height: "100vh"}}>
                 <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/fourthDay.jpg")` }}>

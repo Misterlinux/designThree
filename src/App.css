@@ -36,6 +36,12 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   height: 3382px;
 }
 */
+
+.introText{
+  margin-top: "2.5em"
+}
+
+
 .bassinimio{
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
@@ -277,8 +283,20 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 
+@media only screen and (max-width: 1000px){
+  .singletext{
+    width: 64vw;
+    top: 82%;
+    left: 6%;
+  }
+}
 
 @media only screen and (max-width: 576px){
+
+  /* Intro */
+  .introText{
+    margin-top: "1.5em"
+  }
 
   /* --- */
   .middlecol{
@@ -321,13 +339,13 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   #bootlock .singlename{
     width: calc(100% - 7vh);
   }
-
+  /*
   .singletext{
     width: 64vw;
     top: 82%;
     left: 6%;
   }
-
+  */
   /* Secondo.js */
   .secondTitle{
     width: 95%;

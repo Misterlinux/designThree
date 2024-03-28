@@ -22,7 +22,8 @@ function Navbar(){
       y: 0
     },
     leave:{
-      y: -50
+      y: -50,
+      config: {duration: 100}
     },
     exitBeforeEnter: true,
     config: {    
@@ -49,17 +50,17 @@ function Navbar(){
       </div>
 
       <div className="d-none d-sm-flex col-sm-6 row position-relative">
-        <nav className="col-3 nav-item primo cent-flex">
-          <h4> Singer </h4>
+        <nav className="col-3 nav-item TuneFuse cent-flex">
+          <h4> Artist </h4>
         </nav>
-        <nav className="col-3 nav-item secondo cent-flex">
+        <nav className="col-3 nav-item Band cent-flex">
           <h4 className=""> Band </h4>
         </nav>
-        <nav className="col-3 nav-item terzo cent-flex">
+        <nav className="col-3 nav-item Duo cent-flex">
           <h4 className=""> Duo </h4>
         </nav>
-        <nav className="col-3 nav-item quarto cent-flex">
-          <p className=""> Organization </p>
+        <nav className="col-3 nav-item Team cent-flex">
+          <h4 className=""> Team </h4>
         </nav>
 
         <animated.div className="barra" style={{width: stato.springa}}>

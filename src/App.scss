@@ -41,7 +41,7 @@ $base: 300;
 
 #bootlock .bg-primary{
   background-color: hsl(var(--base, $base), 100%, 36%);
-  /*transition: 1s;*/
+  transition: 1s;
 }
 
 #bootlock .text-secondary{

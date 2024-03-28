@@ -10,10 +10,10 @@ function Intro(){
         <div style={{width: "100%", height: "100%", backgroundColor: "green", opacity: 0.3 }}></div>
       </div>
 
-      <div className="col-10 col-md-7 flex-column cent-flex position-relative"
-        style={{marginTop: "1em", color: "hsl(300, 100%, 36%)"}}>
-        <h1 className="hammer text-center" style={{fontSize: "3em"}}>Welcome to TuneFuse</h1>
-        <p className="hammer" style={{fontSize: "1.2em"}}>Where Melodies Unite!</p>
+      <div className="col-10 col-md-8 flex-column cent-flex position-relative introText"
+        style={{color: "hsl(300, 100%, 36%)"}}>
+        <h1 className="hammer text-center" style={{fontSize: "3.5em"}}>Welcome to TuneFuse</h1>
+        <p className="hammer" style={{fontSize: "1.5em"}}>Where Melodies Unite!</p>
       </div>
 
       <div className="position-absolute text-white d-flex align-items-center" style={{ bottom: 0, height: "15vh"}}>

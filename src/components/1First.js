@@ -122,8 +122,7 @@ function Primo(){
 
                   {nome.map((cont, index)=>(
                     <animated.h1 className="cent-flex position-relative pb-1" key={index}
-                      style={{width: "0.7em", height: "1em", top: mosso[index].top,
-                        }}>
+                      style={{width: "0.7em", height: "1em", top: mosso[index].top }}>
                       {cont}
                     </animated.h1>)
                   )}
