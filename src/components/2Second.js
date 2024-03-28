@@ -97,7 +97,6 @@ function Secondo(){
   //remember that when using d-flex to justify and align multiple elements you need the container to re-set
   //it to 100% for its height and width
 
-  console.log( stato.band )
   return(
     <div style={{height: "100vh"}} ref={tutto}>
 

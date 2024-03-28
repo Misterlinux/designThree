@@ -141,7 +141,7 @@ function Home(){
 
     //we dont use css variables to edit in a changeable className, nor we use a useRef()
     //style we access throught another attribut to then use in an array of useRef()
-    //To access the correct one, we just edit the target's height
+    //To access the correct one, we just directly edit the target's height
     if(finalmente.length){
 
       let coloptions = {
@@ -171,7 +171,8 @@ function Home(){
             //entry.target.ref.current.style.height = "500px"
 
             //We cannot console.log() the document.queryselct style BUT we can edit it
-          
+            console.log("Pixel Movemnt")
+
             reffe = document.querySelector(`.vero.${entry.target.id}`)
             reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - (largo> 537 ? 75 : 75) + "px"} )`
           }
@@ -318,7 +319,7 @@ function Home(){
           //Position relative is needed for the positioning
         }}
         >
-          <Guir className="position-relative firstback" 
+          <Guir className="position-relative firstback"
             style={{ fill: `hsl(${stato.base}, 100%, 36%)`, 
             height: "45vh", width: "12%" }}/>
         </ParallaxLayer>
@@ -445,7 +446,7 @@ function Home(){
         <ParallaxLayer offset={1.37} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.37, end: 2.55}}>
           <>
             <div targetrefname="esempio1" className="d-inline-block vero Band" 
-              style={{overflowY: "hidden",verticalAlign: "top", marginTop: "5em" , marginLeft: "80%", width: "20%" }}>
+              style={{overflowY: "hidden",verticalAlign: "top", marginTop: "5em" , marginLeft: "80%", width: "20%", transition: "0.05s"}}>
 
               <div className="position-relative bg-primary text-secondary" style={{height: "100vh" }}>
                 <div className="position-absolute colonna1" style={{ backgroundImage: `url("./imma/dayTwo.jpg")` }}>

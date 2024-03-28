@@ -298,7 +298,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
   /* Intro */
   #bootlock .introText{
-    margin-top: 1.5em
+    margin-top: 1em
   }
 
   .introText h1{
@@ -317,6 +317,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
   /* Primo.js */
   .firstback{
+    display: none;
     top: 20%;
     left: 0vw;
   }
