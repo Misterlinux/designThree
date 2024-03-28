@@ -51,7 +51,6 @@ function Home(){
 
   //Instead of useResize we just use the current.clientWidth
 
-  let reffe;
   let mio;
 
   //we need to create a different interect ith a different options object
@@ -142,6 +141,17 @@ function Home(){
     //we dont use css variables to edit in a changeable className, nor we use a useRef()
     //style we access throught another attribut to then use in an array of useRef()
     //To access the correct one, we just directly edit the target's height
+    let reffe;
+
+    //so, to avoid the querySelector  on the intersect we cached the values on an object 
+    //to get from the array and modify its height
+    let elements = {};
+    finalmente.forEach((valo1) => {
+      elements[valo1.id] = document.querySelector(`.vero.${valo1.id}`);
+    });
+    console.log( "--------VVV----------" )
+    console.log( elements )
+
     if(finalmente.length){
 
       let coloptions = {
@@ -165,15 +175,15 @@ function Home(){
           if(entry.isIntersecting && entry.boundingClientRect.top <= (largo> 537 ? 75 : 75) ){
             
             //console.log( entry.boundingClientRect.top )
-            if( entry.target.id == "main" ){
-              //console.log( "Pri top" + entry.boundingClientRect.top )
-            }
             //entry.target.ref.current.style.height = "500px"
 
             //We cannot console.log() the document.queryselct style BUT we can edit it
-            console.log("Pixel Movemnt")
+            //instead of doing a querySelector we just pick from a pre-made array
+            //reffe = document.querySelector(`.vero.${entry.target.id}`)
+            reffe = elements[entry.target.id]
+            //console.log("Pixel Movemnt")
+            //console.log( elements[entry.target.id] )
 
-            reffe = document.querySelector(`.vero.${entry.target.id}`)
             reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - (largo> 537 ? 75 : 75) + "px"} )`
           }
 
