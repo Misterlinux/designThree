@@ -8,8 +8,6 @@ import Quarto from "./4Forth";
 import Intro from "./Intro";
 import Footer from "./Footer";
 
-import camera from "../imma/fotoicon.svg"
-
 import guitar from "../imma/guitar.svg"
 import { ReactComponent as Guir } from "../imma/guitar.svg"
 import { ReactComponent as Lamp } from "../imma/lampost1.svg" 

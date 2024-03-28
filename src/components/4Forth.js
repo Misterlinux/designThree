@@ -4,10 +4,12 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { animated, useSpring, useInView, useTransition, useSpringValue} from '@react-spring/web'
 
 import Carousel from 'react-bootstrap/Carousel';
+/*
 import intro from "../imma/intro.jpg";
 import build from "../imma/building.jpg"
 import logo from "../imma/logo.png"
 import camera from "../imma/fotoicon.svg";
+*/
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
