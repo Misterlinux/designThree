@@ -55,7 +55,6 @@ function Home(){
 
   //we need to create a different interect ith a different options object
   useEffect(()=>{
-
     let finalmente = document.querySelectorAll(".stratos")
     let navigat = document.querySelectorAll(".nav-item");
 
@@ -173,7 +172,7 @@ function Home(){
           //from 70 to 10
 
           if(entry.isIntersecting && entry.boundingClientRect.top <= (largo> 537 ? 75 : 75) ){
-            
+          
             //console.log( entry.boundingClientRect.top )
             //entry.target.ref.current.style.height = "500px"
 
@@ -183,8 +182,11 @@ function Home(){
             reffe = elements[entry.target.id]
             //console.log("Pixel Movemnt")
             //console.log( elements[entry.target.id] )
+            requestAnimationFrame(() => {
+              reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - 75 + "px"} )`;
+            });
 
-            reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - (largo> 537 ? 75 : 75) + "px"} )`
+            //reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - (largo> 537 ? 75 : 75) + "px"} )`
           }
 
 

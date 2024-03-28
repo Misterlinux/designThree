@@ -133,7 +133,7 @@ function Primo(){
 
             <div className="p-2 p-md-3 bg-secondary text-white">
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Lorem11 ipsum dolor sit, amet consectetur adipisicing elit. 
                 Aliquam voluptatibus repellendus reprehenderit quaerat 
                 consequuntur molestias culpa, ipsa tempora, accusantium qui 
                 voluptas possimus aspernatur rem pariatur eligendi.
