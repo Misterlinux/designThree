@@ -46,9 +46,9 @@ function Quarto(){
     <div ref={cart} style={{height: "100%"}}>
 
       {/* from 20% to 25% on text intro height */}
-      <div className="text-secondary flex-column cent-flex justify-content-around mx-auto" 
+      <div className="text-secondary flex-column cent-flex mx-auto" 
         style={{paddingTop: "1vh", height: "22vh", width: "85%"}}>
-        <h1 className="text-secondary"> 
+        <h1 className="text-secondary pb-2"> 
           Our Organitation <FontAwesomeIcon className="ps-1" icon={faUserGroup} />
         </h1>
         <div className="bg-secondary p-1 p-md-2 text-white">
