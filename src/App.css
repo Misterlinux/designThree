@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 .marker{
   font-family: 'Permanent Marker', cursive;
 }
+
+.hammer{
+  font-family: 'Racing Sans One', cursive;
+}
+
 
 #bootlock h1, 
 #bootlock h4,
@@ -26,16 +31,66 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   align-items: center;
 }
 
-.middlecol{
-  height: calc(20vh - 5em)
+/* Home.js, ParallaxLayer sticky columns */
+
+#bootlock .noScroll{
+  left: 0px;
+  scrollbar-width: none;
 }
 
-/* intro */
-/*
-.meno div:first-child{
-  height: 3382px;
+.firstback{
+  top: -10%;
+  left: 38vw;
 }
-*/
+
+.fourthback{
+  top: -36%;
+  left: -45%;
+}
+
+.lato{
+  vertical-align: top;
+  margin-top: 5em;
+  overflow: hidden;
+}
+
+.colonna{
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background-position: center center;
+  background-size: cover;
+}
+
+.colImag{
+  height: 20vh;
+  width: 20vh;
+  border-radius: 30%;
+}
+
+.mobilefirst h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8em;
+  height: 2em;
+}
+
+.middleCol{
+  margin-top: 5em;
+}
+
+.middleCol div{
+  height: calc(20vh - 5em);
+}
+
+/* Primo.js */
+
+
+
+
+/* intro */
+
 
 #bootlock .introText{
   margin-top: 2.5em
@@ -45,20 +100,8 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   font-size: 3.5em;
 }
 
-.bassinimio{
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
-}
-
-.hammer{
-  font-family: 'Racing Sans One', cursive;
-}
-
 /* Primo.js */
-.firstback{
-  top: -10%;
-  left: 38vw;
-}
+
 
 #bootlock .unofirst{
   margin-left: 30%;
@@ -76,15 +119,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 /* single was 10vh */
-
-.mobilefirst h1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.8em;
-  height: 2em;
-}
-
 .single{
   height: 45vh;
   width: 45vh;
@@ -123,10 +157,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   height: 5em;
 }
 
-#bootlock .meno{
-  left: 0px;
-  scrollbar-width: none;
-}
 
 
 /* secondo */
@@ -174,14 +204,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   background-size: cover;
 }
 
-.colonna1{
-  height: 100%;
-  width: 100%;
-  opacity: 0.5;
-  /*background-image: url("./imma/intro.jpg");*/
-  background-position: center center;
-  background-size: cover;
-}
 
 
 
@@ -223,10 +245,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 /* Quarto */
 
-.fourthback{
-  top: -36%;
-  left: -45%;
-}
 
 .scrollo{
   scrollbar-width: none;
