@@ -37,10 +37,13 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 */
 
-.introText{
-  margin-top: "2.5em"
+#bootlock .introText{
+  margin-top: 2.5em
 }
 
+.introText h1{
+  font-size: 3.5em;
+}
 
 .bassinimio{
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
@@ -294,8 +297,12 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 @media only screen and (max-width: 576px){
 
   /* Intro */
-  .introText{
-    margin-top: "1.5em"
+  #bootlock .introText{
+    margin-top: 1.5em
+  }
+
+  .introText h1{
+    font-size: 3em;
   }
 
   /* --- */
