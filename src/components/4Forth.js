@@ -34,7 +34,8 @@ function Quarto(){
   let mosso = useSpringValue( 0, {config: {duration: 500}})
 
   {/* when using vh remember, my mistake was that, in a 95VH component, using vh just meant adding to 95
-  BUT I ignored the fact that vh is based on the entire of the uncut windoew, and that each of the vh woulkd carry a 0.05 error
+  BUT I ignored the fact that vh is based on the entire of the uncut windoew, 
+  and that each of the vh woulkd carry a 0.05 error
   , so we use % so that the 95vh (I guess) we inherit from teh ParallaLayer works*/}
 
   return(
@@ -90,8 +91,10 @@ function Quarto(){
 
       </div>
         
-      {/* carousel bar mobile */}
-      <div className="d-flex justify-content-center d-md-none col-11 ms-3 me-2 position-relative" 
+      {/* carousel bar mobile, remember always the mx-0 on row to avoid differences*/}
+      <div className="d-flex justify-content-center row col-12 mx-0">
+
+      <div className="d-flex d-md-none px-0 col-11 col-sm-8 position-relative" 
         style={{height: "15vh", overflowX: "scroll", marginTop: "1vh", scrollbarWidth: "none"}}>
         <animated.div className="position-absolute mobileBorder border border border-3 border-secondary" 
           style={{ x: mosso.to(value => `${value*0.75}vh`) }}>
@@ -104,6 +107,7 @@ function Quarto(){
         ))}
       </div>
 
+      </div>
 
       <div className="cent-flex flex-column justify-content-center justify-content-md-end position-fixed w-100 text-secondary" 
         style={{bottom: 0, height: "17vh"}}>

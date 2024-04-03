@@ -106,10 +106,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   background-size: cover;
 }
 
-
-
-
-
 /* Intro.js */
 
 .sfondo{
@@ -208,7 +204,9 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 /* Third.js */
 
-
+.thirdTitle{
+  padding-top: 5%;
+}
 
 .shortenText{
   display: flex;
@@ -287,6 +285,10 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 /* Footer.js */
 
+.mailText{
+  font-size: 2.5rem;
+}
+
 .sini{
   height: 9vh;
   clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
@@ -331,6 +333,10 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     height: 35vh;
   }
 
+  /* Fourth.js */
+  .mailText{
+    font-size: 2.2rem;
+  }
 
 }
 
@@ -348,7 +354,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     top: -45%;
     left: -40%
   }
-
 
   /* Intro */
   #bootlock .introText{
@@ -391,7 +396,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     width: 95%;
     /*height: 9em;*/
   }
-
 
   /* footer */
   .contactCut, .sini, .des{

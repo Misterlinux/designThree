@@ -34,7 +34,7 @@ function Footer(){
               <FontAwesomeIcon style={{animationDuration: "5s"}} icon={faEnvelope} className="ps-1 text-secondary fs-2" beatFade/>
             </div>
 
-            <h2 style={{ fontSize: "2.5rem" }}>
+            <h2 className="mailText">
               <a className="text-center text-secondary text-decoration-none" href="mailto:tuneFuse@example.com">
                 Contact Us
               </a>

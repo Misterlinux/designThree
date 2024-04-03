@@ -77,9 +77,9 @@ function Terzo(){
   return(   
     <div style={{marginLeft: "22%", height: "100%"}} ref={terzo}>
 
-      <div className="text-secondary flex-column cent-flex justify-content-between justify-content-md-end" 
+      <div className="thirdTitle text-secondary flex-column cent-flex justify-content-between justify-content-md-end" 
         style={{ /*paddingTop: "7%"*/ /*,height: "6%"*/ }}>
-        <h2 className="text-secondary pt-3"> 
+        <h2 className="text-secondary"> 
           The HarmoNavs <FontAwesomeIcon className="ps-1" icon={faChampagneGlasses} /> 
         </h2>
       </div>
