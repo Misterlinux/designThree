@@ -78,54 +78,41 @@ function Terzo(){
     <div style={{marginLeft: "22%", height: "100%"}} ref={terzo}>
 
       <div className="text-secondary flex-column cent-flex justify-content-between justify-content-md-end" 
-        style={{paddingTop: "3vh", height: /*"15%"*/ "6%" }}>
-        <h2 className="text-secondary"> 
+        style={{ /*paddingTop: "7%"*/ /*,height: "6%"*/ }}>
+        <h2 className="text-secondary pt-3"> 
           The HarmoNavs <FontAwesomeIcon className="ps-1" icon={faChampagneGlasses} /> 
         </h2>
-        {/*
-        <div className="p-1 ms-2 p-md-2 text-white bg-secondary d-flex flex-column d-md-none" 
-          style={{  }}>
-          <p>West Sound Studio/ 800 avaiable seats</p>
-          <p>7:30 AM, 1:15 PM, 7:30 PM </p>
-        </div>
-        */}
       </div>
 
-      <div className="d-flex d-md-none flex-column row mx-0 px-2 col-12 position-relative"
+      {/* Mobile design */}
+      <div className="d-flex d-sm-none flex-column row mx-0 px-2 col-12 position-relative"
         style={{height: "90vh"}}>
 
-        {/* for some reason, in a positio-absolute animation
-        a % x movement doesnt work as well as a left position movement
-        between translateX and left:  */}
-        
         {/*
           TranslateX() when using percentage moves an element orizontally based on its
           OWN width, while the left will move based on teh entire container
           translateX doesnt change the layout so won't change theother elements' 
         */}
-        {/* Mobile design */}
         {stato.duo.map((cont, index)=>(
-          <div className={`shortenSect mt-3 row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`} 
-            style={{/*height: "42vh"*/}}>
-            
-            <div className="position-relative d-flex d-md-none px-0" style={{top: "2%", width: "100%", height: "25vw", zIndex: 5 }}>
+          <div className={`shortenSect mt-3 row col-12 mx-0 px-0 d-flex ${index%2 ? "justify-content-end" : "justify-content-start"} align-items-start position-relative`}>
+            {/* image and title */}
+            <div className="position-relative d-flex d-md-none px-0 " style={{top: "2%", width: "100%", height: "25vw", zIndex: 5 }}>
 
             {/* we can variable interpèolation for property names, only values
             so we use an array 
             so we store the property names in the array and use it with index as index while keeping the animated string value fixed
             or we can put the arrays elements directly on the inline*/}
             <div className="position-absolute" style={{height: "100%", width: "25vw", [["left", "right"][index%2]]: "0%" }}>
-              <animated.div className="thirdImage position-absolute" 
+              <animated.div className="centered position-absolute" 
                 style={{backgroundImage: `url(${cont.photo})`, height: "100%", width: "25vw", [["left", "right"][index%2]]: ruolo[0].x }}>
               </animated.div>
 
-              <div className="d-flex justify-content-center align-items-center bg-secondary" 
-                style={{width: "25vw", height: "100%"}}>
+              <div className="cent-flex bg-secondary" style={{width: "25vw", height: "100%"}}>
                 <FontAwesomeIcon icon={cont.icon} style={{fontSize: "3em"}}/>
               </div>
             </div>
 
-            <div className={`bg-primary position-absolute text-white text-center d-flex flex-column justify-content-center align-items-center`}
+            <div className={`bg-primary position-absolute text-white text-center flex-column cent-flex`}
               style={{height: "100%", width: "45vw", [["right", "left"][index%2]]: "0%"}}>
               <h3 className="ps-1"> {cont.name} </h3>
               <p className="px-2"> {cont.role}
@@ -135,65 +122,62 @@ function Terzo(){
 
           </div>
 
-          {/* actual text container*/}
+          {/* actual mobile text container*/}
           <div className="thirdPresent col-11 bg-primary text-white position-absolute px-2" style={{ [["right", "left"][index%2]]: "0%" /*right: "0%"*/ }}>
  
             <div className="shortenText flex-column justify-content-around" style={{fontSize: "0.9em", height: "35%"}}> 
               {cont.desc[0]} 
             </div>
 
-            <div className="d-flex flex-column justify-content-around mt-0 mt-md-2 shortenBar" style={{/*height: "65%"*/}} >
+            <div className="d-flex flex-column justify-content-around mt-0 mt-md-2 shortenBar" >
 
             <div>
-            <p className="fw-bold"> Global views: {cont.views[0]} </p>
-            <div className="position-relative shortenPixel" style={{height: 26, width: "100%"}}>
-            <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
-              <animated.div style={{height: "100%", width: "100%",
-                backgroundImage: `url(${ice})`,
-                backgroundPosition,
-              }}
-              >
+              <p className="fw-bold"> Global views: {cont.views[0]} </p>
+              <div className="position-relative shortenPixel" style={{height: 26, width: "100%"}}>
+              <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
+                <animated.div style={{height: "100%", width: "100%",
+                  backgroundImage: `url(${ice})`,
+                  backgroundPosition,
+                }}
+                >
+                </animated.div>
               </animated.div>
-            </animated.div>
-            </div>
-
-            <div className="d-flex justify-content-start align-items-center position-relative">
-              <div className="bg-secondary" style={{width: "1em", height: "1em", borderRadius: "50%" }}>
               </div>
 
-              <animated.div className="d-flex align-items-center position-absolute bg-secondary"
-                style={{ height: 3, width: pros[index].views }}>
-              </animated.div>
+              <div className="d-flex justify-content-start align-items-center position-relative">
+                <div className="bg-secondary" style={{width: "1em", height: "1em", borderRadius: "50%" }}>
+                </div>
+
+                <animated.div className="d-flex align-items-center position-absolute bg-secondary"
+                  style={{ height: 3, width: pros[index].views }}>
+                </animated.div>
+              </div>
             </div>
-            </div>
-            {/*different d-flex align */}
 
             <div>
-            <p className="fw-bold">Albums sold: {cont.albums[0]}</p>
-            <div className="position-relative shortenPixel" style={{height: 26, width: "100%"}}>
-            <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].albums}}>
-              <animated.div style={{height: "100%", width: "100%",
-                backgroundImage: `url(${ice})`,
-                backgroundPosition,
-              }}
-              >
+              <p className="fw-bold">Albums sold: {cont.albums[0]}</p>
+              <div className="position-relative shortenPixel" style={{height: 26, width: "100%"}}>
+              <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].albums}}>
+                <animated.div style={{height: "100%", width: "100%",
+                  backgroundImage: `url(${ice})`,
+                  backgroundPosition,
+                }}
+                >
+                </animated.div>
               </animated.div>
-            </animated.div>
-            </div>
-
-            <div className="d-flex justify-content-start align-items-center position-relative">
-              <div className="bg-secondary" style={{width: "1em", height: "1em", borderRadius: "50%" }}>
               </div>
 
-              <animated.div className="d-flex align-items-center position-absolute bg-secondary"
-                style={{ height: 3, width: pros[index].albums }}>
-              </animated.div>
-            </div>
+              <div className="d-flex justify-content-start align-items-center position-relative">
+                <div className="bg-secondary" style={{width: "1em", height: "1em", borderRadius: "50%" }}>
+                </div>
+
+                <animated.div className="d-flex align-items-center position-absolute bg-secondary"
+                  style={{ height: 3, width: pros[index].albums }}>
+                </animated.div>
+              </div>
             </div>
 
-
             </div>
-
           </div>
 
           </div>
@@ -201,19 +185,18 @@ function Terzo(){
 
       </div>
 
-      <div className="p-1 mx-2 d-flex flex-column justify-content-center d-md-none bg-secondary text-white" style={{ height: "8%" }}>
+      <div className="p-1 mx-2 d-flex d-md-none flex-column justify-content-center bg-secondary text-white" style={{ height: "8%" }}>
         <p><b>West Sound Studio</b></p>
         <p><b>7:30 AM, 1:15 PM, 7:30 PM</b></p>
       </div>
-
       
       {/* Desktop version */}
-      <div className="d-none d-md-flex align-items-center row col-12 px-2 mx-0" style={{height: "80%"}}>
+      <div className="d-none d-sm-flex align-items-center row col-12 px-2 mx-0" style={{height: "80%"}}>
 
       {stato.duo.map((cont, index)=>(
-        <div className="row col-12 mx-0 px-0 d-flex justify-content-center position-relative" style={{height: "38vh"}}>
+        <div className="row col-12 mx-0 px-0 flex-cent position-relative" style={{height: "38vh"}}>
 
-        {/* text for first/ even inde elements */}
+        {/* text for first/ even index elements */}
         <div style={{width: "57vw", height: "inherit", [["left", "right"][index%2]]: "0%" }} 
           className={`position-absolute bg-primary text-white ${index%2 ? "d-flex" : "d-flex" } d-flex flex-column justify-content-around align-items-start`}>
           
@@ -228,54 +211,51 @@ function Terzo(){
           
           <div className="d-flex row mx-0 col-12">
 
-          <div className="col-6 px-0">
-          <p className="fw-bold"> TEST Global views: {cont.views[0]} </p>
-          <div className="position-relative" style={{height: 26, width: "100%"}}>
-          <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
-            <animated.div style={{height: "100%", width: "100%",
-              backgroundImage: `url(${ice})`,
-              backgroundPosition,
-            }}
-            >
-            </animated.div>
-          </animated.div>
-          </div>
+            <div className="col-6 px-0">
+              <p className="fw-bold"> Global views: {cont.views[0]} </p>
+              <div className="position-relative" style={{height: 26, width: "100%"}}>
+                <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].views}}>
+                  <animated.div style={{height: "100%", width: "100%",
+                    backgroundImage: `url(${ice})`,
+                    backgroundPosition,
+                  }}
+                  >
+                  </animated.div>
+                </animated.div>
+              </div>
 
+              <div className="d-flex justify-content-start align-items-center position-relative">
+                <div className="bg-secondary" style={{width: "1em", height: "1em", borderRadius: "50%" }}>
+                </div>
 
-          <div className="d-flex justify-content-start align-items-center position-relative">
-            <div className="bg-secondary" style={{width: "1em", height: "1em", borderRadius: "50%" }}>
+                <animated.div className="d-flex align-items-center position-absolute bg-secondary"
+                  style={{ height: 3, width: pros[index].views }}>
+                </animated.div>
+              </div>
             </div>
 
-            <animated.div className="d-flex align-items-center position-absolute bg-secondary"
-              style={{ height: 3, width: pros[index].views }}>
-            </animated.div>
-          </div>
-          </div>
+            <div className="col-6 px-0">
+              <p className="fw-bold"> Global albums: {cont.albums[0]} </p>
+              <div className="position-relative" style={{height: 26, width: "100%"}}>
+                <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].albums}}>
+                  <animated.div style={{height: "100%", width: "100%",
+                    backgroundImage: `url(${ice})`,
+                    backgroundPosition,
+                  }}
+                  >
+                  </animated.div>
+                </animated.div>
+              </div>
 
-          <div className="col-6 px-0">
-          <p className="fw-bold"> TEST Global albums: {cont.albums[0]} </p>
-          <div className="position-relative" style={{height: 26, width: "100%"}}>
-          <animated.div className="position-absolute" style={{width: 50, height: 26, left: walk[index].albums}}>
-            <animated.div style={{height: "100%", width: "100%",
-              backgroundImage: `url(${ice})`,
-              backgroundPosition,
-            }}
-            >
-            </animated.div>
-          </animated.div>
-          </div>
+              <div className="d-flex justify-content-start align-items-center position-relative">
+                <div className="bg-secondary" style={{width: "1em", height: "1em", borderRadius: "50%" }}>
+                </div>
 
-
-          <div className="d-flex justify-content-start align-items-center position-relative">
-            <div className="bg-secondary" style={{width: "1em", height: "1em", borderRadius: "50%" }}>
+                <animated.div className="d-flex align-items-center position-absolute bg-secondary"
+                  style={{ height: 3, width: pros[index].albums }}>
+                </animated.div>
+              </div>
             </div>
-
-            <animated.div className="d-flex align-items-center position-absolute bg-secondary"
-              style={{ height: 3, width: pros[index].albums }}>
-            </animated.div>
-
-          </div>
-          </div>
 
           </div>
 
@@ -284,11 +264,11 @@ function Terzo(){
         <div className="px-0 position-absolute" style={{width: "20vw", height: "inherit", [["right", "left"][index%2]]: "0%" }}>
           <div className="bg-primary text-primary d-flex align-items-center" style={{width: "100%", height: "100%" }}>
           
-            <animated.div className="thirdImage position-absolute" 
+            <animated.div className="centered position-absolute" 
               style={{backgroundImage: `url(${basso})`, height: "38vh", width: "20vw", [["right", "left"][index%2]]: ruolo[0].x }}>
             </animated.div>
 
-            <div className="d-flex justify-content-center align-items-center" 
+            <div className="cent-flex" 
               style={{width: "20vw", height: "38vh", backgroundColor: "purple"}}>
               <FontAwesomeIcon icon={faMusic} style={{fontSize: "3em"}}/>
             </div>
@@ -298,10 +278,7 @@ function Terzo(){
 
         </div>
       ))}
-
-            
       </div>
-      
 
     </div>
   )

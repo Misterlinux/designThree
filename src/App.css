@@ -11,6 +11,7 @@
 
 
 #bootlock h1, 
+#bootlock h2,
 #bootlock h4,
 #bootlock h3,
 #bootlock h5{
@@ -22,13 +23,17 @@
 }
 
 /*------------ */
-
 html, body {margin: 0; height: 100%; overflow: hidden}
 
 .cent-flex{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.centered{
+  background-size: cover;
+  background-position: center center;
 }
 
 /* Home.js, ParallaxLayer sticky columns */
@@ -84,13 +89,37 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   height: calc(20vh - 5em);
 }
 
-/* Primo.js */
+/* Navbar.js */
+
+.naviga{
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  height: 5em;
+}
+
+.fondo{
+  height: 100%;
+  width: 100%;
+  background-image: url("./imma/Roundabout.png");
+  background-position: center;
+  background-size: cover;
+}
 
 
 
 
-/* intro */
 
+/* Intro.js */
+
+.sfondo{
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+  background-image: url("./imma/intro.jpg");
+  background-position: center center;
+  background-size: cover;
+}
 
 #bootlock .introText{
   margin-top: 2.5em
@@ -102,8 +131,10 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 /* Primo.js */
 
-
-#bootlock .unofirst{
+#bootlock .unoParallax{
+  width: 70%;
+  height: 100vh;
+  overflow: hidden;
   margin-left: 30%;
 }
 
@@ -118,7 +149,13 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   padding-left: 5%;
 }
 
-/* single was 10vh */
+.barraTour{
+  justify-content: center;
+  white-space: nowrap;
+  overflow-x: hidden;
+  top: 12vh;
+}
+
 .single{
   height: 45vh;
   width: 45vh;
@@ -126,8 +163,17 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 .singlepresent{
+  width: 100%;
+  height: 100%;
   background-position: center center;
   background-size: cover;
+}
+
+.singletext{
+  width: 45vw;
+  z-index: 5;
+  top: 70%;
+  left: 60%;
 }
 
 #bootlock .singlesecond{
@@ -141,32 +187,15 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   width: calc(100% - 15vh );
 }
 
-.singletext{
-  width: 45vw;
-  z-index: 5;
-  top: 70%;
-  left: 60%;
-}
+/* Secondo.js */
 
-/**/
-
-.naviga{
-  position: fixed;
-  top: 0; /* 0 for testing */
-  z-index: 5;
-  height: 5em;
-}
-
-
-
-/* secondo */
 .secondTitle{
   width: 80%;
-  height: 8em;
+  /*height: 8em;*/
 }
 
-.secondTitle > p{
-  font-size: 1.15em;
+.carta{
+  height: 55vh;
 }
 
 .present{
@@ -177,65 +206,20 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   opacity: 0.5;
 }
 
-.carta{
-  height: 55vh;
+/* Third.js */
+
+
+
+.shortenText{
+  display: flex;
 }
 
-/* navbar */
-
-#bootlock .nav-item.col-3{
-  transition: 1s;
+.shortenBar{
+  height: 65%;
 }
 
-.fondo{
-  height: 100%;
-  width: 100%;
-  background-image: url("./imma/Roundabout.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.sfondo{
-  height: 100%;
-  width: 100%;
-  opacity: 0.9;
-  background-image: url("./imma/intro.jpg");
-  background-position: center center;
-  background-size: cover;
-}
-
-
-
-
-
-.sini{
-  height: 9vh;
-
-  clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
-}
-
-.des{
-  height: 9vh;
-
-  clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
-}
-
-/* to change on media query */
-.taglio{
-
-  height: 9vh;
-}
-
-/* Terzo */
-
-.thirdImage{
-  background-position: center center;
-  background-size: cover;
-}
-
-.centered{
-  background-size: cover;
-  background-position: center center;
+.shortenSect{
+  height: 42vh;
 }
 
 .thirdPresent{
@@ -243,28 +227,27 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   padding-top: calc(25vw + 4%);
 }
 
-/* Quarto */
+/* Fourth.js */
 
-
-.scrollo{
-  scrollbar-width: none;
-  scrollbar-color: yellow orange;
+.fourthIntro{
+  padding-top: 1vh;
+  height: 22vh;
+  width: 85%;
 }
 
+.fourthCarousel{
+  width: 80%;
+  height: 65vh;
+}
 
-.caroselheight{
+.carouselWin{
+  width: 80%;
   height: 65vh;
 }
 
 .immagine{
   width: 100%;
   height: 20vh;
-}
-
-/*This is the red space for the mobile version*/
-.immagine1{
-  width: 15vh;
-  height: 100%;
 }
 
 .bassofondo{
@@ -274,6 +257,10 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   width: 100%;
 }
 
+.caroselheight{
+  height: 65vh;
+}
+
 .maxiscreen{
   background-position: center;
   background-size: cover;
@@ -281,30 +268,42 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   width: 100%;
 }
 
-.orizontimma{
+.mobileBorder{
+  width: 15vh;
+  height: 100%;
+}
+
+.mobileOriz{
   height: 100%;
   width: 15vh;
 }
 
-.altofondo{
+.imgOriz{
   width: 15vh;
   height: 100%;
   background-position: center;
   background-size: cover;
 }
 
+/* Footer.js */
 
-.quartotest{
-  width: 80%;
+.sini{
+  height: 9vh;
+  clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
 }
 
-/* --------------------- */
-:root{
-  --col: 0px
+.des{
+  height: 9vh;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+}
+
+.contactCut{
+  height: 9vh;
 }
 
 
 @media only screen and (max-width: 1000px){
+  /* first.js text for section */
   .singletext{
     width: 64vw;
     top: 82%;
@@ -312,7 +311,44 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   }
 }
 
+@media only screen and (max-width: 768px){
+  /* Home */
+  .middleCol div{
+    height: calc(16vh - 5em)
+  }
+
+  /* Fourth.js */
+  .carouselWin{
+    width: 100%;
+    height: auto;
+  }
+
+  .caroselheight{
+    height: 40vh;
+  }
+
+  .carta{
+    height: 35vh;
+  }
+
+
+}
+
+
 @media only screen and (max-width: 576px){
+
+  /* Home */
+  .firstback{
+    display: none;
+    top: 20%;
+    left: 0vw;
+  }
+
+  .fourthback{
+    top: -45%;
+    left: -40%
+  }
+
 
   /* Intro */
   #bootlock .introText{
@@ -323,24 +359,8 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     font-size: 3em;
   }
 
-  /* --- */
-  .middlecol{
-    height: calc(16vh - 5em)
-  }
-  
-  /*quarto */
-  .quartotest{
-    width: 100%;
-  }
-
   /* Primo.js */
-  .firstback{
-    display: none;
-    top: 20%;
-    left: 0vw;
-  }
-
-  #bootlock .unofirst{
+  #bootlock .unoParallax{
     margin-left: 28%;
   }
 
@@ -365,50 +385,24 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   #bootlock .singlename{
     width: calc(100% - 7vh);
   }
-  /*
-  .singletext{
-    width: 64vw;
-    top: 82%;
-    left: 6%;
-  }
-  */
-  /* Secondo.js */
+
+  /* secondo.js */
   .secondTitle{
     width: 95%;
-    height: 9em;
+    /*height: 9em;*/
   }
 
-  .secondTitle > p{
-    font-size: 1em;
-  }
-
-  /* Terzo.js */
-
-  /* Fourth */
-  .fourthback{
-    top: -45%;
-    left: -40%
-  }
 
   /* footer */
-  .taglio, .sini, .des{
+  .contactCut, .sini, .des{
     height: 6.5vh;
   }
-
-  .caroselheight{
-    height: 40vh;
-  }
-
-  .carta{
-    height: 35vh;
-  }
-
-  /* stycky colonne  */
 
 }
 
 @media only screen and (max-width: 400px){
 
+  /* Primo.js */
   .barraintro{
     width: 80%;
     margin-left: -19%;
@@ -428,18 +422,12 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   }
 }
 
-.shortenText{
-  display: flex;
-}
-
-.shortenBar{
-  height: 65%;
-}
 
 /* remove text on third and add from 65% to 100% the loadBar 
 It seems how to do the height  */
 @media (max-height: 690px){
 
+  /* Third.js */
   .shortenText{
     display: none;
   }
@@ -447,22 +435,16 @@ It seems how to do the height  */
   .shortenBar{
     height: 100%;
   }
-
 }
-
-.shortenSect{
-  height: 42vh;
-}
-
 
 @media (max-height: 530px){
 
-  .shortenPixel{
-    display: none;
-  }
-
+  /* Third.js */
   .shortenSect{
     height: 40vh;
   }
 
+  .shortenPixel{
+    display: none;
+  }
 }

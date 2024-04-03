@@ -6,22 +6,19 @@ import { animated, useSprings, to as interpolate, useTrail, useResize} from '@re
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandsClapping } from "@fortawesome/free-solid-svg-icons";
 
-import basso from "../imma/basso.jpg"
-
 function Secondo(){
 
   let stato = useStato()
   let dispatch = useStatoset()
 
   let tutto = useRef()
-
   let piccolo = useRef( false )
 
   const { width, height } = useResize({
     container: tutto,
     onChange: ({value: {width, height} })=> {
 
-      if( width < 500 ){
+      if( width < 768 ){
         piccolo.current = true
       }else{
         piccolo.current = false
@@ -30,11 +27,13 @@ function Secondo(){
   })
 
   useEffect(()=>{
-    piccolo.current = width.animation.to < 500 ? true : false
+    console.log( width )
+
+    piccolo.current = width.animation.to < 768 ? true : false
   }, [width])
 
 
-  //so, The order of animations 
+  //Different animations for useResize
   function axis(x){
 
     if( piccolo.current ){
@@ -100,14 +99,12 @@ function Secondo(){
   return(
     <div style={{height: "100vh"}} ref={tutto}>
 
-      <div className="flex-column cent-flex pt-md-4" style={{width: "80%", height: "15vh"}}>
-        <div className="secondTitle flex-column cent-flex">
-          <h1 className="text-secondary text-center p-1">
+      <div className="flex-column cent-flex pt-md-4 pt-3" style={{width: "80%" /*,height: "20vh"*/ }}>
+        <div className="secondTitle">
+          <h1 className="text-secondary text-center py-2">
             The Beatniks <FontAwesomeIcon className="px-1" icon={faHandsClapping} />
           </h1>
           <div className="p-1 p-md-2 text-white bg-secondary" style={{ width: "100%" }}>
-            {/*They tour the nation with their soulful blend 
-            of blues and rock, driven by a passionate tight-knit group of musicians.*/}
             <p><b>Central Music park/ 1600 seats</b></p>
             <p><b> 12:00 AM/ 8:30 PM </b></p>
           </div>
@@ -121,7 +118,6 @@ function Secondo(){
             
             <animated.div className="col-6 col-md-3 position-absolute carta" key={index}
               style={{
-                //x: pre[piccolo.current ? index : (stato.band.length-1)-index].x, 
                 left: pre[piccolo.current ? index : (stato.band.length-1)-index].x,
                 marginTop: cont.marginTop[piccolo.current ? 1 : 0]  
               }}>
@@ -131,7 +127,7 @@ function Secondo(){
                 <div className="position-relative text-white p-2 d-flex flex-column justify-content-between"
                   style={{ height: "100%" }}>
                   <div className="text-center text-md-start">
-                    <h3 className=""> {cont.name} </h3>
+                    <h3> {cont.name} </h3>
                     <p className="d-none d-md-flex"> {cont.title} </p>
                     <p className="d-none d-md-flex"><b> {cont.play} </b></p>
                   </div>

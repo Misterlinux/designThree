@@ -1,15 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useStato, useStatoset } from "../data/Context";
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import { animated, useSpring, useInView, useTransition, useSpringValue} from '@react-spring/web'
+import { animated, useSpring, useInView, useSpringValue} from '@react-spring/web'
 
 import Carousel from 'react-bootstrap/Carousel';
-/*
-import intro from "../imma/intro.jpg";
-import build from "../imma/building.jpg"
-import logo from "../imma/logo.png"
-import camera from "../imma/fotoicon.svg";
-*/
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
@@ -48,8 +41,7 @@ function Quarto(){
     <div ref={cart} style={{height: "100%"}}>
 
       {/* from 20% to 25% on text intro height */}
-      <div className="text-secondary flex-column cent-flex mx-auto" 
-        style={{paddingTop: "1vh", height: "22vh", width: "85%"}}>
+      <div className="text-secondary flex-column cent-flex mx-auto fourthIntro">
         <h1 className="text-secondary pb-2"> 
           Our Organitation <FontAwesomeIcon className="ps-1" icon={faUserGroup} />
         </h1>
@@ -61,9 +53,10 @@ function Quarto(){
         </div>
       </div>
 
-      <div className="quartotest row mx-0 cent-flex caroselheight px-1">
+      <div className="carouselWin row mx-0 cent-flex px-1">
 
-        <div className="d-none d-md-block col-2 p-0 scrollo position-relative" style={{ height: "100%", overflowY: "scroll" }}>
+        <div className="d-none d-md-block col-2 p-0 position-relative" 
+          style={{ height: "100%", overflowY: "scroll", scrollbarWidth: "none"}}>
           <animated.div className="position-absolute immagine border border-3 border-secondary" 
             style={{ y: mosso.to(value => `${value}vh`) }}>
           </animated.div>
@@ -96,15 +89,17 @@ function Quarto(){
         </div>
 
       </div>
-
-      <div className="d-flex d-sm-none col-11 ms-3 me-2 position-relative" style={{height: "15vh", overflowX: "scroll", marginTop: "1vh"}}>
-        <animated.div className="position-absolute immagine1 border border border-3 border-secondary" 
+        
+      {/* carousel bar mobile */}
+      <div className="d-flex justify-content-center d-md-none col-11 ms-3 me-2 position-relative" 
+        style={{height: "15vh", overflowX: "scroll", marginTop: "1vh", scrollbarWidth: "none"}}>
+        <animated.div className="position-absolute mobileBorder border border border-3 border-secondary" 
           style={{ x: mosso.to(value => `${value*0.75}vh`) }}>
         </animated.div>
 
         {stato.galleria.map((cont, index)=>(
-          <div className="orizontimma" key={index} onClick={()=> mossi(index)}>
-            <div className="altofondo" style={{backgroundImage: `url(${cont.src})`}}></div>
+          <div className="mobileOriz" key={index} onClick={()=> mossi(index)}>
+            <div className="imgOriz" style={{backgroundImage: `url(${cont.src})`}}></div>
           </div>
         ))}
       </div>

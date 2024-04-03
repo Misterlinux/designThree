@@ -39,9 +39,9 @@ function Navbar(){
 
   //WE don't display the name on mobile, and also change the dimentions of the icon
   return(
-    <div className="bg-primary d-flex justify-content-between row mx-0 col-12 naviga">
+    <div className="naviga bg-primary d-flex justify-content-between row mx-0 col-12">
 
-      <div className="col-2 col-md-3 d-flex justify-content-center align-items-center">
+      <div className="cent-flex col-2 col-md-3">
         <div style={{ height: 35, width: 35 }}>
           <div className="fondo"></div>
         </div>
@@ -54,13 +54,13 @@ function Navbar(){
           <h4> Artist </h4>
         </nav>
         <nav className="col-3 nav-item Band cent-flex">
-          <h4 className=""> Band </h4>
+          <h4> Band </h4>
         </nav>
         <nav className="col-3 nav-item Duo cent-flex">
-          <h4 className=""> Duo </h4>
+          <h4> Duo </h4>
         </nav>
         <nav className="col-3 nav-item Team cent-flex">
-          <h4 className=""> Team </h4>
+          <h4> Team </h4>
         </nav>
 
         <animated.div className="barra" style={{width: stato.springa}}>
@@ -80,7 +80,6 @@ function Navbar(){
         <animated.div className="barra" style={{width: stato.springa}}>
         </animated.div>
       </div>
-
 
     </div>
   )
