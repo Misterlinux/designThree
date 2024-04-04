@@ -305,7 +305,7 @@ function Home(){
 
         <ParallaxLayer offset={1.37} style={{height: 0, display: "inline-block"}} sticky={{start: 1.37, end: 1.37 }}>
           <>
-            <div className="d-inline-block middleCol" style={{marginLeft: "25%", width: "55%" }}>
+            <div className="middleCol" style={{marginLeft: "25%", width: "55%" }}>
               <div className="cent-flex position-relative text-primary bg-main-second">
                 <h4> - Our Band - </h4>
               </div>
@@ -368,7 +368,7 @@ function Home(){
 
         <ParallaxLayer offset={2.41} style={{height: 0, display: "inline-block"}} sticky={{start: 2.41, end: 2.41}}>
           <>
-            <div className="d-inline-block middleCol" style={{marginLeft: "20%", width: "60%"}}>
+            <div className="middleCol" style={{marginLeft: "20%", width: "60%"}}>
               <div className="cent-flex position-relative bg-main-second text-primary">
                 <h4> - Our Duo - </h4>
               </div>

@@ -14,7 +14,7 @@ function Intro(){
       <div className="col-10 col-md-11 flex-column cent-flex position-relative introText hammer"
         style={{color: "hsl(300, 100%, 36%)"}}>
         <h1 className="text-center">Welcome to TuneFuse</h1>
-        <p style={{fontSize: "1.5em"}}>Where Melodies Unite!</p>
+        <p >Where Melodies Unite!</p>
       </div>
       
     </div>

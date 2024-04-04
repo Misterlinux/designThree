@@ -82,6 +82,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 .middleCol{
+  display: inline-block;
   margin-top: 5em;
 }
 
@@ -313,7 +314,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 765px){
   /* Home */
   .middleCol div{
     height: calc(16vh - 5em)
@@ -439,9 +440,37 @@ It seems how to do the height  */
   .shortenBar{
     height: 100%;
   }
+
+  /* Fourth.js */
+  .fourthIntro{
+    height: 12vh;
+  }
+
+  .fourthIntro div{
+    display: none;
+  }
+  
 }
 
-@media (max-height: 530px){
+@media (max-height: 550px){
+
+  /* Home.js */
+  .middleCol{
+    display: none;
+  }
+
+  /* Intro.js */
+  #bootlock .introText{
+    margin-top: 3em;
+  }
+
+  #bootlock .introText h1{
+    font-size: 2em;
+  }
+
+  #bootlock .introText p{
+    font-size: 1em;
+  }
 
   /* Third.js */
   .shortenSect{
@@ -450,5 +479,10 @@ It seems how to do the height  */
 
   .shortenPixel{
     display: none;
+  }
+
+  /* Footer.js */
+  .mailText{
+    font-size: 1.7em;
   }
 }

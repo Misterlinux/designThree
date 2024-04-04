@@ -30,7 +30,7 @@ function Footer(){
           </div>  
 
           <div className="contactCut col-9 col-md-8 cent-flex justify-content-around px-0 py-1 py-md-2 bg-main text-white">
-            <div>
+            <div className="mailText">
               <FontAwesomeIcon style={{animationDuration: "5s"}} icon={faEnvelope} className="ps-1 text-secondary fs-2" beatFade/>
             </div>
 
@@ -40,7 +40,7 @@ function Footer(){
               </a>
             </h2>
 
-            <div>
+            <div className="mailText">
               <FontAwesomeIcon style={{animationDuration: "5s"}} icon={faEnvelope} className="ps-1 text-secondary fs-2" beatFade/>
             </div>
           </div>
