@@ -440,15 +440,6 @@ It seems how to do the height  */
   .shortenBar{
     height: 100%;
   }
-
-  /* Fourth.js */
-  .fourthIntro{
-    height: 12vh;
-  }
-
-  .fourthIntro div{
-    display: none;
-  }
   
 }
 
@@ -478,6 +469,15 @@ It seems how to do the height  */
   }
 
   .shortenPixel{
+    display: none;
+  }
+
+  /* Fourth.js */
+  .fourthIntro{
+    height: 12vh;
+  }
+
+  .fourthIntro div{
     display: none;
   }
 

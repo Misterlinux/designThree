@@ -116,7 +116,6 @@ function Quarto(){
           <p><b>Time:</b> 9:30 AM/ 11:15 PM/ 2:30 PM/ 5:30 PM</p>
         </div>
 
-        {/*<h5 className="text-white"> Join our newsletter</h5>*/}
       </div>
 
     </div>
