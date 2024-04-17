@@ -40,12 +40,6 @@ export let galleria = [
 
 export let micro = "biologico"
 
-export const useMount = (callback) =>{
-  useEffect(() => {
-    callback();
-  }, [callback]); 
-} 
-
 export let band = [
   {
     src: basso,

@@ -11,7 +11,6 @@ import Footer from "./Footer";
 import { ReactComponent as Guir } from "../imma/guitar.svg"
 import { ReactComponent as Lamp } from "../imma/lampost1.svg" 
 
-import { useMount } from "../data/Data";
 import { useSpringValue } from "@react-spring/web";
 
 function Home(){
@@ -19,72 +18,47 @@ function Home(){
   let stato = useStato()
   let dispatch = useStatoset()
 
-  //const parallaxLayerRef = useRef(null);
   const [parallaxLayerMounted, setParallaxLayerMounted] = useState(false);
 
-  //let pronto = useRef(null)
-  let base = document.getElementById("finestra")
+  useEffect(() => {
+    setParallaxLayerMounted(true); 
+  }, []);
 
-  let primate = useRef()
-  let secondate = useRef()
-
-  //let colla = useRef()
-  //let alto = useSpringValue(0, {immediate: true})
-
-  //let esempio = useRef(null)
-  /* This should be for the page width on the useRef() current, istead os seResize*/
+  //instead of a resize we use it for clientWidth
   let parle = useRef(null)
+  let finestra = useRef()
 
-  //let mio;
+  let base = document.getElementById("finestra")
+  let stratosRefs = useRef([])
+  let colRefs = useRef([])
 
   //First intersect for the navbar and bar animation
   useEffect(()=>{
-    let finalmente = document.querySelectorAll(".stratos")
     let navigat = document.querySelectorAll(".nav-item");
 
-    if( finalmente.length ){
+    if( stratosRefs.current.length ){
 
       let options = {
-        root: base,
+        root: finestra.current.container.current,
         rootMargin: "0px 0px -85% 0px",
         threshold: 0,
       }
   
-      //It seems I can use entry.target element value inside the 
-      //addEventListener function
-      //We will need to create a section ONLY to talk about ho wheel event works in Parallax
+      let navElems = {}
+      stratosRefs.current.forEach((navId) => {
+        navElems[navId.id] = document.querySelector(`.nav-item.${navId.id}`)
+      })
 
-      //for the classlist to work it needs a single value, and to keep the intersect function
-      //separated from the intersectObserver
       function altro(entries){
   
         entries.forEach((entry)=>{
 
           if( entry.isIntersecting ){
 
-            //transfering these to the wheel function 
-            //console.log( entry.boundingClientRect.height )
-            //console.log( entry.intersectionRect.height )
-            //console.log( entry.target.clientHeight )
-
-            window.addEventListener("wheel", proviamo )
-
-            /*
-            let {container, current} = parle.current
-            console.log( "this is current " + current )
-
-            window.addEventListener('wheel', ()=>{
-              console.log("siam stati qui")
-              console.log( entry.target.clientHeight )
-              console.log( current )
-            }
-            );
-            */
-
             stato.springa.start( entry.target.attributes.move.value )
 
             navigat.forEach(item=>item.classList.remove("active"))
-            document.querySelector(`.nav-item.${entry.target.id }`).classList.add("active")
+            navElems[entry.target.id].classList.add("active")
 
             dispatch({
               type: 'colore',
@@ -102,33 +76,40 @@ function Home(){
 
       let observer = new IntersectionObserver(altro, options)
   
-      finalmente.forEach((valo)=>{
+      stratosRefs.current.forEach((valo)=>{
         observer.observe(valo)
       })
     }
 
-    function handleWheelEvent(){
-      console.log("from here we start")
-    }
-
     // ----------
+
     let reffe;
 
     //we cache the values instead of queryselect() on intersect
     let elements = {};
-    finalmente.forEach((valo1) => {
+    stratosRefs.current.forEach((valo1) => {
       elements[valo1.id] = document.querySelector(`.lato.${valo1.id}`);
     });
+    
 
-    if(finalmente.length){
+    const colonne = stratosRefs.current.reduce((acc, strat) => {
+      const matchingCol = colRefs.current.find((col) => col.className.includes(strat.id));
+      
+      if (matchingCol) {
+        acc[strat.id] = matchingCol;
+      }
+      
+      return acc;
+    }, {});
+
+
+    if(stratosRefs.current.length){
 
       let coloptions = {
-        root: base, 
+        root: finestra.current.container.current, 
         rootMargin: "0px",
         threshold: [...Array(150).keys()].map(x => x / 150),
       }
-
-      let largo = parle.current.clientWidth
 
       //There was a difference between the avaiable space and the Parallax height in some devices,
       //need to set 100vh height on both container and Parallax
@@ -137,77 +118,30 @@ function Home(){
         entries.forEach((entry)=>{
 
           //We can't start the boundingClient.Top from 0 coz we need to space it from the navbar
-          //the boundign goes from 80 to 500, modifying the column height dynamically
-          if(entry.isIntersecting && entry.boundingClientRect.top <= 75 /*(largo> 537 ? 75 : 75)*/ ){
+          if(entry.isIntersecting && entry.boundingClientRect.top <= 75 ){
           
-            //reffe = document.querySelector(`.lato.${entry.target.id}`)
-            reffe = elements[entry.target.id]
+            reffe = colonne[entry.target.id]
             requestAnimationFrame(() => {
               reffe.style.height = `calc(100vh + ${entry.boundingClientRect.top - 75 + "px"} )`;
             });
           }
 
         })
-
       } 
 
       let observer1 = new IntersectionObserver(scrolled, coloptions)
 
-      finalmente.forEach((valo1)=>{
+      stratosRefs.current.forEach((valo1)=>{
         observer1.observe(valo1)
       })
 
     }
 
-    //the return for the added wheel effect, if we were to add it 
-    return () => {
-      window.removeEventListener('wheel', handleWheelEvent);
-    };
-
   }, [parallaxLayerMounted])
- 
-  //lets try an external wheel that gets the target element
-  function proviamo(){
-    /*
-    console.log("---------------------")
-    console.log( secondate )
-    console.log( secondate.current.offsetTop )
-    const {container, current} = parle.current;
-    console.log( current )
-    */
-  }
-
-  //container.current.scrollHeight, or ref.current.clientHeight
-  //the scroll prototype
-  /*
-  let primate = useRef()
-  const scrollListener = () => {
-
-    const handleWheelEvent = () => {
-      const {container, current} = parle.current;
-      let percentage = container.current.scrollHeight - window.innerHeight
-
-      const scrollpercent = current / percentage
-      console.log(scrollpercent);
-    };
-
-    window.addEventListener('wheel', handleWheelEvent);
-
-    return () => {
-      window.removeEventListener('wheel', handleWheelEvent);
-    };
-  };
-  useEffect(scrollListener, []);
-  */
-
-  //Read the useMount paragraph in the notes
-  useMount(() => {
-    setParallaxLayerMounted(true);
-  });
 
   return(
-    <div ref={parle} style={{width: "100%" /*marginTop: "5em", height: "100vh"*/ }}>
-      <Parallax pages={4.75} className="noScroll" id="finestra" style={{ height: "100vh" }}>
+    <div ref={parle} style={{width: "100%" }}>
+      <Parallax pages={4.75} className="noScroll" ref={finestra} id="finestra" style={{ height: "100vh" }}>
         <ParallaxLayer  offset={0}>
           <Intro/>
         </ParallaxLayer>
@@ -219,19 +153,22 @@ function Home(){
         </ParallaxLayer>
 
         <ParallaxLayer  offset={0.55}>
-          <div className="stratos" id="TuneFuse" move="25%" color={300} >
+          <div className="stratos" id="TuneFuse" move="25%" color={300} 
+            ref= {(ref)=> stratosRefs.current[0] = ref }>
             <Primo />
           </div>
         </ParallaxLayer>
       
         <ParallaxLayer offset={1.55} className="bg-main">
-          <div className="stratos" id="Band" move="50%" color={210}>
+          <div className="stratos" id="Band" move="50%" color={210}
+            ref= {(ref)=> stratosRefs.current[1] = ref }>
             <Secondo />
           </div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={2.55} className="bg-main" factor={window.innerWidth< 600 ? 1.05 : 1}>
-          <div className="stratos" id="Duo" move="75%" color={120} style={{ height: "100%" }}>
+          <div className="stratos" id="Duo" move="75%" color={120} style={{ height: "100%" }}
+            ref= {(ref)=> stratosRefs.current[2] = ref }>
             <Terzo />
           </div>
         </ParallaxLayer>
@@ -243,7 +180,8 @@ function Home(){
 
         {/* 3.55  */}
         <ParallaxLayer offset={window.innerWidth< 600 ? 3.60 : 3.55} factor={window.innerWidth< 600 ? 0.95 : 1}>
-          <div className="stratos" id="Team" move="100%" color={35} style={{ height: "100%" }}>
+          <div className="stratos" id="Team" move="100%" color={35} style={{ height: "100%" }}
+            ref= {(ref)=> stratosRefs.current[3] = ref }>
             <Quarto />
           </div>
         </ParallaxLayer>
@@ -254,7 +192,8 @@ function Home(){
 
         <ParallaxLayer offset={0.30} style={{ height: 0 ,display: "inline-block"}} sticky={{ start: 0.30, end: 1.55 }}>
           <> 
-            <div className="position-relative d-inline-block lato TuneFuse" style={{ width: "25%" }}>
+            <div className="position-relative d-inline-block lato TuneFuse" style={{ width: "25%" }}
+              ref={(ref)=> ( colRefs.current[0] = ref )}>
 
               <div className="position-relative bg-primary" style={{ height: "100vh" }} >
                 <div className="position-absolute colonna" style={{ backgroundImage: `url("./imma/dayOne.jpg")` }}>
@@ -315,7 +254,8 @@ function Home(){
 
         <ParallaxLayer offset={1.37} style={{ height: 0, display: "inline-block"}} sticky={{start: 1.37, end: 2.55}}>
           <>
-            <div className="d-inline-block lato Band" style={{marginLeft: "80%", width: "20%", transition: "0.05s"}}>
+            <div className="d-inline-block lato Band" style={{marginLeft: "80%", width: "20%", transition: "0.05s"}}
+              ref={(ref)=> ( colRefs.current[1] = ref )}>
 
               <div className="position-relative bg-primary text-secondary" style={{height: "100vh" }}>
                 <div className="position-absolute colonna" style={{ backgroundImage: `url("./imma/dayTwo.jpg")` }}>
@@ -378,7 +318,8 @@ function Home(){
 
         <ParallaxLayer offset={2.41} style={{height: 0, display: "inline-block"}} sticky={{start: 2.41,end: 3.37}}>
           <>
-            <div className="d-inline-block lato Duo" style={{ width: "20%"}}>
+            <div className="d-inline-block lato Duo" style={{ width: "20%"}}
+              ref={(ref)=> ( colRefs.current[2] = ref )}>
               <div className="bg-primary text-secondary position-relative" style={{height: "100vh"}}>
                 <div className="position-absolute colonna" style={{ backgroundImage: `url("./imma/thirdDay.jpg")` }}>
                 </div>
@@ -429,7 +370,8 @@ function Home(){
 
         <ParallaxLayer className="d-none d-md-inline-block" offset={3.41} style={{height: 0 }} sticky={{start: 3.41,end: 3.70}}>
           <>
-            <div className="d-inline-block lato Team" style={{ width: "20%", marginLeft: "80%" }}>
+            <div className="d-inline-block lato Team" style={{ width: "20%", marginLeft: "80%" }}
+              ref={(ref)=> ( colRefs.current[3] = ref )}>
               <div className="bg-primary text-white position-relative" style={{height: "100vh"}}>
                 <div className="position-absolute colonna" style={{ backgroundImage: `url("./imma/fourthDay.jpg")` }}>
                 </div>
