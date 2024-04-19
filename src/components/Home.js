@@ -13,7 +13,7 @@ import { ReactComponent as Lamp } from "../imma/lampost1.svg"
 
 import { useSpringValue } from "@react-spring/web";
 
-function Home(){
+function Home({ navotto, navParent }){
 
   let stato = useStato()
   let dispatch = useStatoset()
@@ -34,7 +34,8 @@ function Home(){
 
   //First intersect for the navbar and bar animation
   useEffect(()=>{
-    let navigat = document.querySelectorAll(".nav-item");
+
+    let navItems = navParent.current
 
     if( stratosRefs.current.length ){
 
@@ -43,11 +44,19 @@ function Home(){
         rootMargin: "0px 0px -85% 0px",
         threshold: 0,
       }
-  
-      let navElems = {}
-      stratosRefs.current.forEach((navId) => {
-        navElems[navId.id] = document.querySelector(`.nav-item.${navId.id}`)
-      })
+    
+      console.log( navItems )
+
+      const navOb = stratosRefs.current.reduce((acc, strat) => {
+        const matchingCol = navItems.find((col) => col.className.includes(strat.id));
+        
+        if (matchingCol) {
+          acc[strat.id] = matchingCol;
+        }
+        
+        return acc;
+      }, {});
+
 
       function altro(entries){
   
@@ -57,8 +66,10 @@ function Home(){
 
             stato.springa.start( entry.target.attributes.move.value )
 
-            navigat.forEach(item=>item.classList.remove("active"))
-            navElems[entry.target.id].classList.add("active")
+            navItems.forEach(item=>{
+              item.classList.remove("active")
+            })
+            navOb[entry.target.id].classList.add("active")
 
             dispatch({
               type: 'colore',
@@ -85,13 +96,7 @@ function Home(){
 
     let reffe;
 
-    //we cache the values instead of queryselect() on intersect
-    let elements = {};
-    stratosRefs.current.forEach((valo1) => {
-      elements[valo1.id] = document.querySelector(`.lato.${valo1.id}`);
-    });
-    
-
+    //we cache the values instead of queryselect() on intersect    
     const colonne = stratosRefs.current.reduce((acc, strat) => {
       const matchingCol = colRefs.current.find((col) => col.className.includes(strat.id));
       
@@ -111,8 +116,6 @@ function Home(){
         threshold: [...Array(150).keys()].map(x => x / 150),
       }
 
-      //There was a difference between the avaiable space and the Parallax height in some devices,
-      //need to set 100vh height on both container and Parallax
       function scrolled(entries){
 
         entries.forEach((entry)=>{
@@ -152,7 +155,7 @@ function Home(){
             style={{ fill: `hsl(${stato.base}, 100%, 36%)`, height: "45vh", width: "12%" }}/>
         </ParallaxLayer>
 
-        <ParallaxLayer  offset={0.55}>
+        <ParallaxLayer offset={0.55}>
           <div className="stratos" id="TuneFuse" move="25%" color={300} 
             ref= {(ref)=> stratosRefs.current[0] = ref }>
             <Primo />

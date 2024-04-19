@@ -1,4 +1,4 @@
-import { useReducer, useContext, createContext} from 'react';
+import { useReducer, useContext, createContext, useRef} from 'react';
 import { animated, useTransition, useScroll, useSpringValue} from '@react-spring/web'
 import { micro } from './Data';
 import { passo } from '../components/Home';
@@ -29,6 +29,7 @@ export default function Task({children}){
           ...state
         }
       }
+      
     }
 
     throw Error('Unknown action: ' + action.type);

@@ -6,10 +6,10 @@ import {
   useReducedMotion,
   useTransition
 } from "@react-spring/web";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useStato, useStatoset } from "../data/Context";
 
-function Navbar(){
+function Navbar({ navotto, navParent}){
 
   let stato = useStato()
   let dispatch = useStatoset()
@@ -31,13 +31,8 @@ function Navbar(){
     }
   })
 
+  let navi = navParent 
 
-  useEffect(()=>{
-    let navi = document.querySelectorAll(".col-8 .col-3")
-    //console.log( navi )
-  })
-
-  //WE don't display the name on mobile, and also change the dimentions of the icon
   return(
     <div className="naviga bg-primary d-flex justify-content-between row mx-0 col-12">
 
@@ -50,16 +45,16 @@ function Navbar(){
       </div>
 
       <div className="d-none d-sm-flex col-sm-6 row position-relative">
-        <nav className="col-3 nav-item TuneFuse cent-flex">
+        <nav className="col-3 nav-item TuneFuse cent-flex" ref={(ref)=> {navi.current[0] = ref }}>
           <h4> Artist </h4>
         </nav>
-        <nav className="col-3 nav-item Band cent-flex">
+        <nav className="col-3 nav-item Band cent-flex" ref={(ref)=> {navi.current[1] = ref }}>
           <h4> Band </h4>
         </nav>
-        <nav className="col-3 nav-item Duo cent-flex">
+        <nav className="col-3 nav-item Duo cent-flex" ref={(ref)=> {navi.current[2] = ref }}>
           <h4> Duo </h4>
         </nav>
-        <nav className="col-3 nav-item Team cent-flex">
+        <nav className="col-3 nav-item Team cent-flex" ref={(ref)=> {navi.current[3] = ref }}>
           <h4> Team </h4>
         </nav>
 
